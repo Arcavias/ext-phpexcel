@@ -1,0 +1,26 @@
+{
+	"name": "arcavias/ext-phpexcel",
+	"description": "Arcavias extension for providing PHPExcel containers",
+	"homepage": "http://www.arcavias.com/en",
+	"type": "arcavias-extension",
+	"license": "LGPL-3.0",
+	"support": {
+		"source": "https://github.com/Arcavias/ext-phpexcel",
+		"issues": "https://bugs.arcavias.com",
+		"forum": "https://forum.arcavias.com",
+		"wiki": "https://docs.arcavias.com"
+	},
+	"require": {
+		"arcavias/extension-installer": "dev-master"
+	},
+	"autoload": {
+		"psr-0": {
+			"MW": "lib/custom/src",
+			"PHPExcel": "lib/phpexcel"
+		},
+		"classmap": [
+			"lib/custom/src",
+			"lib/phpexcel"
+		]
+	}
+}
