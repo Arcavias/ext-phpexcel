@@ -32,6 +32,42 @@ class Controller_ExtJS_Product_Export_Text_Excel
 
 
 	/**
+	 * Creates a XLS file with all attribute texts and outputs it directly.
+	 *
+	 * @param stdClass $params Object containing the properties, e.g. the list of product IDs
+	 */
+	public function createHttpOutput( stdClass $params )
+	{
+		$this->_checkParams( $params, array( 'site', 'items' ) );
+		$this->_setLocale( $params->site );
+		$actualLangid = $this->_getContext()->getLocale()->getLanguageId();
+
+		$items = ( !is_array( $params->items ) ? array( $params->items ) : $params->items );
+		$lang = ( property_exists( $params, 'lang' ) && is_array( $params->lang ) ? $params->lang : array() );
+
+		$this->_getContext()->getLogger()->log( sprintf( 'Create export for product IDs: %1$s', implode( ',', $items ) ), MW_Logger_Abstract::DEBUG );
+
+		@header('Content-Type: application/vnd.ms-excel');
+		@header('Content-Disposition: attachment; filename=arcavias-product-texts.xls');
+		@header('Cache-Control: max-age=0');
+
+		try
+		{
+			$this->_getContext()->getLocale()->setLanguageId( $actualLangid );
+
+			$this->_exportCatalogData( $items, $lang, 'php://output' );
+		}
+		catch ( Exception $e )
+		{
+			$this->_removeTempFiles( 'php://output' );
+			throw $e;
+		}
+
+		$this->_removeTempFiles( 'php://output' );
+	}
+
+
+	/**
 	 * Creates a new job to export an excel file.
 	 *
 	 * @param stdClass $params Object containing the properties, e.g. the list of product IDs
@@ -42,7 +78,7 @@ class Controller_ExtJS_Product_Export_Text_Excel
 		$this->_setLocale( $params->site );
 
 		$config = $this->_getContext()->getConfig();
-		$dir = $config->get( 'controller/extjs/product/export/text/default/exportdir', 'uploads' );
+		$dir = $config->get( 'controller/extjs/product/export/text/excel/exportdir', 'uploads' );
 
 		$items = (array) $params->items;
 		$lang = ( property_exists( $params, 'lang' ) ) ? (array) $params->lang : array();
@@ -90,8 +126,8 @@ class Controller_ExtJS_Product_Export_Text_Excel
 		$lang = ( property_exists( $params, 'lang' ) ) ? (array) $params->lang : array();
 
 		$config = $this->_getContext()->getConfig();
-		$dir = $config->get( 'controller/extjs/product/export/text/default/exportdir', 'uploads' );
-		$perms = $config->get( 'controller/extjs/product/export/text/default/dirperms', 0775 );
+		$dir = $config->get( 'controller/extjs/product/export/text/excel/exportdir', 'uploads' );
+		$perms = $config->get( 'controller/extjs/product/export/text/excel/dirperms', 0775 );
 
 		if( is_dir( $dir ) === false && mkdir( $dir, $perms, true ) === false ) {
 			throw new Controller_ExtJS_Exception( sprintf( 'Couldn\'t create directory "%1$s" with permissions "%2$o"', $dir, $perms ) );
@@ -105,15 +141,13 @@ class Controller_ExtJS_Product_Export_Text_Excel
 		{
 			$this->_getContext()->getLocale()->setLanguageId( $actualLangid );
 
-			$filename = $this->_exportProductData( $items, $lang, $tmpfolder . 'xls');
+			$this->_exportProductData( $items, $lang, $filename );
 		}
 		catch ( Exception $e )
 		{
-			$this->_removeTempFiles( $tmpfolder );
+			$this->_removeTempFiles( $filename );
 			throw $e;
 		}
-
-		$this->_removeTempFiles( $tmpfolder );
 
 		return array(
 			'file' => '<a href="'.$filename.'">Download</a>',
@@ -161,7 +195,7 @@ class Controller_ExtJS_Product_Export_Text_Excel
 		if( !empty( $lang ) ) {
 			$search->setConditions( $search->compare( '==', 'locale.language.id', $lang ) );
 		}
-		$containerItem = new MW_Container_PHPExcel();
+
 		$containerItem = $this->_initContainer( $filename );
 
 		$start = 0;
@@ -284,6 +318,6 @@ class Controller_ExtJS_Product_Export_Text_Excel
 	 */
 	protected function _initContainer( $resource )
 	{
-		return new MW_Container_PHPExcel( $resource . '.xls', 'XLS' );
+		return new MW_Container_PHPExcel( $resource, 'Excel5' );
 	}
 }

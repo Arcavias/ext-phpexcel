@@ -38,7 +38,7 @@ class Controller_ExtJS_Product_Import_Text_ExcelTest extends MW_Unittest_Testcas
 	{
 		$context = TestHelper::getContext();
 
-		$this->_testdir = $context->getConfig()->get( 'controller/extjs/product/import/text/default/uploaddir', './tmp' );
+		$this->_testdir = $context->getConfig()->get( 'controller/extjs/product/import/text/excel/uploaddir', './tmp' );
 		$this->_testfile = $this->_testdir . DIRECTORY_SEPARATOR . 'file.txt';
 
 		if( !is_dir( $this->_testdir ) && mkdir( $this->_testdir, 0775, true ) === false ) {

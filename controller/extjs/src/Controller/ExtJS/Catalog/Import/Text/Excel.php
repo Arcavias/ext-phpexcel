@@ -44,9 +44,9 @@ class Controller_ExtJS_Catalog_Import_Text_Excel
 		}
 
 		$config = $this->_getContext()->getConfig();
-		$dir = $config->get( 'controller/extjs/catalog/import/text/default/uploaddir', 'uploads' );
+		$dir = $config->get( 'controller/extjs/catalog/import/text/excel/uploaddir', 'uploads' );
 
-		if( $config->get( 'controller/extjs/catalog/import/text/default/enablecheck', true ) ) {
+		if( $config->get( 'controller/extjs/catalog/import/text/excel/enablecheck', true ) ) {
 			$this->_checkFileUpload( $fileinfo['tmp_name'], $fileinfo['error'] );
 		}
 
@@ -59,7 +59,7 @@ class Controller_ExtJS_Catalog_Import_Text_Excel
 			throw new Controller_ExtJS_Exception( $msg );
 		}
 
-		$perms = $config->get( 'controller/extjs/catalog/import/text/default/fileperms', 0660 );
+		$perms = $config->get( 'controller/extjs/catalog/import/text/excel/fileperms', 0660 );
 		if( chmod( $dest, $perms ) !== true )
 		{
 			$msg = sprintf( 'Could not set permissions "%1$s" for file "%2$s"', $perms, $dest );

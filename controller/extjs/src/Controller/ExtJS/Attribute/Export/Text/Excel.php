@@ -31,6 +31,32 @@ class Controller_ExtJS_Attribute_Export_Text_Excel
 
 
 	/**
+	 * Creates a XLS file with all attribute texts and outputs it directly.
+	 *
+	 * @param stdClass $params Object containing the properties, e.g. the list of attribute IDs
+	 */
+	public function createHttpOutput( stdClass $params )
+	{
+		$this->_checkParams( $params, array( 'site', 'items' ) );
+		$this->_setLocale( $params->site );
+
+		$items = ( !is_array( $params->items ) ? array( $params->items ) : $params->items );
+		$lang = ( property_exists( $params, 'lang' ) && is_array( $params->lang ) ? $params->lang : array() );
+
+		$this->_getContext()->getLogger()->log( sprintf( 'Create export for attribute IDs: %1$s', implode( ',', $items ) ), MW_Logger_Abstract::DEBUG );
+
+
+		@header('Content-Type: application/vnd.ms-excel');
+		@header('Content-Disposition: attachment; filename=arcavias-attribute-texts.xls');
+		@header('Cache-Control: max-age=0');
+
+		$this->_container = new Controller_ExtJS_Common_Load_Container_PHPExcel( 'php://output', 'attribute' );//$this->_getContext()->getConfig()->get( 'controller/extjs/export/manager', new Controller_ExtJS_Common_Load_Container_PHPExcel( 'php://output', 'attribute' ) );
+		$phpExcel = $this->_createDocument( $items, $lang );
+		$this->_container->finish();
+	}
+
+
+	/**
 	 * Creates a new job to export an excel file.
 	 *
 	 * @param stdClass $params Object containing the properties, e.g. the list of attribute IDs
@@ -41,7 +67,7 @@ class Controller_ExtJS_Attribute_Export_Text_Excel
 		$this->_setLocale( $params->site );
 
 		$config = $this->_getContext()->getConfig();
-		$dir = $config->get( 'controller/extjs/attribute/export/text/default/exportdir', 'uploads' );
+		$dir = $config->get( 'controller/extjs/attribute/export/text/excel/exportdir', 'uploads' );
 
 		$items = (array) $params->items;
 		$lang = ( property_exists( $params, 'lang' ) ) ? (array) $params->lang : array();
@@ -89,8 +115,8 @@ class Controller_ExtJS_Attribute_Export_Text_Excel
 		$lang = ( property_exists( $params, 'lang' ) ) ? (array) $params->lang : array();
 
 		$config = $this->_getContext()->getConfig();
-		$dir = $config->get( 'controller/extjs/attribute/export/text/default/exportdir', 'uploads' );
-		$perms = $config->get( 'controller/extjs/attribute/export/text/default/dirperms', 0775 );
+		$dir = $config->get( 'controller/extjs/attribute/export/text/excel/exportdir', 'uploads' );
+		$perms = $config->get( 'controller/extjs/attribute/export/text/excel/dirperms', 0775 );
 
 		if( is_dir( $dir ) === false && mkdir( $dir, $perms, true ) === false ) {
 			throw new Controller_ExtJS_Exception( sprintf( 'Couldn\'t create directory "%1$s" with permissions "%2$o"', $dir, $perms ) );
@@ -238,7 +264,7 @@ class Controller_ExtJS_Attribute_Export_Text_Excel
 	 */
 	protected function _initContainer( $resource )
 	{
-		return new MW_Container_Zip( $resource . '.zip', 'CSV' );
+		return new MW_Container_Zip( $resource, 'PHPExcel' );
 	}
 
 
