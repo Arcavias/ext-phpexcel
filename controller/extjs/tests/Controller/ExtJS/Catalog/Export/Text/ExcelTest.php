@@ -133,7 +133,6 @@ class Controller_ExtJS_Catalog_Export_Text_ExcelTest extends MW_Unittest_Testcas
 		$params->site = $context->getLocale()->getSite()->getCode();
 
 		$result = $this->_object->exportFile( $params );
-
 		$this->assertTrue( array_key_exists('file', $result) );
 
 		$file = substr($result['file'], 9, -14);

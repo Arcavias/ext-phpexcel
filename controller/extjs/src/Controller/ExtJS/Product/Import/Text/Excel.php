@@ -150,10 +150,7 @@ class Controller_ExtJS_Product_Import_Text_Excel
 	 */
 	protected function _importFile( $path )
 	{
-		$type = PHPExcel_IOFactory::identify( $path );
-		$reader = PHPExcel_IOFactory::createReader( $type );
-		$reader->setReadDataOnly( true );
-		$phpExcel = $reader->load( $path );
+		$container = new MW_Container_PHPExcel( $path, 'Excel5' );
 
 		$textTypeMap = array();
 		foreach( $this->_getTextTypes( 'product' ) as $item ) {
@@ -162,9 +159,9 @@ class Controller_ExtJS_Product_Import_Text_Excel
 
 		$manager = MShop_Product_Manager_Factory::createManager( $this->_getContext() );
 
-		foreach( $phpExcel->getWorksheetIterator() as $sheet )
+		foreach( $container as $language )
 		{
-			$itemTextMap = $this->_importTextsFromXLS( $sheet, $textTypeMap, 'product' );
+			$itemTextMap = $this->_importTextsFromContent( $language, $textTypeMap, 'product' );
 			$this->_importReferences( $manager, $itemTextMap, 'product' );
 		}
 	}

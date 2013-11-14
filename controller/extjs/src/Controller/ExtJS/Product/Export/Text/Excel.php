@@ -55,7 +55,7 @@ class Controller_ExtJS_Product_Export_Text_Excel
 		{
 			$this->_getContext()->getLocale()->setLanguageId( $actualLangid );
 
-			$this->_exportCatalogData( $items, $lang, 'php://output' );
+			$this->_exportProductData( $items, $lang, 'php://output' );
 		}
 		catch ( Exception $e )
 		{
@@ -139,9 +139,9 @@ class Controller_ExtJS_Product_Export_Text_Excel
 
 		try
 		{
-			$this->_getContext()->getLocale()->setLanguageId( $actualLangid );
-
 			$this->_exportProductData( $items, $lang, $filename );
+
+			$this->_getContext()->getLocale()->setLanguageId( $actualLangid );
 		}
 		catch ( Exception $e )
 		{
@@ -210,7 +210,7 @@ class Controller_ExtJS_Product_Export_Text_Excel
 
 				$contentItem = $containerItem->create( $langid . $contentFormat );
 				$contentItem->add( array( 'Language ID', 'Product type', 'Product code', 'List type', 'Text type', 'Text ID', 'Text' ) );
-				$this->_getContext()->getLocale()->setLanguageId( $langid );
+// 				$this->_getContext()->getLocale()->setLanguageId( $langid );
 				$this->_addLanguage( $langid, $ids, $contentItem );
 				$containerItem->add( $contentItem );
 			}

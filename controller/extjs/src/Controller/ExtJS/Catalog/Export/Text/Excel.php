@@ -126,6 +126,7 @@ class Controller_ExtJS_Catalog_Export_Text_Excel
 		$this->_setLocale( $params->site );
 		$actualLangid = $this->_getContext()->getLocale()->getLanguageId();
 
+
 		$items = (array) $params->items;
 		$lang = ( property_exists( $params, 'lang' ) ) ? (array) $params->lang : array();
 
@@ -143,9 +144,9 @@ class Controller_ExtJS_Catalog_Export_Text_Excel
 
 		try
 		{
-			$this->_getContext()->getLocale()->setLanguageId( $actualLangid );
-
 			$this->_exportCatalogData( $items, $lang, $filename );
+
+			$this->_getContext()->getLocale()->setLanguageId( $actualLangid );
 		}
 		catch ( Exception $e )
 		{
@@ -184,7 +185,7 @@ class Controller_ExtJS_Catalog_Export_Text_Excel
 	{
 		$manager = MShop_Locale_Manager_Factory::createManager( $this->_getContext() );
 		$globalLanguageManager = $manager->getSubManager( 'language' );
-		echo var_dump( $ids );
+
 		$search = $globalLanguageManager->createSearch();
 		$search->setSortations( array( $search->sort( '+', 'locale.language.id' ) ) );
 
@@ -206,7 +207,7 @@ class Controller_ExtJS_Catalog_Export_Text_Excel
 
 				$contentItem = $containerItem->create( $langid . $contentFormat  );
 				$contentItem->add( array( 'Language ID', 'Catalog label', 'Catalog ID', 'List type', 'Text type', 'Text ID', 'Text' ) );
-				$this->_getContext()->getLocale()->setLanguageId( $langid );
+// 				$this->_getContext()->getLocale()->setLanguageId( $langid );
 				$this->_addLanguage( $langid, $ids, $contentItem );
 				$containerItem->add( $contentItem );
 			}
@@ -256,6 +257,8 @@ class Controller_ExtJS_Catalog_Export_Text_Excel
 		foreach( $item->getListItems( 'text' ) as $listItem ) {
 			$listTypes[ $listItem->getRefId() ] = $listItem->getType();
 		}
+
+
 
 		foreach( $this->_getTextTypes( 'catalog' ) as $textTypeItem )
 		{

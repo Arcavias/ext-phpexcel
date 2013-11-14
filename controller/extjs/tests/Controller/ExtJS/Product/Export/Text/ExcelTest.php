@@ -50,75 +50,75 @@ class Controller_ExtJS_Product_Export_Text_ExcelTest extends MW_Unittest_Testcas
 	}
 
 
-// 	public function testcreateHttpOutput()
-// 	{
-// 		$context = TestHelper::getContext();
-// 		$manager = MShop_Product_Manager_Factory::createManager( $context );
-// 		$textTypeManager = MShop_Text_Manager_Factory::createManager( $context )->getSubManager('type');
+	public function testcreateHttpOutput()
+	{
+		$context = TestHelper::getContext();
+		$manager = MShop_Product_Manager_Factory::createManager( $context );
+		$textTypeManager = MShop_Text_Manager_Factory::createManager( $context )->getSubManager('type');
 
 
-// 		$typeTotal = 0;
-// 		$typeSearch = $textTypeManager->createSearch();
-// 		$typeSearch->setConditions( $typeSearch->compare( '==', 'text.type.domain', 'product' ) );
-// 		$typeSearch->setSlice( 0, 0 );
-// 		$textTypeManager->searchItems( $typeSearch, array(), $typeTotal );
+		$typeTotal = 0;
+		$typeSearch = $textTypeManager->createSearch();
+		$typeSearch->setConditions( $typeSearch->compare( '==', 'text.type.domain', 'product' ) );
+		$typeSearch->setSlice( 0, 0 );
+		$textTypeManager->searchItems( $typeSearch, array(), $typeTotal );
 
 
-// 		$ids = array();
-// 		$search = $manager->createSearch();
-// 		$search->setConditions( $search->compare( '!=', 'product.code', array( 'U:HIS', 'U:HISSUB01', 'U:HISSUB02' ) ) );
-// 		foreach( $manager->searchItems( $search ) as $item ) {
-// 			$ids[] = $item->getId();
-// 		}
+		$ids = array();
+		$search = $manager->createSearch();
+		$search->setConditions( $search->compare( '!=', 'product.code', array( 'U:HIS', 'U:HISSUB01', 'U:HISSUB02' ) ) );
+		foreach( $manager->searchItems( $search ) as $item ) {
+			$ids[] = $item->getId();
+		}
 
-// 		$params = new stdClass();
-// 		$params->lang = array( 'de', 'en' );
-// 		$params->items = $ids;
-// 		$params->site = 'unittest';
+		$params = new stdClass();
+		$params->lang = array( 'de', 'en' );
+		$params->items = $ids;
+		$params->site = 'unittest';
 
-// 		if( ob_start() === false ) {
-// 			throw new Exception( 'Unable to start output buffering' );
-// 		}
+		if( ob_start() === false ) {
+			throw new Exception( 'Unable to start output buffering' );
+		}
 
-// 		$this->_object->createHttpOutput( $params );
+		$this->_object->createHttpOutput( $params );
 
-// 		$content = ob_get_contents();
-// 		ob_end_clean();
+		$content = ob_get_contents();
+		ob_end_clean();
 
-// 		$filename = 'product-export.xls';
+		$filename = 'product-export.xls';
 
-// 		if( file_put_contents( $filename, $content ) === false ) {
-// 			throw new Exception( 'Unable to write export file' );
-// 		}
+		if( file_put_contents( $filename, $content ) === false ) {
+			throw new Exception( 'Unable to write export file' );
+		}
 
-// 		$phpExcel = PHPExcel_IOFactory::load($filename);
+		$phpExcel = PHPExcel_IOFactory::load($filename);
 
-// 		if( unlink( $filename ) === false ) {
-// 			throw new exception( 'unable to remove export file' );
-// 		}
+		if( unlink( $filename ) === false ) {
+			throw new exception( 'unable to remove export file' );
+		}
 
 
-// 		$phpExcel->setActiveSheetIndex(0);
-// 		$sheet = $phpExcel->getActiveSheet();
+		$phpExcel->setActiveSheetIndex(0);
+		$sheet = $phpExcel->getActiveSheet();
 
-// 		$this->assertEquals( 'Language ID', $sheet->getCell('A1')->getValue() );
-// 		$this->assertEquals( 'Text', $sheet->getCell('G1')->getValue() );
+		$this->assertEquals( 'Language ID', $sheet->getCell('A1')->getValue() );
+		$this->assertEquals( 'Text', $sheet->getCell('G1')->getValue() );
 
-// 		for( $i = 2; $i < $typeTotal + 1; $i++ )
-// 		{
-// 			if( $sheet->getCell( 'E' . $i )->getValue() == 'name' ) {
-// 				break;
-// 			}
-// 		}
-// 		$this->assertLessThan( $typeTotal, $i );
+		for( $i = 2; $i < $typeTotal + 1; $i++ )
+		{
+			if( $sheet->getCell( 'E' . $i )->getValue() == 'name' ) {
+				break;
+			}
+		}
+		$this->assertLessThan( $typeTotal, $i );
 
-// 		$this->assertEquals( 'de', $sheet->getCell('A' . $i)->getValue() );
-// 		$this->assertEquals( 'default', $sheet->getCell('B' . $i)->getValue() );
-// 		$this->assertEquals( 'ABCD', $sheet->getCell('C' . $i)->getValue() );
-// 		$this->assertEquals( 'default', $sheet->getCell('D' . $i)->getValue() );
-// 		$this->assertEquals( 'name', $sheet->getCell('E' . $i)->getValue() );
-// 		$this->assertEquals( 'Unterproduct 1', $sheet->getCell('G' . $i)->getValue() );
-// 	}
+		$this->assertEquals( 'de', $sheet->getCell('A' . $i)->getValue() );
+		$this->assertEquals( 'default', $sheet->getCell('B' . $i)->getValue() );
+		$this->assertEquals( 'ABCD', $sheet->getCell('C' . $i)->getValue() );
+		$this->assertEquals( 'default', $sheet->getCell('D' . $i)->getValue() );
+		$this->assertEquals( 'name', $sheet->getCell('E' . $i)->getValue() );
+		$this->assertEquals( 'Unterproduct 1', $sheet->getCell('G' . $i)->getValue() );
+	}
 
 
 	public function testExportFile()

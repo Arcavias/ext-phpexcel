@@ -148,19 +148,16 @@ class Controller_ExtJS_Catalog_Import_Text_Excel
 	 */
 	protected function _importFile( $path )
 	{
-		$type = PHPExcel_IOFactory::identify( $path );
-		$reader = PHPExcel_IOFactory::createReader( $type );
-		$reader->setReadDataOnly( true );
-		$phpExcel = $reader->load( $path );
+		$container = new MW_Container_PHPExcel( $path, 'Excel5' );
 
 		$textTypeMap = array();
 		foreach( $this->_getTextTypes( 'catalog' ) as $item ) {
 			$textTypeMap[ $item->getCode() ] = $item->getId();
 		}
 
-		foreach( $phpExcel->getWorksheetIterator() as $sheet )
+		foreach( $container as $language )
 		{
-			$catalogTextMap = $this->_importTextsFromXLS( $sheet, $textTypeMap, 'catalog' );
+			$catalogTextMap = $this->_importTextsFromContent( $language, $textTypeMap, 'catalog' );
 			$this->_importCatalogReferences( $catalogTextMap );
 		}
 	}

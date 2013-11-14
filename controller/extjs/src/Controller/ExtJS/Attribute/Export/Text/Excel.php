@@ -50,9 +50,17 @@ class Controller_ExtJS_Attribute_Export_Text_Excel
 		@header('Content-Disposition: attachment; filename=arcavias-attribute-texts.xls');
 		@header('Cache-Control: max-age=0');
 
-		$this->_container = new Controller_ExtJS_Common_Load_Container_PHPExcel( 'php://output', 'attribute' );//$this->_getContext()->getConfig()->get( 'controller/extjs/export/manager', new Controller_ExtJS_Common_Load_Container_PHPExcel( 'php://output', 'attribute' ) );
-		$phpExcel = $this->_createDocument( $items, $lang );
-		$this->_container->finish();
+		try
+		{
+			$this->_exportAttributeData( $items, $lang, 'php://output' );
+		}
+		catch ( Exception $e )
+		{
+			$this->_removeTempFiles( 'php://output' );
+			throw $e;
+		}
+
+		$this->_removeTempFiles( 'php://output' );
 	}
 
 
@@ -129,9 +137,9 @@ class Controller_ExtJS_Attribute_Export_Text_Excel
 
 		try
 		{
-			$this->_getContext()->getLocale()->setLanguageId( $actualLangid );
-
 			$filename = $this->_exportAttributeData( $items, $lang, $tmpfolder . 'xls');
+
+			$this->_getContext()->getLocale()->setLanguageId( $actualLangid );
 		}
 		catch ( Exception $e )
 		{
@@ -202,7 +210,7 @@ class Controller_ExtJS_Attribute_Export_Text_Excel
 
 				$contentItem = $containerItem->create( $langid . $contentFormat );
 				$contentItem->add( array( 'Language ID', 'Product type', 'Product code', 'List type', 'Text type', 'Text ID', 'Text' ) );
-				$this->_getContext()->getLocale()->setLanguageId( $langid );
+// 				$this->_getContext()->getLocale()->setLanguageId( $langid );
 				$this->_addLanguage( $langid, $ids, $contentItem );
 				$containerItem->add( $contentItem );
 			}
