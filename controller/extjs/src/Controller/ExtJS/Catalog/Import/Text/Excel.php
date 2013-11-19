@@ -155,9 +155,9 @@ class Controller_ExtJS_Catalog_Import_Text_Excel
 			$textTypeMap[ $item->getCode() ] = $item->getId();
 		}
 
-		foreach( $container as $language )
+		foreach( $container as $langContent )
 		{
-			$catalogTextMap = $this->_importTextsFromContent( $language, $textTypeMap, 'catalog' );
+			$catalogTextMap = $this->_importTextsFromContent( $langContent, $textTypeMap, 'catalog' );
 			$this->_importCatalogReferences( $catalogTextMap );
 		}
 	}

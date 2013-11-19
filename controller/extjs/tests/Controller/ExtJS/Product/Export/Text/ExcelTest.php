@@ -9,6 +9,7 @@
 class Controller_ExtJS_Product_Export_Text_ExcelTest extends MW_Unittest_Testcase
 {
 	private $_object;
+	private $_context;
 
 
 	/**
@@ -34,7 +35,8 @@ class Controller_ExtJS_Product_Export_Text_ExcelTest extends MW_Unittest_Testcas
 	 */
 	protected function setUp()
 	{
-		$this->_object = new Controller_ExtJS_Product_Export_Text_Excel( TestHelper::getContext() );
+		$this->_context = TestHelper::getContext();
+		$this->_object = new Controller_ExtJS_Product_Export_Text_Excel( $this->_context );
 	}
 
 
@@ -52,9 +54,8 @@ class Controller_ExtJS_Product_Export_Text_ExcelTest extends MW_Unittest_Testcas
 
 	public function testcreateHttpOutput()
 	{
-		$context = TestHelper::getContext();
-		$manager = MShop_Product_Manager_Factory::createManager( $context );
-		$textTypeManager = MShop_Text_Manager_Factory::createManager( $context )->getSubManager('type');
+		$manager = MShop_Product_Manager_Factory::createManager( $this->_context );
+		$textTypeManager = MShop_Text_Manager_Factory::createManager( $this->_context )->getSubManager('type');
 
 
 		$typeTotal = 0;
@@ -123,9 +124,7 @@ class Controller_ExtJS_Product_Export_Text_ExcelTest extends MW_Unittest_Testcas
 
 	public function testExportFile()
 	{
-		$context = TestHelper::getContext();
-
-		$productManager = MShop_Product_Manager_Factory::createManager( $context );
+		$productManager = MShop_Product_Manager_Factory::createManager( $this->_context );
 		$criteria = $productManager->createSearch();
 
 		$expr = array();
@@ -139,7 +138,7 @@ class Controller_ExtJS_Product_Export_Text_ExcelTest extends MW_Unittest_Testcas
 		}
 
 		$params = new stdClass();
-		$params->site = $context->getLocale()->getSite()->getCode();
+		$params->site = $this->_context->getLocale()->getSite()->getCode();
 		$params->items = $productItem->getId();
 		$params->lang = 'de';
 

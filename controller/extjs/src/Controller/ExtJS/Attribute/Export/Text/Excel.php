@@ -130,27 +130,27 @@ class Controller_ExtJS_Attribute_Export_Text_Excel
 			throw new Controller_ExtJS_Exception( sprintf( 'Couldn\'t create directory "%1$s" with permissions "%2$o"', $dir, $perms ) );
 		}
 
-		$filename = 'attribute-text-export_' .date('Y-m-d') . '_' . md5( time() . getmypid() );
+		$filename = 'attribute-text-export_' .date('Y-m-d') . '_' . md5( time() . getmypid() ) . '.xls';
 		$this->_filepath = $dir . DIRECTORY_SEPARATOR . $filename;
 
 		$this->_getContext()->getLogger()->log( sprintf( 'Create export file for attribute IDs: %1$s', implode( ',', $items ) ), MW_Logger_Abstract::DEBUG );
 
 		try
 		{
-			$filename = $this->_exportAttributeData( $items, $lang, $tmpfolder . 'xls');
+			$filename = $this->_exportAttributeData( $items, $lang, $this->_filepath );
 
 			$this->_getContext()->getLocale()->setLanguageId( $actualLangid );
 		}
 		catch ( Exception $e )
 		{
-			$this->_removeTempFiles( $tmpfolder );
+			$this->_removeTempFiles( $this->_filepath );
 			throw $e;
 		}
 
-		$this->_removeTempFiles( $tmpfolder );
+// 		$this->_removeTempFiles( $tmpfolder );
 
 		return array(
-			'file' => '<a href="'.$filename.'">Download</a>',
+			'file' => '<a href="'.$this->_filepath.'">Download</a>',
 		);
 	}
 
@@ -195,7 +195,7 @@ class Controller_ExtJS_Attribute_Export_Text_Excel
 		if( !empty( $lang ) ) {
 			$search->setConditions( $search->compare( '==', 'locale.language.id', $lang ) );
 		}
-		$containerItem = new MW_Container_PHPExcel();
+
 		$containerItem = $this->_initContainer( $filename );
 
 		$start = 0;
@@ -210,7 +210,7 @@ class Controller_ExtJS_Attribute_Export_Text_Excel
 
 				$contentItem = $containerItem->create( $langid . $contentFormat );
 				$contentItem->add( array( 'Language ID', 'Product type', 'Product code', 'List type', 'Text type', 'Text ID', 'Text' ) );
-// 				$this->_getContext()->getLocale()->setLanguageId( $langid );
+				$this->_getContext()->getLocale()->setLanguageId( $langid );
 				$this->_addLanguage( $langid, $ids, $contentItem );
 				$containerItem->add( $contentItem );
 			}
@@ -240,10 +240,10 @@ class Controller_ExtJS_Attribute_Export_Text_Excel
 		$search = $manager->createSearch();
 
 		if( !empty( $ids ) ) {
-			$search->setConditions( $search->compare( '==', 'product.id', $ids ) );
+			$search->setConditions( $search->compare( '==', 'attribute.id', $ids ) );
 		}
 
-		$sort = array( $search->sort( '+', 'product.type.code' ), $search->sort( '+', 'product.code' ) );
+		$sort = array( $search->sort( '+', 'attribute.type.code' ), $search->sort( '+', 'attribute.position' ) );
 		$search->setSortations( $sort );
 
 		$start = 0;
@@ -272,7 +272,7 @@ class Controller_ExtJS_Attribute_Export_Text_Excel
 	 */
 	protected function _initContainer( $resource )
 	{
-		return new MW_Container_Zip( $resource, 'PHPExcel' );
+		return new MW_Container_PHPExcel( $resource, 'Excel5' );
 	}
 
 
@@ -280,10 +280,10 @@ class Controller_ExtJS_Attribute_Export_Text_Excel
 	 * Adds all texts belonging to an product item.
 	 *
 	 * @param string $langid Language id
-	 * @param MShop_Product_Item_Interface $item product item object
+	 * @param MShop_Attribute_Item_Interface $item product item object
 	 * @param MW_Container_Content_Interface $contentItem Content item
 	 */
-	protected function _addItem( $langid, MShop_Product_Item_Interface $item, MW_Container_Content_Interface $contentItem )
+	protected function _addItem( $langid, MShop_Attribute_Item_Interface $item, MW_Container_Content_Interface $contentItem )
 	{
 		$listTypes = array();
 		foreach( $item->getListItems( 'text' ) as $listItem ) {
@@ -298,9 +298,9 @@ class Controller_ExtJS_Attribute_Export_Text_Excel
 			{
 				foreach( $textItems as $textItem )
 				{
-					$listType = ( isset( $listTypes[ $textItem->getId() ] ) ? $listTypes[ $textItem->getId() ] : '' );
+					$listType = ( isset( $listTypes[ $textItem->getId() ] ) ? $listTypes[ $textItem->getId() ] : '-' );
 
-					$items = array( $langid, $item->getType(), $item->getCode(), $listType, $textTypeItem->getCode(), '', '' );
+					$items = array( $langid, $item->getType(), $item->getCode(), $listType, $textTypeItem->getCode(), '-', '-' );
 
 					// use language of the text item because it may be null
 					if( ( $textItem->getLanguageId() == $langid || is_null( $textItem->getLanguageId() ) )
@@ -314,7 +314,7 @@ class Controller_ExtJS_Attribute_Export_Text_Excel
 			}
 			else
 			{
-				$items = array( $langid, $item->getType(), $item->getCode(), 'default', $textTypeItem->getCode(), '', '' );
+				$items = array( $langid, $item->getType(), $item->getCode(), 'default', $textTypeItem->getCode(), '-', '-' );
 			}
 
 			$contentItem->add( $items );

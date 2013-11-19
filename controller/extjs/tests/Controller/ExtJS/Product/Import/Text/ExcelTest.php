@@ -11,6 +11,7 @@ class Controller_ExtJS_Product_Import_Text_ExcelTest extends MW_Unittest_Testcas
 	private $_object;
 	private $_testdir;
 	private $_testfile;
+	private $_context;
 
 
 	/**
@@ -36,16 +37,16 @@ class Controller_ExtJS_Product_Import_Text_ExcelTest extends MW_Unittest_Testcas
 	 */
 	protected function setUp()
 	{
-		$context = TestHelper::getContext();
+		$this->_context = TestHelper::getContext();
 
-		$this->_testdir = $context->getConfig()->get( 'controller/extjs/product/import/text/excel/uploaddir', './tmp' );
+		$this->_testdir = $this->_context->getConfig()->get( 'controller/extjs/product/import/text/excel/uploaddir', './tmp' );
 		$this->_testfile = $this->_testdir . DIRECTORY_SEPARATOR . 'file.txt';
 
 		if( !is_dir( $this->_testdir ) && mkdir( $this->_testdir, 0775, true ) === false ) {
 			throw new Exception( sprintf( 'Unable to create missing upload directory "%1$s"', $this->_testdir ) );
 		}
 
-		$this->_object = new Controller_ExtJS_Product_Import_Text_Excel( $context );
+		$this->_object = new Controller_ExtJS_Product_Import_Text_Excel( $this->_context );
 	}
 
 
@@ -72,7 +73,6 @@ class Controller_ExtJS_Product_Import_Text_ExcelTest extends MW_Unittest_Testcas
 
 	public function testImportFile()
 	{
-		$context = TestHelper::getContext();
 		$filename = 'product-import-test.xlsx';
 
 		$phpExcel = new PHPExcel();
@@ -114,6 +114,13 @@ class Controller_ExtJS_Product_Import_Text_ExcelTest extends MW_Unittest_Testcas
 		$sheet->setCellValueByColumnAndRow( 4, 6, 'name' );
 		$sheet->setCellValueByColumnAndRow( 4, 7, 'short' );
 
+		$sheet->setCellValueByColumnAndRow( 5, 2, '-' );
+		$sheet->setCellValueByColumnAndRow( 5, 3, '-' );
+		$sheet->setCellValueByColumnAndRow( 5, 4, '-' );
+		$sheet->setCellValueByColumnAndRow( 5, 5, '-' );
+		$sheet->setCellValueByColumnAndRow( 5, 6, '-' );
+		$sheet->setCellValueByColumnAndRow( 5, 7, '-' );
+
 		$sheet->setCellValueByColumnAndRow( 6, 2, 'ABCD: long' );
 		$sheet->setCellValueByColumnAndRow( 6, 3, 'ABCD: meta desc' );
 		$sheet->setCellValueByColumnAndRow( 6, 4, 'ABCD: meta keywords' );
@@ -126,13 +133,13 @@ class Controller_ExtJS_Product_Import_Text_ExcelTest extends MW_Unittest_Testcas
 
 
 		$params = new stdClass();
-		$params->site = $context->getLocale()->getSite()->getCode();
+		$params->site = $this->_context->getLocale()->getSite()->getCode();
 		$params->items = $filename;
 
 		$this->_object->importFile( $params );
 
 
-		$textManager = MShop_Text_Manager_Factory::createManager( $context );
+		$textManager = MShop_Text_Manager_Factory::createManager( $this->_context );
 		$criteria = $textManager->createSearch();
 
 		$expr = array();
@@ -152,7 +159,7 @@ class Controller_ExtJS_Product_Import_Text_ExcelTest extends MW_Unittest_Testcas
 		}
 
 
-		$productManager = MShop_Product_Manager_Factory::createManager( $context );
+		$productManager = MShop_Product_Manager_Factory::createManager( $this->_context );
 		$listManager = $productManager->getSubManager( 'list' );
 		$criteria = $listManager->createSearch();
 
@@ -183,8 +190,7 @@ class Controller_ExtJS_Product_Import_Text_ExcelTest extends MW_Unittest_Testcas
 
 	public function testUploadFile()
 	{
-		$context = TestHelper::getContext();
-		$jobController = Controller_ExtJS_Admin_Job_Factory::createController( $context );
+		$jobController = Controller_ExtJS_Admin_Job_Factory::createController( $this->_context );
 
 		$testfiledir = dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'testfiles' . DIRECTORY_SEPARATOR;
 
@@ -199,7 +205,7 @@ class Controller_ExtJS_Product_Import_Text_ExcelTest extends MW_Unittest_Testcas
 
 		$params = new stdClass();
 		$params->items = $this->_testfile;
-		$params->site = $context->getLocale()->getSite()->getCode();
+		$params->site = $this->_context->getLocale()->getSite()->getCode();
 
 		$result = $this->_object->uploadFile( $params );
 
@@ -228,13 +234,11 @@ class Controller_ExtJS_Product_Import_Text_ExcelTest extends MW_Unittest_Testcas
 
 	public function testUploadFileExceptionNoUploadFile()
 	{
-		$context = TestHelper::getContext();
-
 		$_FILES = array();
 
 		$params = new stdClass();
 		$params->items = 'file.txt';
-		$params->site = $context->getLocale()->getSite()->getCode();
+		$params->site = $this->_context->getLocale()->getSite()->getCode();
 
 		$this->setExpectedException( 'Controller_ExtJS_Exception' );
 		$this->_object->uploadFile( $params );

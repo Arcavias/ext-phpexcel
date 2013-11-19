@@ -139,6 +139,7 @@ class Controller_ExtJS_Catalog_Export_Text_Excel
 		}
 
 		$filename = 'catalog-text-export_' .date('Y-m-d') . '_' . md5( time() . getmypid() ) .'.xls';
+		$this->_filepath = $dir . DIRECTORY_SEPARATOR . $filename;
 
 		$this->_getContext()->getLogger()->log( sprintf( 'Create export file for catalog IDs: %1$s', implode( ',', $items ) ), MW_Logger_Abstract::DEBUG );
 
@@ -207,7 +208,7 @@ class Controller_ExtJS_Catalog_Export_Text_Excel
 
 				$contentItem = $containerItem->create( $langid . $contentFormat  );
 				$contentItem->add( array( 'Language ID', 'Catalog label', 'Catalog ID', 'List type', 'Text type', 'Text ID', 'Text' ) );
-// 				$this->_getContext()->getLocale()->setLanguageId( $langid );
+				$this->_getContext()->getLocale()->setLanguageId( $langid );
 				$this->_addLanguage( $langid, $ids, $contentItem );
 				$containerItem->add( $contentItem );
 			}
@@ -268,9 +269,9 @@ class Controller_ExtJS_Catalog_Export_Text_Excel
 			{
 				foreach( $textItems as $textItem )
 				{
-					$listType = ( isset( $listTypes[ $textItem->getId() ] ) ? $listTypes[ $textItem->getId() ] : '' );
+					$listType = ( isset( $listTypes[ $textItem->getId() ] ) ? $listTypes[ $textItem->getId() ] : '-' );
 
-					$items = array( $langid, $item->getLabel(), $item->getId(), $listType, $textTypeItem->getCode(), '', '' );
+					$items = array( $langid, $item->getLabel(), $item->getId(), $listType, $textTypeItem->getCode(), '-', '-' );
 
 					// use language of the text item because it may be null
 					if( ( $textItem->getLanguageId() == $langid || is_null( $textItem->getLanguageId() ) )
@@ -284,7 +285,7 @@ class Controller_ExtJS_Catalog_Export_Text_Excel
 			}
 			else
 			{
-				$items = array( $langid, $item->getLabel(), $item->getId(), 'default', $textTypeItem->getCode(), '', '' );
+				$items = array( $langid, $item->getLabel(), $item->getId(), 'default', $textTypeItem->getCode(), '-', '-' );
 			}
 
 			$contentItem->add( $items );

@@ -11,6 +11,7 @@ class Controller_ExtJS_Catalog_Import_Text_ExcelTest extends MW_Unittest_Testcas
 	private $_object;
 	private $_testdir;
 	private $_testfile;
+	private $_context;
 
 
 	/**
@@ -36,16 +37,16 @@ class Controller_ExtJS_Catalog_Import_Text_ExcelTest extends MW_Unittest_Testcas
 	 */
 	protected function setUp()
 	{
-		$context = TestHelper::getContext();
+		$this->_context = TestHelper::getContext();
 
-		$this->_testdir = $context->getConfig()->get( 'controller/extjs/catalog/import/text/default/uploaddir', './tmp' );
+		$this->_testdir = $this->_context->getConfig()->get( 'controller/extjs/catalog/import/text/default/uploaddir', './tmp' );
 		$this->_testfile = $this->_testdir . DIRECTORY_SEPARATOR . 'file.txt';
 
 		if( !is_dir( $this->_testdir ) && mkdir( $this->_testdir, 0775, true ) === false ) {
 			throw new Exception( sprintf( 'Unable to create missing upload directory "%1$s"', $this->_testdir ) );
 		}
 
-		$this->_object = new Controller_ExtJS_Catalog_Import_Text_Excel( $context );
+		$this->_object = new Controller_ExtJS_Catalog_Import_Text_Excel( $this->_context );
 	}
 
 
@@ -70,21 +71,20 @@ class Controller_ExtJS_Catalog_Import_Text_ExcelTest extends MW_Unittest_Testcas
 
 	public function testImportFile()
 	{
-		$context = TestHelper::getContext();
-		$catalogManager = MShop_Catalog_Manager_Factory::createManager( $context );
+		$catalogManager = MShop_Catalog_Manager_Factory::createManager( $this->_context );
 
 		$node = $catalogManager->getTree( null, array(), MW_Tree_Manager_Abstract::LEVEL_ONE );
 
 		$params = new stdClass();
-		$params->lang = array( 'de', 'en' );
+		$params->lang = array( 'de' );
 		$params->items = $node->getId();
-		$params->site = $context->getLocale()->getSite()->getCode();
+		$params->site = $this->_context->getLocale()->getSite()->getCode();
 
 		if( ob_start() === false ) {
 			throw new Exception( 'Unable to start output buffering' );
 		}
 
-		$exporter = new Controller_ExtJS_Catalog_Export_Text_Excel( $context );
+		$exporter = new Controller_ExtJS_Catalog_Export_Text_Excel( $this->_context );
 		$exporter->createHttpOutput( $params );
 
 		$content = ob_get_contents();
@@ -104,7 +104,7 @@ class Controller_ExtJS_Catalog_Import_Text_ExcelTest extends MW_Unittest_Testcas
 			throw new Exception( sprintf( 'Deleting file "%1$s" failed', $filename ) );
 		}
 
-		$sheet = $phpExcel->getSheet( 1 );
+		$sheet = $phpExcel->getSheet( 0 );
 
 		$sheet->setCellValueByColumnAndRow( 6, 2, 'Root: delivery info' );
 		$sheet->setCellValueByColumnAndRow( 6, 3, 'Root: long' );
@@ -117,18 +117,18 @@ class Controller_ExtJS_Catalog_Import_Text_ExcelTest extends MW_Unittest_Testcas
 
 
 		$params = new stdClass();
-		$params->site = $context->getLocale()->getSite()->getCode();
+		$params->site = $this->_context->getLocale()->getSite()->getCode();
 		$params->items = $filename2;
 
 		$this->_object->importFile( $params );
 
 
-		$textManager = MShop_Text_Manager_Factory::createManager( $context );
+		$textManager = MShop_Text_Manager_Factory::createManager( $this->_context );
 		$criteria = $textManager->createSearch();
 
 		$expr = array();
 		$expr[] = $criteria->compare( '==', 'text.domain', 'catalog' );
-		$expr[] = $criteria->compare( '==', 'text.languageid', 'en' );
+		$expr[] = $criteria->compare( '==', 'text.languageid', 'de' );
 		$expr[] = $criteria->compare( '==', 'text.status', 1 );
 		$expr[] = $criteria->compare( '~=', 'text.content', 'Root:' );
 		$criteria->setConditions( $criteria->combine( '&&', $expr ) );
@@ -172,8 +172,7 @@ class Controller_ExtJS_Catalog_Import_Text_ExcelTest extends MW_Unittest_Testcas
 
 	public function testUploadFile()
 	{
-		$context = TestHelper::getContext();
-		$jobController = Controller_ExtJS_Admin_Job_Factory::createController( $context );
+		$jobController = Controller_ExtJS_Admin_Job_Factory::createController( $this->_context );
 
 		$testfiledir = dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'testfiles' . DIRECTORY_SEPARATOR;
 		$directory = dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'testdir';
@@ -189,7 +188,7 @@ class Controller_ExtJS_Catalog_Import_Text_ExcelTest extends MW_Unittest_Testcas
 
 		$params = new stdClass();
 		$params->items = $this->_testfile;
-		$params->site = $context->getLocale()->getSite()->getCode();
+		$params->site = $this->_context->getLocale()->getSite()->getCode();
 
 		$result = $this->_object->uploadFile( $params );
 

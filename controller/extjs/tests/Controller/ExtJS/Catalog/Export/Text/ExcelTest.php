@@ -9,6 +9,7 @@
 class Controller_ExtJS_Catalog_Export_Text_ExcelTest extends MW_Unittest_Testcase
 {
 	private $_object;
+	private $_context;
 
 
 	/**
@@ -34,7 +35,8 @@ class Controller_ExtJS_Catalog_Export_Text_ExcelTest extends MW_Unittest_Testcas
 	 */
 	protected function setUp()
 	{
-		$this->_object = new Controller_ExtJS_Catalog_Export_Text_Excel( TestHelper::getContext() );
+		$this->_context = TestHelper::getContext();
+		$this->_object = new Controller_ExtJS_Catalog_Export_Text_Excel( $this->_context );
 	}
 
 
@@ -52,7 +54,7 @@ class Controller_ExtJS_Catalog_Export_Text_ExcelTest extends MW_Unittest_Testcas
 
 	public function testcreateHttpOutput()
 	{
-		$manager = MShop_Catalog_Manager_Factory::createManager( TestHelper::getContext() );
+		$manager = MShop_Catalog_Manager_Factory::createManager( $this->_context );
 		$node = $manager->getTree( null, array(), MW_Tree_Manager_Abstract::LEVEL_ONE );
 
 		$search = $manager->createSearch();
@@ -102,7 +104,7 @@ class Controller_ExtJS_Catalog_Export_Text_ExcelTest extends MW_Unittest_Testcas
 		$this->assertEquals( $ids['Root'], $sheet->getCell( 'C4' )->getValue() );
 		$this->assertEquals( 'default', $sheet->getCell( 'D4' )->getValue() );
 		$this->assertEquals( 'name', $sheet->getCell( 'E4' )->getValue() );
-		$this->assertEquals( '', $sheet->getCell( 'G4' )->getValue() );
+		$this->assertEquals( '-', $sheet->getCell( 'G4' )->getValue() );
 
 		$this->assertEquals( 'de', $sheet->getCell( 'A21' )->getValue() );
 		$this->assertEquals( 'Tee', $sheet->getCell( 'B21' )->getValue() );
@@ -114,9 +116,7 @@ class Controller_ExtJS_Catalog_Export_Text_ExcelTest extends MW_Unittest_Testcas
 
 	public function testExportFile()
 	{
-		$context = TestHelper::getContext();
-
-		$manager = MShop_Catalog_Manager_Factory::createManager( TestHelper::getContext() );
+		$manager = MShop_Catalog_Manager_Factory::createManager( $this->_context );
 		$node = $manager->getTree( null, array(), MW_Tree_Manager_Abstract::LEVEL_ONE );
 
 		$search = $manager->createSearch();
@@ -130,7 +130,7 @@ class Controller_ExtJS_Catalog_Export_Text_ExcelTest extends MW_Unittest_Testcas
 		$params = new stdClass();
 		$params->lang = array( 'de', 'fr' );
 		$params->items = array( $node->getId() );
-		$params->site = $context->getLocale()->getSite()->getCode();
+		$params->site = $this->_context->getLocale()->getSite()->getCode();
 
 		$result = $this->_object->exportFile( $params );
 		$this->assertTrue( array_key_exists('file', $result) );
@@ -158,7 +158,7 @@ class Controller_ExtJS_Catalog_Export_Text_ExcelTest extends MW_Unittest_Testcas
 		$this->assertEquals( $ids['Root'], $sheet->getCell( 'C4' )->getValue() );
 		$this->assertEquals( 'default', $sheet->getCell( 'D4' )->getValue() );
 		$this->assertEquals( 'name', $sheet->getCell( 'E4' )->getValue() );
-		$this->assertEquals( '', $sheet->getCell( 'G4' )->getValue() );
+		$this->assertEquals( '-', $sheet->getCell( 'G4' )->getValue() );
 
 		$this->assertEquals( 'de', $sheet->getCell( 'A21' )->getValue() );
 		$this->assertEquals( 'Tee', $sheet->getCell( 'B21' )->getValue() );
