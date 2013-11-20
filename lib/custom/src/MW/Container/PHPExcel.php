@@ -34,7 +34,6 @@ class MW_Container_PHPExcel implements MW_Container_Interface
 		{
 			$type = PHPExcel_IOFactory::identify( $resourcepath );
 			$reader = PHPExcel_IOFactory::createReader( $type );
-			$reader->setReadDataOnly( true );
 			$this->_container = $reader->load( $resourcepath );
 		}
 		else
