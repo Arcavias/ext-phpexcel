@@ -16,20 +16,8 @@
  * @subpackage ExtJS
  */
 class Controller_ExtJS_Product_Import_Text_Excel
-	extends Controller_ExtJS_Common_Load_Text_Abstract
-	implements Controller_ExtJS_Common_Load_Text_Interface
+	extends Controller_ExtJS_Product_Import_Text_Default
 {
-	/**
-	 * Initializes the controller.
-	 *
-	 * @param MShop_Context_Item_Interface $context MShop context object
-	 */
-	public function __construct( MShop_Context_Item_Interface $context )
-	{
-		parent::__construct( $context, 'Product_Import_Text' );
-	}
-
-
 	/**
 	 * Uploads a XLS file with all product texts.
 	 *
@@ -89,56 +77,6 @@ class Controller_ExtJS_Product_Import_Text_Excel
 		return array(
 			'items' => $dest,
 			'success' => true,
-		);
-	}
-
-
-	/**
-	 * Imports a XLS file with all product texts.
-	 *
-	 * @param stdClass $params Object containing the properties
-	 */
-	public function importFile( stdClass $params )
-	{
-		$this->_checkParams( $params, array( 'site', 'items' ) );
-		$this->_setLocale( $params->site );
-
-		$items = ( !is_array( $params->items ) ? array( $params->items ) : $params->items );
-
-		foreach( $items as $entry )
-		{
-			$this->_importFile( $entry );
-			unlink( $entry );
-		}
-
-		return array(
-			'success' => true,
-		);
-	}
-
-
-	/**
-	 * Returns the service description of the class.
-	 * It describes the class methods and its parameters including their types
-	 *
-	 * @return array Associative list of class/method names, their parameters and types
-	 */
-	public function getServiceDescription()
-	{
-		return array(
-			'Product_Import_Text.uploadFile' => array(
-				"parameters" => array(
-					array( "type" => "string","name" => "site","optional" => false ),
-				),
-				"returns" => "",
-			),
-			'Product_Import_Text.importFile' => array(
-				"parameters" => array(
-					array( "type" => "string","name" => "site","optional" => false ),
-					array( "type" => "array","name" => "items","optional" => false ),
-				),
-				"returns" => "",
-			),
 		);
 	}
 

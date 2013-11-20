@@ -114,12 +114,12 @@ class Controller_ExtJS_Product_Import_Text_ExcelTest extends MW_Unittest_Testcas
 		$sheet->setCellValueByColumnAndRow( 4, 6, 'name' );
 		$sheet->setCellValueByColumnAndRow( 4, 7, 'short' );
 
-		$sheet->setCellValueByColumnAndRow( 5, 2, '-' );
-		$sheet->setCellValueByColumnAndRow( 5, 3, '-' );
-		$sheet->setCellValueByColumnAndRow( 5, 4, '-' );
-		$sheet->setCellValueByColumnAndRow( 5, 5, '-' );
-		$sheet->setCellValueByColumnAndRow( 5, 6, '-' );
-		$sheet->setCellValueByColumnAndRow( 5, 7, '-' );
+// 		$sheet->setCellValueByColumnAndRow( 5, 2, '-' );
+// 		$sheet->setCellValueByColumnAndRow( 5, 3, '-' );
+// 		$sheet->setCellValueByColumnAndRow( 5, 4, '-' );
+// 		$sheet->setCellValueByColumnAndRow( 5, 5, '-' );
+// 		$sheet->setCellValueByColumnAndRow( 5, 6, '-' );
+// 		$sheet->setCellValueByColumnAndRow( 5, 7, '-' );
 
 		$sheet->setCellValueByColumnAndRow( 6, 2, 'ABCD: long' );
 		$sheet->setCellValueByColumnAndRow( 6, 3, 'ABCD: meta desc' );

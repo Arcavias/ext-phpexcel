@@ -104,7 +104,7 @@ class Controller_ExtJS_Catalog_Export_Text_ExcelTest extends MW_Unittest_Testcas
 		$this->assertEquals( $ids['Root'], $sheet->getCell( 'C4' )->getValue() );
 		$this->assertEquals( 'default', $sheet->getCell( 'D4' )->getValue() );
 		$this->assertEquals( 'name', $sheet->getCell( 'E4' )->getValue() );
-		$this->assertEquals( '-', $sheet->getCell( 'G4' )->getValue() );
+		$this->assertEquals( '', $sheet->getCell( 'G4' )->getValue() );
 
 		$this->assertEquals( 'de', $sheet->getCell( 'A21' )->getValue() );
 		$this->assertEquals( 'Tee', $sheet->getCell( 'B21' )->getValue() );
@@ -158,7 +158,7 @@ class Controller_ExtJS_Catalog_Export_Text_ExcelTest extends MW_Unittest_Testcas
 		$this->assertEquals( $ids['Root'], $sheet->getCell( 'C4' )->getValue() );
 		$this->assertEquals( 'default', $sheet->getCell( 'D4' )->getValue() );
 		$this->assertEquals( 'name', $sheet->getCell( 'E4' )->getValue() );
-		$this->assertEquals( '-', $sheet->getCell( 'G4' )->getValue() );
+		$this->assertEquals( '', $sheet->getCell( 'G4' )->getValue() );
 
 		$this->assertEquals( 'de', $sheet->getCell( 'A21' )->getValue() );
 		$this->assertEquals( 'Tee', $sheet->getCell( 'B21' )->getValue() );
