@@ -61,11 +61,44 @@ class MW_Container_Content_PHPExcelTest extends MW_Unittest_Testcase
 	}
 
 
+	public function testAddEmpty()
+	{
+		$expected = array(
+			array( 'test', '', 'data' ),
+		);
+
+		foreach( $expected as $entry ) {
+			$this->_object->add( $entry );
+		}
+
+		$actual = $this->_object->getResource()->toArray();
+
+		$this->assertEquals( $expected, $actual );
+	}
+
+
 	public function testIterator()
 	{
 		$expected = array(
 			array( 'test', 'file', 'data' ),
 			array( '":;,"', pack( 'x' ), '\\' ),
+		);
+
+		$this->_object->getResource()->fromArray( $expected );
+
+		$actual = array();
+		foreach( $this->_object as $values ) {
+			$actual[] = $values;
+		}
+
+		$this->assertEquals( $expected, $actual );
+	}
+
+
+	public function testIteratorEmpty()
+	{
+		$expected = array(
+			array( 'test', '', 'data' ),
 		);
 
 		$this->_object->getResource()->fromArray( $expected );

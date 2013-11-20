@@ -73,7 +73,10 @@ class MW_Container_Content_PHPExcel
 	{
 		$result = array();
 
-		foreach( $this->_iterator->current()->getCellIterator() as $cell ) {
+		$iterator = $this->_iterator->current()->getCellIterator();
+		$iterator->setIterateOnlyExistingCells( false );
+
+		foreach( $iterator as $cell ) {
 			$result[] = $cell->getValue();
 		}
 
