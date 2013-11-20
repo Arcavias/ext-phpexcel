@@ -12,9 +12,15 @@ return array(
 	'include' => array(
 		'lib/custom/src',
 		'lib/phpexcel',
+		'controller/extjs/src',
 	),
 	'config' => array(
 	),
 	'setup' => array(
+	),
+	'custom' => array(
+		'controller/extjs' => array(
+			'controller/extjs/src',
+		),
 	),
 );
