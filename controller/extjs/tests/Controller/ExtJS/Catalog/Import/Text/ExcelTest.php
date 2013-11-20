@@ -122,6 +122,9 @@ class Controller_ExtJS_Catalog_Import_Text_ExcelTest extends MW_Unittest_Testcas
 
 		$this->_object->importFile( $params );
 
+		if( file_exists( $filename2 ) !== false ) {
+			throw new Exception( 'Import file was not removed' );
+		}
 
 		$textManager = MShop_Text_Manager_Factory::createManager( $this->_context );
 		$criteria = $textManager->createSearch();
@@ -163,10 +166,6 @@ class Controller_ExtJS_Catalog_Import_Text_ExcelTest extends MW_Unittest_Testcas
 
 		foreach( $textItems as $item ) {
 			$this->assertEquals( 'Root:', substr( $item->getContent(), 0, 5 ) );
-		}
-
-		if( file_exists( $filename2 ) !== false ) {
-			throw new Exception( 'Import file was not removed' );
 		}
 	}
 

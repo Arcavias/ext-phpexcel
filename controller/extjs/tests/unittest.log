@@ -1,11 +1,11 @@
-<message> 2013-11-19 17:59:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+<message> 2013-11-20 11:58:06 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Locale_Manager_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:06 7 MShop_Locale_Manager_Default::_getSearchResults: SQL statement: 
 			SELECT DISTINCT mloc."id", mloc."siteid", mloc."langid", mloc."currencyid", mloc."pos", mloc."status",
 				mloc."mtime", mloc."editor", mloc."ctime"
 			FROM "mshop_locale" AS mloc
@@ -15,7 +15,7 @@
 			WHERE ( mloc."siteid" IN (58) AND mloc."langid" = '' AND mloc."currencyid" = '' AND 1 = 1 )
 			ORDER BY mloc."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Locale_Manager_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:06 7 MShop_Locale_Manager_Default::_getSearchResults: SQL statement: 
 			SELECT DISTINCT mloc."id", mloc."siteid", mloc."langid", mloc."currencyid", mloc."pos", mloc."status",
 				mloc."mtime", mloc."editor", mloc."ctime"
 			FROM "mshop_locale" AS mloc
@@ -25,7 +25,7 @@
 			WHERE ( mloc."siteid" IN (58) AND 1 = 1 )
 			ORDER BY mloc."pos" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(0.28491020202637ms): SQL statement: 
+		<message> 2013-11-20 11:58:06 7 MShop_Common_Manager_Abstract::_searchItems(0.23603439331055ms): SQL statement: 
 			SELECT DISTINCT matt."id", matt."siteid", matt."typeid", matt."domain", matt."code", matt."status",
 				matt."pos", matt."label", matt."mtime", matt."ctime", matt."editor"
 			FROM "mshop_attribute" AS matt
@@ -33,7 +33,7 @@
 			WHERE ( matt."siteid" IN (58) AND 1 = 1 )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(0.15401840209961ms): SQL statement: 
+		<message> 2013-11-20 11:58:06 7 MShop_Common_Manager_Abstract::_searchItems(0.20289421081543ms): SQL statement: 
 			SELECT mattty."id", mattty."siteid", mattty."code", mattty."domain", mattty."label",
 				mattty."status", mattty."mtime", mattty."ctime", mattty."editor"
 			FROM "mshop_attribute_type" AS mattty
@@ -41,29 +41,29 @@
 			WHERE ( mattty."siteid" IN (58) AND mattty."id" IN (47,49,48,46,50) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:06 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 Create export for attribute IDs: 123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153<message> 2013-11-19 17:59:08 7 MShop_Locale_Manager_Language_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:06 7 Create export for attribute IDs: 123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153<message> 2013-11-20 11:58:06 7 MShop_Locale_Manager_Language_Default::_getSearchResults: SQL statement: 
 			SELECT mlocla."id", mlocla."label", mlocla."siteid", mlocla."status",
 				mlocla."mtime", mlocla."editor", mlocla."ctime"
 			FROM "mshop_locale_language" AS mlocla
 			WHERE mlocla."id" IN ('de')
 			ORDER BY mlocla."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2100467681884766ms): SQL statement: 
+		<message> 2013-11-20 11:58:06 7 MShop_Common_Manager_Abstract::_searchItems(0.2889633178710938ms): SQL statement: 
 			SELECT DISTINCT matt."id", matt."siteid", matt."typeid", matt."domain", matt."code", matt."status",
 				matt."pos", matt."label", matt."mtime", matt."ctime", matt."editor"
 			FROM "mshop_attribute" AS matt
 			LEFT JOIN "mshop_attribute_type" AS mattty ON ( matt."typeid" = mattty."id" )
 			WHERE ( matt."siteid" IN (58) AND mattty."siteid" IN (58) AND matt."id" IN (123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153) )
-			 ORDER BY mattty."code" ASC, matt."pos" ASC 
+			 ORDER BY mattty."code" ASC, matt."pos" ASC, matt."id" DESC 
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(0.247955322265625ms): SQL statement: 
+		<message> 2013-11-20 11:58:06 7 MShop_Common_Manager_Abstract::_searchItems(0.2491474151611328ms): SQL statement: 
 			SELECT mattty."id", mattty."siteid", mattty."code", mattty."domain", mattty."label",
 				mattty."status", mattty."mtime", mattty."ctime", mattty."editor"
 			FROM "mshop_attribute_type" AS mattty
@@ -71,15 +71,15 @@
 			WHERE ( mattty."siteid" IN (58) AND mattty."id" IN (50,46,49,47,48) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(1.914024353027344ms): SQL statement: 
+		<message> 2013-11-20 11:58:06 7 MShop_Common_Manager_Abstract::_searchItems(1.970052719116211ms): SQL statement: 
 			SELECT mattli."id", mattli."parentid", mattli."siteid", mattli."typeid", mattli."domain",
 				mattli."refid", mattli."start", mattli."end", mattli."pos", mattli."mtime", mattli."ctime", mattli."editor"
 			FROM "mshop_attribute_list" AS mattli
 			
-			WHERE ( mattli."siteid" IN (58) AND ( mattli."parentid" IN (147,140,148,141,149,142,150,143,151,144,152,145,153,146,129,130,131,132,133,123,124,125,126,127,128,134,135,136,137,138,139) AND mattli."domain" IN ('text') AND ( ( mattli."start" <= '2013-11-19 17:59:00' OR mattli."start" IS NULL ) AND ( mattli."end" >= '2013-11-19 17:59:00' OR mattli."end" IS NULL ) ) ) )
+			WHERE ( mattli."siteid" IN (58) AND ( mattli."parentid" IN (147,140,148,141,149,142,150,143,151,144,152,145,153,146,129,130,131,133,132,123,124,125,126,127,128,134,135,136,137,138,139) AND mattli."domain" IN ('text') AND ( ( mattli."start" <= '2013-11-20 11:58:00' OR mattli."start" IS NULL ) AND ( mattli."end" >= '2013-11-20 11:58:00' OR mattli."end" IS NULL ) ) ) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(0.1881122589111328ms): SQL statement: 
+		<message> 2013-11-20 11:58:06 7 MShop_Common_Manager_Abstract::_searchItems(0.3099441528320312ms): SQL statement: 
 			SELECT mattlity."id", mattlity."siteid", mattlity."code", mattlity."domain", mattlity."label",
 				mattlity."status", mattlity."mtime", mattlity."ctime", mattlity."editor"
 			FROM "mshop_attribute_list_type" AS mattlity
@@ -87,7 +87,7 @@
 			WHERE ( mattlity."siteid" IN (58) AND mattlity."id" IN (49) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(1.210212707519531ms): SQL statement: 
+		<message> 2013-11-20 11:58:06 7 MShop_Common_Manager_Abstract::_searchItems(0.9801387786865234ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
@@ -96,7 +96,7 @@
 				( mtex."siteid" IN (58) AND ( mtex."id" IN (787,788,789,790,791,792,793,794,795,796,797,798,799,800,801,802,803,804,805,806,807,808,810,811) AND ( mtex."status" > 0 AND ( mtex."langid" = 'de' OR mtex."langid" IS NULL ) ) ) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2701282501220703ms): SQL statement: 
+		<message> 2013-11-20 11:58:06 7 MShop_Common_Manager_Abstract::_searchItems(0.2801418304443359ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -104,7 +104,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (126,128,127) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2629756927490234ms): SQL statement: 
+		<message> 2013-11-20 11:58:06 7 MShop_Common_Manager_Abstract::_searchItems(0.2660751342773438ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -112,7 +112,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."domain" = 'attribute' )
 			 ORDER BY mtexty."code" ASC 
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2079010009765625ms): SQL statement: 
+		<message> 2013-11-20 11:58:06 7 MShop_Common_Manager_Abstract::_searchItems(0.2198219299316406ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -120,7 +120,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."domain" = 'attribute' )
 			 ORDER BY mtexty."code" ASC 
 			LIMIT 100 OFFSET 4
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2229213714599609ms): SQL statement: 
+		<message> 2013-11-20 11:58:06 7 MShop_Common_Manager_Abstract::_searchItems(0.2419948577880859ms): SQL statement: 
 			SELECT DISTINCT matt."id", matt."siteid", matt."typeid", matt."domain", matt."code", matt."status",
 				matt."pos", matt."label", matt."mtime", matt."ctime", matt."editor"
 			FROM "mshop_attribute" AS matt
@@ -128,7 +128,7 @@
 			WHERE ( matt."siteid" IN (58) AND 1 = 1 )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2470016479492188ms): SQL statement: 
+		<message> 2013-11-20 11:58:06 7 MShop_Common_Manager_Abstract::_searchItems(0.2150535583496094ms): SQL statement: 
 			SELECT mattty."id", mattty."siteid", mattty."code", mattty."domain", mattty."label",
 				mattty."status", mattty."mtime", mattty."ctime", mattty."editor"
 			FROM "mshop_attribute_type" AS mattty
@@ -136,29 +136,29 @@
 			WHERE ( mattty."siteid" IN (58) AND mattty."id" IN (47,49,48,46,50) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:06 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 Create export file for attribute IDs: 123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153<message> 2013-11-19 17:59:08 7 MShop_Locale_Manager_Language_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:06 7 Create export file for attribute IDs: 123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153<message> 2013-11-20 11:58:06 7 MShop_Locale_Manager_Language_Default::_getSearchResults: SQL statement: 
 			SELECT mlocla."id", mlocla."label", mlocla."siteid", mlocla."status",
 				mlocla."mtime", mlocla."editor", mlocla."ctime"
 			FROM "mshop_locale_language" AS mlocla
 			WHERE mlocla."id" IN ('de')
 			ORDER BY mlocla."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2498626708984375ms): SQL statement: 
+		<message> 2013-11-20 11:58:06 7 MShop_Common_Manager_Abstract::_searchItems(0.2448558807373047ms): SQL statement: 
 			SELECT DISTINCT matt."id", matt."siteid", matt."typeid", matt."domain", matt."code", matt."status",
 				matt."pos", matt."label", matt."mtime", matt."ctime", matt."editor"
 			FROM "mshop_attribute" AS matt
 			LEFT JOIN "mshop_attribute_type" AS mattty ON ( matt."typeid" = mattty."id" )
 			WHERE ( matt."siteid" IN (58) AND mattty."siteid" IN (58) AND matt."id" IN (123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153) )
-			 ORDER BY mattty."code" ASC, matt."pos" ASC 
+			 ORDER BY mattty."code" ASC, matt."pos" ASC, matt."id" DESC 
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2880096435546875ms): SQL statement: 
+		<message> 2013-11-20 11:58:06 7 MShop_Common_Manager_Abstract::_searchItems(0.2140998840332031ms): SQL statement: 
 			SELECT mattty."id", mattty."siteid", mattty."code", mattty."domain", mattty."label",
 				mattty."status", mattty."mtime", mattty."ctime", mattty."editor"
 			FROM "mshop_attribute_type" AS mattty
@@ -166,15 +166,15 @@
 			WHERE ( mattty."siteid" IN (58) AND mattty."id" IN (50,46,49,47,48) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2629756927490234ms): SQL statement: 
+		<message> 2013-11-20 11:58:06 7 MShop_Common_Manager_Abstract::_searchItems(0.2498626708984375ms): SQL statement: 
 			SELECT mattli."id", mattli."parentid", mattli."siteid", mattli."typeid", mattli."domain",
 				mattli."refid", mattli."start", mattli."end", mattli."pos", mattli."mtime", mattli."ctime", mattli."editor"
 			FROM "mshop_attribute_list" AS mattli
 			
-			WHERE ( mattli."siteid" IN (58) AND ( mattli."parentid" IN (147,140,148,141,149,142,150,143,151,144,152,145,153,146,129,130,131,132,133,123,124,125,126,127,128,134,135,136,137,138,139) AND mattli."domain" IN ('text') AND ( ( mattli."start" <= '2013-11-19 17:59:00' OR mattli."start" IS NULL ) AND ( mattli."end" >= '2013-11-19 17:59:00' OR mattli."end" IS NULL ) ) ) )
+			WHERE ( mattli."siteid" IN (58) AND ( mattli."parentid" IN (147,140,148,141,149,142,150,143,151,144,152,145,153,146,129,130,131,133,132,123,124,125,126,127,128,134,135,136,137,138,139) AND mattli."domain" IN ('text') AND ( ( mattli."start" <= '2013-11-20 11:58:00' OR mattli."start" IS NULL ) AND ( mattli."end" >= '2013-11-20 11:58:00' OR mattli."end" IS NULL ) ) ) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2379417419433594ms): SQL statement: 
+		<message> 2013-11-20 11:58:06 7 MShop_Common_Manager_Abstract::_searchItems(0.09107589721679688ms): SQL statement: 
 			SELECT mattlity."id", mattlity."siteid", mattlity."code", mattlity."domain", mattlity."label",
 				mattlity."status", mattlity."mtime", mattlity."ctime", mattlity."editor"
 			FROM "mshop_attribute_list_type" AS mattlity
@@ -182,7 +182,7 @@
 			WHERE ( mattlity."siteid" IN (58) AND mattlity."id" IN (49) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(0.1680850982666016ms): SQL statement: 
+		<message> 2013-11-20 11:58:06 7 MShop_Common_Manager_Abstract::_searchItems(0.1080036163330078ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
@@ -191,7 +191,7 @@
 				( mtex."siteid" IN (58) AND ( mtex."id" IN (787,788,789,790,791,792,793,794,795,796,797,798,799,800,801,802,803,804,805,806,807,808,810,811) AND ( mtex."status" > 0 AND ( mtex."langid" = 'de' OR mtex."langid" IS NULL ) ) ) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2369880676269531ms): SQL statement: 
+		<message> 2013-11-20 11:58:06 7 MShop_Common_Manager_Abstract::_searchItems(0.09989738464355469ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -199,7 +199,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (126,128,127) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(0.09989738464355469ms): SQL statement: 
+		<message> 2013-11-20 11:58:06 7 MShop_Common_Manager_Abstract::_searchItems(0.2288818359375ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -207,7 +207,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."domain" = 'attribute' )
 			 ORDER BY mtexty."code" ASC 
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(0.0820159912109375ms): SQL statement: 
+		<message> 2013-11-20 11:58:06 7 MShop_Common_Manager_Abstract::_searchItems(0.1041889190673828ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -215,84 +215,556 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."domain" = 'attribute' )
 			 ORDER BY mtexty."code" ASC 
 			LIMIT 100 OFFSET 4
-		<message> 2013-11-19 17:59:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:06 7 MShop_Common_Manager_Abstract::_searchItems(0.3068447113037109ms): SQL statement: 
+			SELECT DISTINCT matt."id", matt."siteid", matt."typeid", matt."domain", matt."code", matt."status",
+				matt."pos", matt."label", matt."mtime", matt."ctime", matt."editor"
+			FROM "mshop_attribute" AS matt
+			
+			WHERE ( matt."siteid" IN (58) AND 1 = 1 )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:06 7 MShop_Common_Manager_Abstract::_searchItems(0.1480579376220703ms): SQL statement: 
+			SELECT mattty."id", mattty."siteid", mattty."code", mattty."domain", mattty."label",
+				mattty."status", mattty."mtime", mattty."ctime", mattty."editor"
+			FROM "mshop_attribute_type" AS mattty
+			
+			WHERE ( mattty."siteid" IN (58) AND mattty."id" IN (47,49,48,46,50) )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:06 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:06 7 Create export for attribute IDs: 123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153<message> 2013-11-20 11:58:06 7 MShop_Locale_Manager_Language_Default::_getSearchResults: SQL statement: 
+			SELECT mlocla."id", mlocla."label", mlocla."siteid", mlocla."status",
+				mlocla."mtime", mlocla."editor", mlocla."ctime"
+			FROM "mshop_locale_language" AS mlocla
+			WHERE mlocla."id" IN ('en')
+			ORDER BY mlocla."id" ASC
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:06 7 MShop_Common_Manager_Abstract::_searchItems(0.1790523529052734ms): SQL statement: 
+			SELECT DISTINCT matt."id", matt."siteid", matt."typeid", matt."domain", matt."code", matt."status",
+				matt."pos", matt."label", matt."mtime", matt."ctime", matt."editor"
+			FROM "mshop_attribute" AS matt
+			LEFT JOIN "mshop_attribute_type" AS mattty ON ( matt."typeid" = mattty."id" )
+			WHERE ( matt."siteid" IN (58) AND mattty."siteid" IN (58) AND matt."id" IN (123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153) )
+			 ORDER BY mattty."code" ASC, matt."pos" ASC, matt."id" DESC 
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:06 7 MShop_Common_Manager_Abstract::_searchItems(0.1978874206542969ms): SQL statement: 
+			SELECT mattty."id", mattty."siteid", mattty."code", mattty."domain", mattty."label",
+				mattty."status", mattty."mtime", mattty."ctime", mattty."editor"
+			FROM "mshop_attribute_type" AS mattty
+			
+			WHERE ( mattty."siteid" IN (58) AND mattty."id" IN (50,46,49,47,48) )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:06 7 MShop_Common_Manager_Abstract::_searchItems(0.1761913299560547ms): SQL statement: 
+			SELECT mattli."id", mattli."parentid", mattli."siteid", mattli."typeid", mattli."domain",
+				mattli."refid", mattli."start", mattli."end", mattli."pos", mattli."mtime", mattli."ctime", mattli."editor"
+			FROM "mshop_attribute_list" AS mattli
+			
+			WHERE ( mattli."siteid" IN (58) AND ( mattli."parentid" IN (147,140,148,141,149,142,150,143,151,144,152,145,153,146,129,130,131,133,132,123,124,125,126,127,128,134,135,136,137,138,139) AND mattli."domain" IN ('text') AND ( ( mattli."start" <= '2013-11-20 11:58:00' OR mattli."start" IS NULL ) AND ( mattli."end" >= '2013-11-20 11:58:00' OR mattli."end" IS NULL ) ) ) )
+			
+			LIMIT 2147483647 OFFSET 0
+		<message> 2013-11-20 11:58:06 7 MShop_Common_Manager_Abstract::_searchItems(0.1430511474609375ms): SQL statement: 
+			SELECT mattlity."id", mattlity."siteid", mattlity."code", mattlity."domain", mattlity."label",
+				mattlity."status", mattlity."mtime", mattlity."ctime", mattlity."editor"
+			FROM "mshop_attribute_list_type" AS mattlity
+			
+			WHERE ( mattlity."siteid" IN (58) AND mattlity."id" IN (49) )
+			
+			LIMIT 2147483647 OFFSET 0
+		<message> 2013-11-20 11:58:06 7 MShop_Common_Manager_Abstract::_searchItems(0.1401901245117188ms): SQL statement: 
+			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
+				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
+			FROM "mshop_text" AS mtex
+			
+			WHERE
+				( mtex."siteid" IN (58) AND ( mtex."id" IN (787,788,789,790,791,792,793,794,795,796,797,798,799,800,801,802,803,804,805,806,807,808,810,811) AND ( mtex."status" > 0 AND ( mtex."langid" = 'de' OR mtex."langid" IS NULL ) ) ) )
+			
+			LIMIT 2147483647 OFFSET 0
+		<message> 2013-11-20 11:58:06 7 MShop_Common_Manager_Abstract::_searchItems(0.2088546752929688ms): SQL statement: 
+			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
+				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
+			FROM "mshop_text_type" mtexty
+			
+			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (126,128,127) )
+			
+			LIMIT 2147483647 OFFSET 0
+		<message> 2013-11-20 11:58:06 7 MShop_Common_Manager_Abstract::_searchItems(0.1728534698486328ms): SQL statement: 
+			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
+				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
+			FROM "mshop_text_type" mtexty
+			
+			WHERE ( mtexty."siteid" IN (58) AND mtexty."domain" = 'attribute' )
+			 ORDER BY mtexty."code" ASC 
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:06 7 MShop_Common_Manager_Abstract::_searchItems(0.1821517944335938ms): SQL statement: 
+			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
+				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
+			FROM "mshop_text_type" mtexty
+			
+			WHERE ( mtexty."siteid" IN (58) AND mtexty."domain" = 'attribute' )
+			 ORDER BY mtexty."code" ASC 
+			LIMIT 100 OFFSET 4
+		<message> 2013-11-20 11:58:06 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2210140228271484ms): SQL statement: 
+			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
+				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
+			FROM "mshop_text_type" mtexty
+			
+			WHERE ( mtexty."siteid" IN (58) AND mtexty."domain" = 'attribute' )
+			 ORDER BY mtexty."code" ASC 
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.080108642578125ms): SQL statement: 
+			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
+				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
+			FROM "mshop_text_type" mtexty
+			
+			WHERE ( mtexty."siteid" IN (58) AND mtexty."domain" = 'attribute' )
+			 ORDER BY mtexty."code" ASC 
+			LIMIT 100 OFFSET 4
+		<import> 2013-11-20 11:58:07 3 attribute text insert: Invalid text type "793"<import> 2013-11-20 11:58:07 3 attribute text insert: Invalid text type "794"<import> 2013-11-20 11:58:07 3 attribute text insert: Invalid text type "795"<import> 2013-11-20 11:58:07 3 attribute text insert: Invalid text type "797"<import> 2013-11-20 11:58:07 3 attribute text insert: Invalid text type "796"<import> 2013-11-20 11:58:07 3 attribute text insert: Invalid text type "787"<import> 2013-11-20 11:58:07 3 attribute text insert: Invalid text type "788"<import> 2013-11-20 11:58:07 3 attribute text insert: Invalid text type "789"<import> 2013-11-20 11:58:07 3 attribute text insert: Invalid text type "790"<import> 2013-11-20 11:58:07 3 attribute text insert: Invalid text type "791"<import> 2013-11-20 11:58:07 3 attribute text insert: Invalid text type "792"<import> 2013-11-20 11:58:07 3 attribute text insert: Invalid text type "798"<import> 2013-11-20 11:58:07 3 attribute text insert: Invalid text type "799"<import> 2013-11-20 11:58:07 3 attribute text insert: Invalid text type "800"<import> 2013-11-20 11:58:07 3 attribute text insert: Invalid text type "801"<import> 2013-11-20 11:58:07 3 attribute text insert: Invalid text type "802"<import> 2013-11-20 11:58:07 3 attribute text insert: Invalid text type "803"<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.1840591430664062ms): SQL statement: 
+			SELECT DISTINCT matt."id", matt."siteid", matt."typeid", matt."domain", matt."code", matt."status",
+				matt."pos", matt."label", matt."mtime", matt."ctime", matt."editor"
+			FROM "mshop_attribute" AS matt
+			
+			WHERE ( matt."siteid" IN (58) AND matt."code" IN ('white') )
+			 ORDER BY matt."id" ASC 
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.1280307769775391ms): SQL statement: 
+			SELECT mattty."id", mattty."siteid", mattty."code", mattty."domain", mattty."label",
+				mattty."status", mattty."mtime", mattty."ctime", mattty."editor"
+			FROM "mshop_attribute_type" AS mattty
+			
+			WHERE ( mattty."siteid" IN (58) AND mattty."id" IN (46,50) )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.1111030578613281ms): SQL statement: 
+			SELECT DISTINCT matt."id", matt."siteid", matt."typeid", matt."domain", matt."code", matt."status",
+				matt."pos", matt."label", matt."mtime", matt."ctime", matt."editor"
+			FROM "mshop_attribute" AS matt
+			
+			WHERE ( matt."siteid" IN (58) AND matt."code" IN ('white') )
+			 ORDER BY matt."id" ASC 
+			LIMIT 100 OFFSET 2
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.6198883056640625ms): SQL statement: 
+			SELECT mattli."id", mattli."parentid", mattli."siteid", mattli."typeid", mattli."domain",
+				mattli."refid", mattli."start", mattli."end", mattli."pos", mattli."mtime", mattli."ctime", mattli."editor"
+			FROM "mshop_attribute_list" AS mattli
+			
+			WHERE ( mattli."siteid" IN (58) AND ( mattli."parentid" IN (140,147) AND mattli."domain" = 'text' ) )
+			 ORDER BY mattli."id" ASC 
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.1058578491210938ms): SQL statement: 
+			SELECT mattlity."id", mattlity."siteid", mattlity."code", mattlity."domain", mattlity."label",
+				mattlity."status", mattlity."mtime", mattlity."ctime", mattlity."editor"
+			FROM "mshop_attribute_list_type" AS mattlity
+			
+			WHERE ( mattlity."siteid" IN (58) AND mattlity."id" IN (49) )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.7572174072265625ms): SQL statement: 
+			SELECT mattli."id", mattli."parentid", mattli."siteid", mattli."typeid", mattli."domain",
+				mattli."refid", mattli."start", mattli."end", mattli."pos", mattli."mtime", mattli."ctime", mattli."editor"
+			FROM "mshop_attribute_list" AS mattli
+			
+			WHERE ( mattli."siteid" IN (58) AND ( mattli."parentid" IN (140,147) AND mattli."domain" = 'text' ) )
+			 ORDER BY mattli."id" ASC 
+			LIMIT 100 OFFSET 1
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.20599365234375ms): SQL statement: 
+			SELECT mattlity."id", mattlity."siteid", mattlity."code", mattlity."domain", mattlity."label",
+				mattlity."status", mattlity."mtime", mattlity."ctime", mattlity."editor"
+			FROM "mshop_attribute_list_type" AS mattlity
+			
+			WHERE ( mattlity."siteid" IN (58) AND mattlity."domain" = 'text' )
+			 ORDER BY mattlity."code" ASC 
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2238750457763672ms): SQL statement: 
+			SELECT mattlity."id", mattlity."siteid", mattlity."code", mattlity."domain", mattlity."label",
+				mattlity."status", mattlity."mtime", mattlity."ctime", mattlity."editor"
+			FROM "mshop_attribute_list_type" AS mattlity
+			
+			WHERE ( mattlity."siteid" IN (58) AND mattlity."domain" = 'text' )
+			 ORDER BY mattlity."code" ASC 
+			LIMIT 100 OFFSET 1
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.7450580596923828ms): SQL statement: 
+			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
+				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
+			FROM "mshop_text" AS mtex
+			
+			WHERE
+				( mtex."siteid" IN (58) AND ( mtex."langid" = 'en' AND mtex."status" = 1 AND mtex."content" LIKE '%Root:%' ) )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2398490905761719ms): SQL statement: 
+			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
+				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
+			FROM "mshop_text_type" mtexty
+			
+			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (135,128,126,127) )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.4880428314208984ms): SQL statement: 
+			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
+				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
+			FROM "mshop_text" AS mtex
+			
+			WHERE
+				( mtex."siteid" IN (58) AND mtex."id" = 1178 )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.1780986785888672ms): SQL statement: 
+			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
+				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
+			FROM "mshop_text_type" mtexty
+			
+			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (135) )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.5500316619873047ms): SQL statement: 
+			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
+				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
+			FROM "mshop_text" AS mtex
+			
+			WHERE
+				( mtex."siteid" IN (58) AND mtex."id" = 1179 )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.3142356872558594ms): SQL statement: 
+			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
+				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
+			FROM "mshop_text_type" mtexty
+			
+			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (128) )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.8149147033691406ms): SQL statement: 
+			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
+				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
+			FROM "mshop_text" AS mtex
+			
+			WHERE
+				( mtex."siteid" IN (58) AND mtex."id" = 1180 )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2920627593994141ms): SQL statement: 
+			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
+				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
+			FROM "mshop_text_type" mtexty
+			
+			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (126) )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.5619525909423828ms): SQL statement: 
+			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
+				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
+			FROM "mshop_text" AS mtex
+			
+			WHERE
+				( mtex."siteid" IN (58) AND mtex."id" = 1181 )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2369880676269531ms): SQL statement: 
+			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
+				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
+			FROM "mshop_text_type" mtexty
+			
+			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (127) )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.5669593811035156ms): SQL statement: 
+			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
+				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
+			FROM "mshop_text" AS mtex
+			
+			WHERE
+				( mtex."siteid" IN (58) AND mtex."id" = 1182 )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2539157867431641ms): SQL statement: 
+			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
+				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
+			FROM "mshop_text_type" mtexty
+			
+			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (135) )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.8389949798583984ms): SQL statement: 
+			SELECT mattli."id", mattli."parentid", mattli."siteid", mattli."typeid", mattli."domain",
+				mattli."refid", mattli."start", mattli."end", mattli."pos", mattli."mtime", mattli."ctime", mattli."editor"
+			FROM "mshop_attribute_list" AS mattli
+			
+			WHERE ( mattli."siteid" IN (58) AND ( mattli."domain" = 'text' AND mattli."refid" IN ('1178','1179','1180','1181','1182') ) )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2040863037109375ms): SQL statement: 
+			SELECT mattlity."id", mattlity."siteid", mattlity."code", mattlity."domain", mattlity."label",
+				mattlity."status", mattlity."mtime", mattlity."ctime", mattlity."editor"
+			FROM "mshop_attribute_list_type" AS mattlity
+			
+			WHERE ( mattlity."siteid" IN (58) AND mattlity."id" IN (55) )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.4820823669433594ms): SQL statement: 
+			SELECT mattli."id", mattli."parentid", mattli."siteid", mattli."typeid", mattli."domain",
+				mattli."refid", mattli."start", mattli."end", mattli."pos", mattli."mtime", mattli."ctime", mattli."editor"
+			FROM "mshop_attribute_list" AS mattli
+			
+			WHERE ( mattli."siteid" IN (58) AND mattli."id" = 171 )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.1730918884277344ms): SQL statement: 
+			SELECT mattlity."id", mattlity."siteid", mattlity."code", mattlity."domain", mattlity."label",
+				mattlity."status", mattlity."mtime", mattlity."ctime", mattlity."editor"
+			FROM "mshop_attribute_list_type" AS mattlity
+			
+			WHERE ( mattlity."siteid" IN (58) AND mattlity."id" IN (55) )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.4899501800537109ms): SQL statement: 
+			SELECT mattli."id", mattli."parentid", mattli."siteid", mattli."typeid", mattli."domain",
+				mattli."refid", mattli."start", mattli."end", mattli."pos", mattli."mtime", mattli."ctime", mattli."editor"
+			FROM "mshop_attribute_list" AS mattli
+			
+			WHERE ( mattli."siteid" IN (58) AND mattli."id" = 172 )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2641677856445312ms): SQL statement: 
+			SELECT mattlity."id", mattlity."siteid", mattlity."code", mattlity."domain", mattlity."label",
+				mattlity."status", mattlity."mtime", mattlity."ctime", mattlity."editor"
+			FROM "mshop_attribute_list_type" AS mattlity
+			
+			WHERE ( mattlity."siteid" IN (58) AND mattlity."id" IN (55) )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.4398822784423828ms): SQL statement: 
+			SELECT mattli."id", mattli."parentid", mattli."siteid", mattli."typeid", mattli."domain",
+				mattli."refid", mattli."start", mattli."end", mattli."pos", mattli."mtime", mattli."ctime", mattli."editor"
+			FROM "mshop_attribute_list" AS mattli
+			
+			WHERE ( mattli."siteid" IN (58) AND mattli."id" = 173 )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2429485321044922ms): SQL statement: 
+			SELECT mattlity."id", mattlity."siteid", mattlity."code", mattlity."domain", mattlity."label",
+				mattlity."status", mattlity."mtime", mattlity."ctime", mattlity."editor"
+			FROM "mshop_attribute_list_type" AS mattlity
+			
+			WHERE ( mattlity."siteid" IN (58) AND mattlity."id" IN (55) )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.4479885101318359ms): SQL statement: 
+			SELECT mattli."id", mattli."parentid", mattli."siteid", mattli."typeid", mattli."domain",
+				mattli."refid", mattli."start", mattli."end", mattli."pos", mattli."mtime", mattli."ctime", mattli."editor"
+			FROM "mshop_attribute_list" AS mattli
+			
+			WHERE ( mattli."siteid" IN (58) AND mattli."id" = 174 )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2238750457763672ms): SQL statement: 
+			SELECT mattlity."id", mattlity."siteid", mattlity."code", mattlity."domain", mattlity."label",
+				mattlity."status", mattlity."mtime", mattlity."ctime", mattlity."editor"
+			FROM "mshop_attribute_list_type" AS mattlity
+			
+			WHERE ( mattlity."siteid" IN (58) AND mattlity."id" IN (55) )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.5178451538085938ms): SQL statement: 
+			SELECT mattli."id", mattli."parentid", mattli."siteid", mattli."typeid", mattli."domain",
+				mattli."refid", mattli."start", mattli."end", mattli."pos", mattli."mtime", mattli."ctime", mattli."editor"
+			FROM "mshop_attribute_list" AS mattli
+			
+			WHERE ( mattli."siteid" IN (58) AND mattli."id" = 175 )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2238750457763672ms): SQL statement: 
+			SELECT mattlity."id", mattlity."siteid", mattlity."code", mattlity."domain", mattlity."label",
+				mattlity."status", mattlity."mtime", mattlity."ctime", mattlity."editor"
+			FROM "mshop_attribute_list_type" AS mattlity
+			
+			WHERE ( mattlity."siteid" IN (58) AND mattlity."id" IN (55) )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
+				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
+			FROM "mshop_locale_site" AS mlocsi
+			WHERE mlocsi."id" = 58
+			ORDER BY mlocsi."id" ASC
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.5381107330322266ms): SQL statement: 
+		SELECT majob."id", majob."siteid", majob."label", majob."method", majob."parameter",
+			majob."result", majob."status", majob."editor", majob."mtime", majob."ctime"
+		FROM "madmin_job" AS majob
+		WHERE ( majob."siteid" IN (58) AND majob."id" IN (239) )
+		
+		LIMIT 1 OFFSET 0
+	<message> 2013-11-20 11:58:07 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
+				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
+			FROM "mshop_locale_site" AS mlocsi
+			WHERE mlocsi."id" = 58
+			ORDER BY mlocsi."id" ASC
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.4649162292480469ms): SQL statement: 
+		SELECT COUNT( majob."id" ) AS "count"
+		FROM "madmin_job" AS majob
+		WHERE ( majob."siteid" IN (58) AND ( ( majob."label" LIKE '%file.txt%' ) AND 1 = 1 ) )
+	<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.4479885101318359ms): SQL statement: 
+		SELECT majob."id", majob."siteid", majob."label", majob."method", majob."parameter",
+			majob."result", majob."status", majob."editor", majob."mtime", majob."ctime"
+		FROM "madmin_job" AS majob
+		WHERE ( majob."siteid" IN (58) AND ( ( majob."label" LIKE '%file.txt%' ) AND 1 = 1 ) )
+		
+		LIMIT 100 OFFSET 0
+	<message> 2013-11-20 11:58:07 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
+				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
+			FROM "mshop_locale_site" AS mlocsi
+			WHERE mlocsi."id" = 58
+			ORDER BY mlocsi."id" ASC
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
+				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
+			FROM "mshop_locale_site" AS mlocsi
+			WHERE mlocsi."id" = 58
+			ORDER BY mlocsi."id" ASC
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.4968643188476562ms): SQL statement: 
+		SELECT COUNT( majob."id" ) AS "count"
+		FROM "madmin_job" AS majob
+		WHERE ( majob."siteid" IN (58) AND ( ( majob."label" LIKE '%file.txt%' ) AND 1 = 1 ) )
+	<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.4410743713378906ms): SQL statement: 
+		SELECT majob."id", majob."siteid", majob."label", majob."method", majob."parameter",
+			majob."result", majob."status", majob."editor", majob."mtime", majob."ctime"
+		FROM "madmin_job" AS majob
+		WHERE ( majob."siteid" IN (58) AND ( ( majob."label" LIKE '%file.txt%' ) AND 1 = 1 ) )
+		
+		LIMIT 100 OFFSET 0
+	<message> 2013-11-20 11:58:07 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
+				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
+			FROM "mshop_locale_site" AS mlocsi
+			WHERE mlocsi."code" = 'unittest'
+			ORDER BY mlocsi."id" ASC
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
+				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
+			FROM "mshop_locale_site" AS mlocsi
+			WHERE mlocsi."code" = 'unittest'
+			ORDER BY mlocsi."id" ASC
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
+				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
+			FROM "mshop_locale_site" AS mlocsi
+			WHERE mlocsi."code" = 'unittest'
+			ORDER BY mlocsi."id" ASC
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
+				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
+			FROM "mshop_locale_site" AS mlocsi
+			WHERE mlocsi."code" = 'unittest'
+			ORDER BY mlocsi."id" ASC
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
+				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
+			FROM "mshop_locale_site" AS mlocsi
+			WHERE mlocsi."code" = 'unittest'
+			ORDER BY mlocsi."id" ASC
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
+				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
+			FROM "mshop_locale_site" AS mlocsi
+			WHERE mlocsi."code" = 'unittest'
+			ORDER BY mlocsi."id" ASC
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
+				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
+			FROM "mshop_locale_site" AS mlocsi
+			WHERE mlocsi."code" = 'unittest'
+			ORDER BY mlocsi."id" ASC
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:07 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'badSite'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(0.3399848937988281ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.1668930053710938ms): SQL statement: 
 			SELECT DISTINCT
 				mcat."id", mcat."label", mcat."config", mcat."code", mcat."status", mcat."level", mcat."parentid",
 				mcat."siteid", mcat."nleft" AS "left", mcat."nright" AS "right",
@@ -302,29 +774,29 @@
 			WHERE ( mcat."siteid" IN (58) AND mcat."label" IN ('Root','Tee') )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 Create export for catalog IDs: 85<message> 2013-11-19 17:59:08 7 MShop_Locale_Manager_Language_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:07 7 Create export for catalog IDs: 85<message> 2013-11-20 11:58:07 7 MShop_Locale_Manager_Language_Default::_getSearchResults: SQL statement: 
 			SELECT mlocla."id", mlocla."label", mlocla."siteid", mlocla."status",
 				mlocla."mtime", mlocla."editor", mlocla."ctime"
 			FROM "mshop_locale_language" AS mlocla
 			WHERE mlocla."id" IN ('de','fr')
 			ORDER BY mlocla."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(1.343965530395508ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.7641315460205078ms): SQL statement: 
 			SELECT mcatli."id", mcatli."parentid", mcatli."siteid", mcatli."typeid", mcatli."domain", mcatli."refid",
 				mcatli."start", mcatli."end", mcatli."pos", mcatli."mtime", mcatli."editor", mcatli."ctime"
 			FROM "mshop_catalog_list" AS mcatli
 			
-			WHERE ( mcatli."siteid" IN (58) AND ( mcatli."parentid" IN (85,86,88,89,90,87,91,92) AND mcatli."domain" IN ('text') AND ( ( mcatli."start" <= '2013-11-19 17:59:00' OR mcatli."start" IS NULL ) AND ( mcatli."end" >= '2013-11-19 17:59:00' OR mcatli."end" IS NULL ) ) ) )
+			WHERE ( mcatli."siteid" IN (58) AND ( mcatli."parentid" IN (85,86,88,89,90,87,91,92) AND mcatli."domain" IN ('text') AND ( ( mcatli."start" <= '2013-11-20 11:58:00' OR mcatli."start" IS NULL ) AND ( mcatli."end" >= '2013-11-20 11:58:00' OR mcatli."end" IS NULL ) ) ) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2620220184326172ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.1480579376220703ms): SQL statement: 
 			SELECT mcatlity."id", mcatlity."siteid", mcatlity."code", mcatlity."domain", mcatlity."label",
 				mcatlity."mtime", mcatlity."editor", mcatlity."ctime", mcatlity."status"
 			FROM "mshop_catalog_list_type" AS mcatlity
@@ -332,7 +804,7 @@
 			WHERE ( mcatlity."siteid" IN (58) AND mcatlity."id" IN (149,156,157,158,159,160,161,162,163,164,165,168,169,170,171,172,173,174,175,176,177) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(1.175880432128906ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(1.009941101074219ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
@@ -341,7 +813,7 @@
 				( mtex."siteid" IN (58) AND ( mtex."id" IN (817,818,819,820,821,822,823,824,825,826,827,828,829,830,831,832,833,834,835,836,837) AND ( mtex."status" > 0 AND ( mtex."langid" = 'de' OR mtex."langid" IS NULL ) ) ) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2620220184326172ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2419948577880859ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -349,7 +821,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (134,133,129,130,131,132,143,145,146,147,148) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2369880676269531ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2689361572265625ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -357,7 +829,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."domain" = 'catalog' )
 			 ORDER BY mtexty."code" ASC 
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(0.1668930053710938ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.1900196075439453ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -365,15 +837,15 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."domain" = 'catalog' )
 			 ORDER BY mtexty."code" ASC 
 			LIMIT 100 OFFSET 6
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2360343933105469ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.1928806304931641ms): SQL statement: 
 			SELECT mcatli."id", mcatli."parentid", mcatli."siteid", mcatli."typeid", mcatli."domain", mcatli."refid",
 				mcatli."start", mcatli."end", mcatli."pos", mcatli."mtime", mcatli."editor", mcatli."ctime"
 			FROM "mshop_catalog_list" AS mcatli
 			
-			WHERE ( mcatli."siteid" IN (58) AND ( mcatli."parentid" IN (85,86,88,89,90,87,91,92) AND mcatli."domain" IN ('text') AND ( ( mcatli."start" <= '2013-11-19 17:59:00' OR mcatli."start" IS NULL ) AND ( mcatli."end" >= '2013-11-19 17:59:00' OR mcatli."end" IS NULL ) ) ) )
+			WHERE ( mcatli."siteid" IN (58) AND ( mcatli."parentid" IN (85,86,88,89,90,87,91,92) AND mcatli."domain" IN ('text') AND ( ( mcatli."start" <= '2013-11-20 11:58:00' OR mcatli."start" IS NULL ) AND ( mcatli."end" >= '2013-11-20 11:58:00' OR mcatli."end" IS NULL ) ) ) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(0.3511905670166016ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.1070499420166016ms): SQL statement: 
 			SELECT mcatlity."id", mcatlity."siteid", mcatlity."code", mcatlity."domain", mcatlity."label",
 				mcatlity."mtime", mcatlity."editor", mcatlity."ctime", mcatlity."status"
 			FROM "mshop_catalog_list_type" AS mcatlity
@@ -381,7 +853,7 @@
 			WHERE ( mcatlity."siteid" IN (58) AND mcatlity."id" IN (149,156,157,158,159,160,161,162,163,164,165,168,169,170,171,172,173,174,175,176,177) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(0.3130435943603516ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.1699924468994141ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
@@ -390,7 +862,7 @@
 				( mtex."siteid" IN (58) AND ( mtex."id" IN (817,818,819,820,821,822,823,824,825,826,827,828,829,830,831,832,833,834,835,836,837) AND ( mtex."status" > 0 AND ( mtex."langid" = 'de' OR mtex."langid" IS NULL ) ) ) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2298355102539062ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.1149177551269531ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -398,7 +870,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (134,133,129,130,131,132,143,145,146,147,148) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(0.148773193359375ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2641677856445312ms): SQL statement: 
 			SELECT DISTINCT
 				mcat."id", mcat."label", mcat."config", mcat."code", mcat."status", mcat."level", mcat."parentid",
 				mcat."siteid", mcat."nleft" AS "left", mcat."nright" AS "right",
@@ -408,29 +880,29 @@
 			WHERE ( mcat."siteid" IN (58) AND mcat."label" IN ('Root','Tee') )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 Create export file for catalog IDs: 85<message> 2013-11-19 17:59:08 7 MShop_Locale_Manager_Language_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:07 7 Create export file for catalog IDs: 85<message> 2013-11-20 11:58:07 7 MShop_Locale_Manager_Language_Default::_getSearchResults: SQL statement: 
 			SELECT mlocla."id", mlocla."label", mlocla."siteid", mlocla."status",
 				mlocla."mtime", mlocla."editor", mlocla."ctime"
 			FROM "mshop_locale_language" AS mlocla
 			WHERE mlocla."id" IN ('de','fr')
 			ORDER BY mlocla."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:08 7 MShop_Common_Manager_Abstract::_searchItems(0.1428127288818359ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2689361572265625ms): SQL statement: 
 			SELECT mcatli."id", mcatli."parentid", mcatli."siteid", mcatli."typeid", mcatli."domain", mcatli."refid",
 				mcatli."start", mcatli."end", mcatli."pos", mcatli."mtime", mcatli."editor", mcatli."ctime"
 			FROM "mshop_catalog_list" AS mcatli
 			
-			WHERE ( mcatli."siteid" IN (58) AND ( mcatli."parentid" IN (85,86,88,89,90,87,91,92) AND mcatli."domain" IN ('text') AND ( ( mcatli."start" <= '2013-11-19 17:59:00' OR mcatli."start" IS NULL ) AND ( mcatli."end" >= '2013-11-19 17:59:00' OR mcatli."end" IS NULL ) ) ) )
+			WHERE ( mcatli."siteid" IN (58) AND ( mcatli."parentid" IN (85,86,88,89,90,87,91,92) AND mcatli."domain" IN ('text') AND ( ( mcatli."start" <= '2013-11-20 11:58:00' OR mcatli."start" IS NULL ) AND ( mcatli."end" >= '2013-11-20 11:58:00' OR mcatli."end" IS NULL ) ) ) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2558231353759766ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2689361572265625ms): SQL statement: 
 			SELECT mcatlity."id", mcatlity."siteid", mcatlity."code", mcatlity."domain", mcatlity."label",
 				mcatlity."mtime", mcatlity."editor", mcatlity."ctime", mcatlity."status"
 			FROM "mshop_catalog_list_type" AS mcatlity
@@ -438,7 +910,7 @@
 			WHERE ( mcatlity."siteid" IN (58) AND mcatlity."id" IN (149,156,157,158,159,160,161,162,163,164,165,168,169,170,171,172,173,174,175,176,177) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2210140228271484ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.3271102905273438ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
@@ -447,7 +919,7 @@
 				( mtex."siteid" IN (58) AND ( mtex."id" IN (817,818,819,820,821,822,823,824,825,826,827,828,829,830,831,832,833,834,835,836,837) AND ( mtex."status" > 0 AND ( mtex."langid" = 'de' OR mtex."langid" IS NULL ) ) ) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2369880676269531ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2110004425048828ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -455,7 +927,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (134,133,129,130,131,132,143,145,146,147,148) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2148151397705078ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.247955322265625ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -463,7 +935,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."domain" = 'catalog' )
 			 ORDER BY mtexty."code" ASC 
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.1959800720214844ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.244140625ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -471,15 +943,15 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."domain" = 'catalog' )
 			 ORDER BY mtexty."code" ASC 
 			LIMIT 100 OFFSET 6
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2610683441162109ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2660751342773438ms): SQL statement: 
 			SELECT mcatli."id", mcatli."parentid", mcatli."siteid", mcatli."typeid", mcatli."domain", mcatli."refid",
 				mcatli."start", mcatli."end", mcatli."pos", mcatli."mtime", mcatli."editor", mcatli."ctime"
 			FROM "mshop_catalog_list" AS mcatli
 			
-			WHERE ( mcatli."siteid" IN (58) AND ( mcatli."parentid" IN (85,86,88,89,90,87,91,92) AND mcatli."domain" IN ('text') AND ( ( mcatli."start" <= '2013-11-19 17:59:00' OR mcatli."start" IS NULL ) AND ( mcatli."end" >= '2013-11-19 17:59:00' OR mcatli."end" IS NULL ) ) ) )
+			WHERE ( mcatli."siteid" IN (58) AND ( mcatli."parentid" IN (85,86,88,89,90,87,91,92) AND mcatli."domain" IN ('text') AND ( ( mcatli."start" <= '2013-11-20 11:58:00' OR mcatli."start" IS NULL ) AND ( mcatli."end" >= '2013-11-20 11:58:00' OR mcatli."end" IS NULL ) ) ) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2360343933105469ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2410411834716797ms): SQL statement: 
 			SELECT mcatlity."id", mcatlity."siteid", mcatlity."code", mcatlity."domain", mcatlity."label",
 				mcatlity."mtime", mcatlity."editor", mcatlity."ctime", mcatlity."status"
 			FROM "mshop_catalog_list_type" AS mcatlity
@@ -487,7 +959,7 @@
 			WHERE ( mcatlity."siteid" IN (58) AND mcatlity."id" IN (149,156,157,158,159,160,161,162,163,164,165,168,169,170,171,172,173,174,175,176,177) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2667903900146484ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.1590251922607422ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
@@ -496,7 +968,7 @@
 				( mtex."siteid" IN (58) AND ( mtex."id" IN (817,818,819,820,821,822,823,824,825,826,827,828,829,830,831,832,833,834,835,836,837) AND ( mtex."status" > 0 AND ( mtex."langid" = 'de' OR mtex."langid" IS NULL ) ) ) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.1409053802490234ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.1399517059326172ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -504,29 +976,29 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (134,133,129,130,131,132,143,145,146,147,148) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 Create export for catalog IDs: 85<message> 2013-11-19 17:59:09 7 MShop_Locale_Manager_Language_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:07 7 Create export for catalog IDs: 85<message> 2013-11-20 11:58:07 7 MShop_Locale_Manager_Language_Default::_getSearchResults: SQL statement: 
 			SELECT mlocla."id", mlocla."label", mlocla."siteid", mlocla."status",
 				mlocla."mtime", mlocla."editor", mlocla."ctime"
 			FROM "mshop_locale_language" AS mlocla
 			WHERE mlocla."id" IN ('de')
 			ORDER BY mlocla."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.3068447113037109ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.1380443572998047ms): SQL statement: 
 			SELECT mcatli."id", mcatli."parentid", mcatli."siteid", mcatli."typeid", mcatli."domain", mcatli."refid",
 				mcatli."start", mcatli."end", mcatli."pos", mcatli."mtime", mcatli."editor", mcatli."ctime"
 			FROM "mshop_catalog_list" AS mcatli
 			
-			WHERE ( mcatli."siteid" IN (58) AND ( mcatli."parentid" IN (85,86,88,89,90,87,91,92) AND mcatli."domain" IN ('text') AND ( ( mcatli."start" <= '2013-11-19 17:59:00' OR mcatli."start" IS NULL ) AND ( mcatli."end" >= '2013-11-19 17:59:00' OR mcatli."end" IS NULL ) ) ) )
+			WHERE ( mcatli."siteid" IN (58) AND ( mcatli."parentid" IN (85,86,88,89,90,87,91,92) AND mcatli."domain" IN ('text') AND ( ( mcatli."start" <= '2013-11-20 11:58:00' OR mcatli."start" IS NULL ) AND ( mcatli."end" >= '2013-11-20 11:58:00' OR mcatli."end" IS NULL ) ) ) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.1089572906494141ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.1080036163330078ms): SQL statement: 
 			SELECT mcatlity."id", mcatlity."siteid", mcatlity."code", mcatlity."domain", mcatlity."label",
 				mcatlity."mtime", mcatlity."editor", mcatlity."ctime", mcatlity."status"
 			FROM "mshop_catalog_list_type" AS mcatlity
@@ -534,7 +1006,7 @@
 			WHERE ( mcatlity."siteid" IN (58) AND mcatlity."id" IN (149,156,157,158,159,160,161,162,163,164,165,168,169,170,171,172,173,174,175,176,177) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.1139640808105469ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2131462097167969ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
@@ -543,7 +1015,7 @@
 				( mtex."siteid" IN (58) AND ( mtex."id" IN (817,818,819,820,821,822,823,824,825,826,827,828,829,830,831,832,833,834,835,836,837) AND ( mtex."status" > 0 AND ( mtex."langid" = 'de' OR mtex."langid" IS NULL ) ) ) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.1070499420166016ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.1518726348876953ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -551,7 +1023,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (134,133,129,130,131,132,143,145,146,147,148) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.1120567321777344ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.1959800720214844ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -559,7 +1031,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."domain" = 'catalog' )
 			 ORDER BY mtexty."code" ASC 
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.1049041748046875ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.1220703125ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -567,14 +1039,14 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."domain" = 'catalog' )
 			 ORDER BY mtexty."code" ASC 
 			LIMIT 100 OFFSET 6
-		<message> 2013-11-19 17:59:09 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.1971721649169922ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2191066741943359ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -582,7 +1054,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."domain" = 'catalog' )
 			 ORDER BY mtexty."code" ASC 
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.1270771026611328ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.1740455627441406ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -590,7 +1062,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."domain" = 'catalog' )
 			 ORDER BY mtexty."code" ASC 
 			LIMIT 100 OFFSET 6
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.3750324249267578ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.7040500640869141ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
@@ -599,7 +1071,7 @@
 				( mtex."siteid" IN (58) AND mtex."id" = 817 )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.1289844512939453ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.1249313354492188ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -607,7 +1079,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (134) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2739429473876953ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.4858970642089844ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
@@ -616,7 +1088,7 @@
 				( mtex."siteid" IN (58) AND mtex."id" = 821 )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.09608268737792969ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.20599365234375ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -624,7 +1096,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (131) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.3230571746826172ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.5619525909423828ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
@@ -633,7 +1105,7 @@
 				( mtex."siteid" IN (58) AND mtex."id" = 820 )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2000331878662109ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2288818359375ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -641,7 +1113,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (130) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.4668235778808594ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.4711151123046875ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
@@ -650,7 +1122,7 @@
 				( mtex."siteid" IN (58) AND mtex."id" = 818 )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.1900196075439453ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2319812774658203ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -658,7 +1130,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (133) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.3199577331542969ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.5359649658203125ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
@@ -667,7 +1139,7 @@
 				( mtex."siteid" IN (58) AND mtex."id" = 822 )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.1900196075439453ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2839565277099609ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -675,7 +1147,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (132) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.5431175231933594ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.6299018859863281ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
@@ -684,7 +1156,7 @@
 				( mtex."siteid" IN (58) AND mtex."id" = 819 )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.09703636169433594ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.1130104064941406ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -692,7 +1164,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (129) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.4770755767822266ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.6570816040039062ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
@@ -701,7 +1173,7 @@
 				( mtex."siteid" IN (58) AND mtex."id" = 826 )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2331733703613281ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.1358985900878906ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -709,7 +1181,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (131) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.4789829254150391ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.4270076751708984ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
@@ -718,7 +1190,7 @@
 				( mtex."siteid" IN (58) AND mtex."id" = 825 )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.3209114074707031ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2179145812988281ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -726,7 +1198,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (130) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.5459785461425781ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.4308223724365234ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
@@ -735,7 +1207,7 @@
 				( mtex."siteid" IN (58) AND mtex."id" = 823 )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2019405364990234ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.3478527069091797ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -743,7 +1215,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (133) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.3859996795654297ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.4708766937255859ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
@@ -752,7 +1224,7 @@
 				( mtex."siteid" IN (58) AND mtex."id" = 827 )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.08821487426757812ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2808570861816406ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -760,7 +1232,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (132) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2839565277099609ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.3998279571533203ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
@@ -769,7 +1241,7 @@
 				( mtex."siteid" IN (58) AND mtex."id" = 824 )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.1142024993896484ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.1988410949707031ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -777,7 +1249,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (129) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.1649856567382812ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.1881122589111328ms): SQL statement: 
 			SELECT DISTINCT
 				mcat."id", mcat."label", mcat."config", mcat."code", mcat."status", mcat."level", mcat."parentid",
 				mcat."siteid", mcat."nleft" AS "left", mcat."nright" AS "right",
@@ -787,7 +1259,7 @@
 			WHERE ( mcat."siteid" IN (58) AND mcat."id" IN (85,88,89,90) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.5059242248535156ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.8869171142578125ms): SQL statement: 
 			SELECT COUNT(*) AS "count"
 			FROM (
 				SELECT DISTINCT mcatli."id"
@@ -796,7 +1268,7 @@
 				WHERE ( mcatli."siteid" IN (58) AND ( mcatli."parentid" IN (88,90,85,89) AND mcatli."domain" = 'text' ) )
 				LIMIT 10000 OFFSET 0
 			) AS list
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.6289482116699219ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.8258819580078125ms): SQL statement: 
 			SELECT mcatli."id", mcatli."parentid", mcatli."siteid", mcatli."typeid", mcatli."domain", mcatli."refid",
 				mcatli."start", mcatli."end", mcatli."pos", mcatli."mtime", mcatli."editor", mcatli."ctime"
 			FROM "mshop_catalog_list" AS mcatli
@@ -804,7 +1276,7 @@
 			WHERE ( mcatli."siteid" IN (58) AND ( mcatli."parentid" IN (88,90,85,89) AND mcatli."domain" = 'text' ) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.1420974731445312ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2160072326660156ms): SQL statement: 
 			SELECT mcatlity."id", mcatlity."siteid", mcatlity."code", mcatlity."domain", mcatlity."label",
 				mcatlity."mtime", mcatlity."editor", mcatlity."ctime", mcatlity."status"
 			FROM "mshop_catalog_list_type" AS mcatlity
@@ -812,7 +1284,7 @@
 			WHERE ( mcatlity."siteid" IN (58) AND mcatlity."id" IN (151,152,149,156,157,158,159,160,161,162,163,164,165) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.4491806030273438ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.8649826049804688ms): SQL statement: 
 			SELECT COUNT(*) AS "count"
 			FROM (
 				SELECT DISTINCT mcatli."id"
@@ -821,7 +1293,7 @@
 				WHERE ( mcatli."siteid" IN (58) AND ( mcatli."parentid" IN (88,90,85,89) AND mcatli."domain" = 'text' AND mcatli."parentid" IN (88,90,85,89) AND mcatli."domain" = 'text' ) )
 				LIMIT 10000 OFFSET 0
 			) AS list
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.8900165557861328ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.8521080017089844ms): SQL statement: 
 			SELECT mcatli."id", mcatli."parentid", mcatli."siteid", mcatli."typeid", mcatli."domain", mcatli."refid",
 				mcatli."start", mcatli."end", mcatli."pos", mcatli."mtime", mcatli."editor", mcatli."ctime"
 			FROM "mshop_catalog_list" AS mcatli
@@ -829,7 +1301,7 @@
 			WHERE ( mcatli."siteid" IN (58) AND ( mcatli."parentid" IN (88,90,85,89) AND mcatli."domain" = 'text' AND mcatli."parentid" IN (88,90,85,89) AND mcatli."domain" = 'text' ) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2019405364990234ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2050399780273438ms): SQL statement: 
 			SELECT mcatlity."id", mcatlity."siteid", mcatlity."code", mcatlity."domain", mcatlity."label",
 				mcatlity."mtime", mcatlity."editor", mcatlity."ctime", mcatlity."status"
 			FROM "mshop_catalog_list_type" AS mcatlity
@@ -837,7 +1309,7 @@
 			WHERE ( mcatlity."siteid" IN (58) AND mcatlity."id" IN (151,152,149,156,157,158,159,160,161,162,163,164,165) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.8440017700195312ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.7431507110595703ms): SQL statement: 
 			SELECT COUNT(*) AS "count"
 			FROM (
 				SELECT DISTINCT mcatli."id"
@@ -846,7 +1318,7 @@
 				WHERE ( mcatli."siteid" IN (58) AND ( mcatli."parentid" IN (88,90,85,89) AND mcatli."domain" = 'text' AND mcatli."parentid" IN (88,90,85,89) AND mcatli."domain" = 'text' AND mcatli."parentid" IN (88,90,85,89) AND mcatli."domain" = 'text' ) )
 				LIMIT 10000 OFFSET 0
 			) AS list
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.4999637603759766ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.8559226989746094ms): SQL statement: 
 			SELECT mcatli."id", mcatli."parentid", mcatli."siteid", mcatli."typeid", mcatli."domain", mcatli."refid",
 				mcatli."start", mcatli."end", mcatli."pos", mcatli."mtime", mcatli."editor", mcatli."ctime"
 			FROM "mshop_catalog_list" AS mcatli
@@ -854,7 +1326,7 @@
 			WHERE ( mcatli."siteid" IN (58) AND ( mcatli."parentid" IN (88,90,85,89) AND mcatli."domain" = 'text' AND mcatli."parentid" IN (88,90,85,89) AND mcatli."domain" = 'text' AND mcatli."parentid" IN (88,90,85,89) AND mcatli."domain" = 'text' ) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2121925354003906ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2100467681884766ms): SQL statement: 
 			SELECT mcatlity."id", mcatlity."siteid", mcatlity."code", mcatlity."domain", mcatlity."label",
 				mcatlity."mtime", mcatlity."editor", mcatlity."ctime", mcatlity."status"
 			FROM "mshop_catalog_list_type" AS mcatlity
@@ -862,7 +1334,7 @@
 			WHERE ( mcatlity."siteid" IN (58) AND mcatlity."id" IN (151,152,149,156,157,158,159,160,161,162,163,164,165) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.9031295776367188ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.8690357208251953ms): SQL statement: 
 			SELECT COUNT(*) AS "count"
 			FROM (
 				SELECT DISTINCT mcatli."id"
@@ -871,7 +1343,7 @@
 				WHERE ( mcatli."siteid" IN (58) AND ( mcatli."parentid" IN (88,90,85,89) AND mcatli."domain" = 'text' AND mcatli."parentid" IN (88,90,85,89) AND mcatli."domain" = 'text' AND mcatli."parentid" IN (88,90,85,89) AND mcatli."domain" = 'text' AND mcatli."parentid" IN (88,90,85,89) AND mcatli."domain" = 'text' ) )
 				LIMIT 10000 OFFSET 0
 			) AS list
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.8130073547363281ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.9210109710693359ms): SQL statement: 
 			SELECT mcatli."id", mcatli."parentid", mcatli."siteid", mcatli."typeid", mcatli."domain", mcatli."refid",
 				mcatli."start", mcatli."end", mcatli."pos", mcatli."mtime", mcatli."editor", mcatli."ctime"
 			FROM "mshop_catalog_list" AS mcatli
@@ -879,7 +1351,7 @@
 			WHERE ( mcatli."siteid" IN (58) AND ( mcatli."parentid" IN (88,90,85,89) AND mcatli."domain" = 'text' AND mcatli."parentid" IN (88,90,85,89) AND mcatli."domain" = 'text' AND mcatli."parentid" IN (88,90,85,89) AND mcatli."domain" = 'text' AND mcatli."parentid" IN (88,90,85,89) AND mcatli."domain" = 'text' ) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2160072326660156ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.1990795135498047ms): SQL statement: 
 			SELECT mcatlity."id", mcatlity."siteid", mcatlity."code", mcatlity."domain", mcatlity."label",
 				mcatlity."mtime", mcatlity."editor", mcatlity."ctime", mcatlity."status"
 			FROM "mshop_catalog_list_type" AS mcatlity
@@ -887,7 +1359,7 @@
 			WHERE ( mcatlity."siteid" IN (58) AND mcatlity."id" IN (151,152,149,156,157,158,159,160,161,162,163,164,165) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2079010009765625ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2350807189941406ms): SQL statement: 
 			SELECT mcatlity."id", mcatlity."siteid", mcatlity."code", mcatlity."domain", mcatlity."label",
 				mcatlity."mtime", mcatlity."editor", mcatlity."ctime", mcatlity."status"
 			FROM "mshop_catalog_list_type" AS mcatlity
@@ -895,7 +1367,7 @@
 			WHERE ( mcatlity."siteid" IN (58) AND mcatlity."domain" = 'text' )
 			 ORDER BY mcatlity."code" ASC 
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.1938343048095703ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.1859664916992188ms): SQL statement: 
 			SELECT mcatlity."id", mcatlity."siteid", mcatlity."code", mcatlity."domain", mcatlity."label",
 				mcatlity."mtime", mcatlity."editor", mcatlity."ctime", mcatlity."status"
 			FROM "mshop_catalog_list_type" AS mcatlity
@@ -903,7 +1375,7 @@
 			WHERE ( mcatlity."siteid" IN (58) AND mcatlity."domain" = 'text' )
 			 ORDER BY mcatlity."code" ASC 
 			LIMIT 100 OFFSET 28
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(1.104831695556641ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(1.081943511962891ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
@@ -912,7 +1384,7 @@
 				( mtex."siteid" IN (58) AND ( mtex."domain" = 'catalog' AND mtex."langid" = 'de' AND mtex."status" = 1 AND mtex."content" LIKE '%Root:%' ) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2400875091552734ms): SQL statement: 
+		<message> 2013-11-20 11:58:07 7 MShop_Common_Manager_Abstract::_searchItems(0.2849102020263672ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -920,16 +1392,16 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (131,130,133,132,134) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.5478858947753906ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.3778934478759766ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
 			
 			WHERE
-				( mtex."siteid" IN (58) AND mtex."id" = 1213 )
+				( mtex."siteid" IN (58) AND mtex."id" = 1183 )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2539157867431641ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.1399517059326172ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -937,16 +1409,16 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (131) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.6299018859863281ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.3859996795654297ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
 			
 			WHERE
-				( mtex."siteid" IN (58) AND mtex."id" = 1214 )
+				( mtex."siteid" IN (58) AND mtex."id" = 1184 )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2229213714599609ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.1289844512939453ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -954,16 +1426,16 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (130) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.4851818084716797ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.5159378051757812ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
 			
 			WHERE
-				( mtex."siteid" IN (58) AND mtex."id" = 1215 )
+				( mtex."siteid" IN (58) AND mtex."id" = 1185 )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2460479736328125ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.247955322265625ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -971,16 +1443,16 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (133) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.4749298095703125ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.5440711975097656ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
 			
 			WHERE
-				( mtex."siteid" IN (58) AND mtex."id" = 1216 )
+				( mtex."siteid" IN (58) AND mtex."id" = 1186 )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.14495849609375ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2589225769042969ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -988,16 +1460,16 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (132) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2899169921875ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.5030632019042969ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
 			
 			WHERE
-				( mtex."siteid" IN (58) AND mtex."id" = 1217 )
+				( mtex."siteid" IN (58) AND mtex."id" = 1187 )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.1089572906494141ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2539157867431641ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -1005,15 +1477,15 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (134) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.3981590270996094ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.8258819580078125ms): SQL statement: 
 			SELECT mcatli."id", mcatli."parentid", mcatli."siteid", mcatli."typeid", mcatli."domain", mcatli."refid",
 				mcatli."start", mcatli."end", mcatli."pos", mcatli."mtime", mcatli."editor", mcatli."ctime"
 			FROM "mshop_catalog_list" AS mcatli
 			
-			WHERE ( mcatli."siteid" IN (58) AND ( mcatli."domain" = 'text' AND mcatli."refid" IN ('1213','1214','1215','1216','1217') ) )
+			WHERE ( mcatli."siteid" IN (58) AND ( mcatli."domain" = 'text' AND mcatli."refid" IN ('1183','1184','1185','1186','1187') ) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.09202957153320312ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2379417419433594ms): SQL statement: 
 			SELECT mcatlity."id", mcatlity."siteid", mcatlity."code", mcatlity."domain", mcatlity."label",
 				mcatlity."mtime", mcatlity."editor", mcatlity."ctime", mcatlity."status"
 			FROM "mshop_catalog_list_type" AS mcatlity
@@ -1021,15 +1493,15 @@
 			WHERE ( mcatlity."siteid" IN (58) AND mcatlity."id" IN (149) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2930164337158203ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.4642009735107422ms): SQL statement: 
 			SELECT mcatli."id", mcatli."parentid", mcatli."siteid", mcatli."typeid", mcatli."domain", mcatli."refid",
 				mcatli."start", mcatli."end", mcatli."pos", mcatli."mtime", mcatli."editor", mcatli."ctime"
 			FROM "mshop_catalog_list" AS mcatli
 			
-			WHERE ( mcatli."siteid" IN (58) AND mcatli."id" = 538 )
+			WHERE ( mcatli."siteid" IN (58) AND mcatli."id" = 510 )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.1058578491210938ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2369880676269531ms): SQL statement: 
 			SELECT mcatlity."id", mcatlity."siteid", mcatlity."code", mcatlity."domain", mcatlity."label",
 				mcatlity."mtime", mcatlity."editor", mcatlity."ctime", mcatlity."status"
 			FROM "mshop_catalog_list_type" AS mcatlity
@@ -1037,15 +1509,15 @@
 			WHERE ( mcatlity."siteid" IN (58) AND mcatlity."id" IN (149) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.4220008850097656ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.4990100860595703ms): SQL statement: 
 			SELECT mcatli."id", mcatli."parentid", mcatli."siteid", mcatli."typeid", mcatli."domain", mcatli."refid",
 				mcatli."start", mcatli."end", mcatli."pos", mcatli."mtime", mcatli."editor", mcatli."ctime"
 			FROM "mshop_catalog_list" AS mcatli
 			
-			WHERE ( mcatli."siteid" IN (58) AND mcatli."id" = 539 )
+			WHERE ( mcatli."siteid" IN (58) AND mcatli."id" = 511 )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.1409053802490234ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2570152282714844ms): SQL statement: 
 			SELECT mcatlity."id", mcatlity."siteid", mcatlity."code", mcatlity."domain", mcatlity."label",
 				mcatlity."mtime", mcatlity."editor", mcatlity."ctime", mcatlity."status"
 			FROM "mshop_catalog_list_type" AS mcatlity
@@ -1053,15 +1525,15 @@
 			WHERE ( mcatlity."siteid" IN (58) AND mcatlity."id" IN (149) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.3638267517089844ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.5621910095214844ms): SQL statement: 
 			SELECT mcatli."id", mcatli."parentid", mcatli."siteid", mcatli."typeid", mcatli."domain", mcatli."refid",
 				mcatli."start", mcatli."end", mcatli."pos", mcatli."mtime", mcatli."editor", mcatli."ctime"
 			FROM "mshop_catalog_list" AS mcatli
 			
-			WHERE ( mcatli."siteid" IN (58) AND mcatli."id" = 540 )
+			WHERE ( mcatli."siteid" IN (58) AND mcatli."id" = 512 )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.1568794250488281ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2501010894775391ms): SQL statement: 
 			SELECT mcatlity."id", mcatlity."siteid", mcatlity."code", mcatlity."domain", mcatlity."label",
 				mcatlity."mtime", mcatlity."editor", mcatlity."ctime", mcatlity."status"
 			FROM "mshop_catalog_list_type" AS mcatlity
@@ -1069,15 +1541,15 @@
 			WHERE ( mcatlity."siteid" IN (58) AND mcatlity."id" IN (149) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.4100799560546875ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.4870891571044922ms): SQL statement: 
 			SELECT mcatli."id", mcatli."parentid", mcatli."siteid", mcatli."typeid", mcatli."domain", mcatli."refid",
 				mcatli."start", mcatli."end", mcatli."pos", mcatli."mtime", mcatli."editor", mcatli."ctime"
 			FROM "mshop_catalog_list" AS mcatli
 			
-			WHERE ( mcatli."siteid" IN (58) AND mcatli."id" = 541 )
+			WHERE ( mcatli."siteid" IN (58) AND mcatli."id" = 513 )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2031326293945312ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2391338348388672ms): SQL statement: 
 			SELECT mcatlity."id", mcatlity."siteid", mcatlity."code", mcatlity."domain", mcatlity."label",
 				mcatlity."mtime", mcatlity."editor", mcatlity."ctime", mcatlity."status"
 			FROM "mshop_catalog_list_type" AS mcatlity
@@ -1085,15 +1557,15 @@
 			WHERE ( mcatlity."siteid" IN (58) AND mcatlity."id" IN (149) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.4711151123046875ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.4651546478271484ms): SQL statement: 
 			SELECT mcatli."id", mcatli."parentid", mcatli."siteid", mcatli."typeid", mcatli."domain", mcatli."refid",
 				mcatli."start", mcatli."end", mcatli."pos", mcatli."mtime", mcatli."editor", mcatli."ctime"
 			FROM "mshop_catalog_list" AS mcatli
 			
-			WHERE ( mcatli."siteid" IN (58) AND mcatli."id" = 542 )
+			WHERE ( mcatli."siteid" IN (58) AND mcatli."id" = 514 )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2241134643554688ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2470016479492188ms): SQL statement: 
 			SELECT mcatlity."id", mcatlity."siteid", mcatlity."code", mcatlity."domain", mcatlity."label",
 				mcatlity."mtime", mcatlity."editor", mcatlity."ctime", mcatlity."status"
 			FROM "mshop_catalog_list_type" AS mcatlity
@@ -1101,106 +1573,106 @@
 			WHERE ( mcatlity."siteid" IN (58) AND mcatlity."id" IN (149) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."id" = 58
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.5209445953369141ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.5121231079101562ms): SQL statement: 
 		SELECT majob."id", majob."siteid", majob."label", majob."method", majob."parameter",
 			majob."result", majob."status", majob."editor", majob."mtime", majob."ctime"
 		FROM "madmin_job" AS majob
-		WHERE ( majob."siteid" IN (58) AND majob."id" IN (300) )
+		WHERE ( majob."siteid" IN (58) AND majob."id" IN (240) )
 		
 		LIMIT 1 OFFSET 0
-	<message> 2013-11-19 17:59:09 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+	<message> 2013-11-20 11:58:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."id" = 58
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.4608631134033203ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.5199909210205078ms): SQL statement: 
 		SELECT COUNT( majob."id" ) AS "count"
 		FROM "madmin_job" AS majob
 		WHERE ( majob."siteid" IN (58) AND ( ( majob."label" LIKE '%file.txt%' ) AND 1 = 1 ) )
-	<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.5118846893310547ms): SQL statement: 
+	<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.5180835723876953ms): SQL statement: 
 		SELECT majob."id", majob."siteid", majob."label", majob."method", majob."parameter",
 			majob."result", majob."status", majob."editor", majob."mtime", majob."ctime"
 		FROM "madmin_job" AS majob
 		WHERE ( majob."siteid" IN (58) AND ( ( majob."label" LIKE '%file.txt%' ) AND 1 = 1 ) )
 		
 		LIMIT 100 OFFSET 0
-	<message> 2013-11-19 17:59:09 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+	<message> 2013-11-20 11:58:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."id" = 58
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."id" = 58
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.5021095275878906ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.5130767822265625ms): SQL statement: 
 		SELECT COUNT( majob."id" ) AS "count"
 		FROM "madmin_job" AS majob
 		WHERE ( majob."siteid" IN (58) AND ( ( majob."label" LIKE '%file.txt%' ) AND 1 = 1 ) )
-	<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.4749298095703125ms): SQL statement: 
+	<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.4999637603759766ms): SQL statement: 
 		SELECT majob."id", majob."siteid", majob."label", majob."method", majob."parameter",
 			majob."result", majob."status", majob."editor", majob."mtime", majob."ctime"
 		FROM "madmin_job" AS majob
 		WHERE ( majob."siteid" IN (58) AND ( ( majob."label" LIKE '%file.txt%' ) AND 1 = 1 ) )
 		
 		LIMIT 100 OFFSET 0
-	<message> 2013-11-19 17:59:09 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+	<message> 2013-11-20 11:58:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2770423889160156ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2629756927490234ms): SQL statement: 
 			SELECT COUNT(*) AS "count"
 			FROM (
 				SELECT DISTINCT mtexty."id"
@@ -1209,7 +1681,7 @@
 				WHERE ( mtexty."siteid" IN (58) AND mtexty."domain" = 'product' )
 				LIMIT 10000 OFFSET 0
 			) AS list
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.3209114074707031ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.1380443572998047ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -1217,7 +1689,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."domain" = 'product' )
 			
 			LIMIT 0 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.1730918884277344ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.1890659332275391ms): SQL statement: 
 			SELECT DISTINCT mpro."id", mpro."siteid", mpro."typeid", mpro."label",
 				mpro."status", mpro."start", mpro."end", mpro."code", mpro."suppliercode",
 				mpro."ctime", mpro."mtime", mpro."editor"
@@ -1226,7 +1698,7 @@
 			WHERE ( mpro."siteid" IN (58) AND mpro."code" NOT IN ('U:HIS','U:HISSUB01','U:HISSUB02') )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2391338348388672ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2548694610595703ms): SQL statement: 
 			SELECT mproty."id", mproty."siteid", mproty."code", mproty."domain", mproty."label",
 				mproty."status", mproty."mtime", mproty."editor", mproty."ctime"
 			FROM "mshop_product_type" AS mproty
@@ -1234,21 +1706,21 @@
 			WHERE ( mproty."siteid" IN (58) AND mproty."id" IN (40,42,41) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 Create export for product IDs: 139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159<message> 2013-11-19 17:59:09 7 MShop_Locale_Manager_Language_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:08 7 Create export for product IDs: 139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159<message> 2013-11-20 11:58:08 7 MShop_Locale_Manager_Language_Default::_getSearchResults: SQL statement: 
 			SELECT mlocla."id", mlocla."label", mlocla."siteid", mlocla."status",
 				mlocla."mtime", mlocla."editor", mlocla."ctime"
 			FROM "mshop_locale_language" AS mlocla
 			WHERE mlocla."id" IN ('de','en')
 			ORDER BY mlocla."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.3111362457275391ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.1928806304931641ms): SQL statement: 
 			SELECT DISTINCT mpro."id", mpro."siteid", mpro."typeid", mpro."label",
 				mpro."status", mpro."start", mpro."end", mpro."code", mpro."suppliercode",
 				mpro."ctime", mpro."mtime", mpro."editor"
@@ -1257,7 +1729,7 @@
 			WHERE ( mpro."siteid" IN (58) AND mproty."siteid" IN (58) AND mpro."id" IN (139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159) )
 			 ORDER BY mproty."code" ASC, mpro."code" ASC 
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2639293670654297ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.1180171966552734ms): SQL statement: 
 			SELECT mproty."id", mproty."siteid", mproty."code", mproty."domain", mproty."label",
 				mproty."status", mproty."mtime", mproty."editor", mproty."ctime"
 			FROM "mshop_product_type" AS mproty
@@ -1265,15 +1737,15 @@
 			WHERE ( mproty."siteid" IN (58) AND mproty."id" IN (40,42,41) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(2.045154571533203ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(1.711845397949219ms): SQL statement: 
 			SELECT mproli."id", mproli."parentid", mproli."siteid", mproli."typeid", mproli."domain",
 				mproli."refid", mproli."start", mproli."end", mproli."pos", mproli."mtime", mproli."editor", mproli."ctime"
 			FROM "mshop_product_list" AS mproli
 			
-			WHERE ( mproli."siteid" IN (58) AND ( mproli."parentid" IN (145,140,139,146,147,148,149,150,141,142,159,152,153,154,155,156,144,143,151,158,157) AND mproli."domain" IN ('text') AND ( ( mproli."start" <= '2013-11-19 17:59:00' OR mproli."start" IS NULL ) AND ( mproli."end" >= '2013-11-19 17:59:00' OR mproli."end" IS NULL ) ) ) )
+			WHERE ( mproli."siteid" IN (58) AND ( mproli."parentid" IN (145,140,139,146,147,148,149,150,141,142,159,152,153,154,155,156,144,143,151,158,157) AND mproli."domain" IN ('text') AND ( ( mproli."start" <= '2013-11-20 11:58:00' OR mproli."start" IS NULL ) AND ( mproli."end" >= '2013-11-20 11:58:00' OR mproli."end" IS NULL ) ) ) )
 			 
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2720355987548828ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2369880676269531ms): SQL statement: 
 			SELECT mprolity."id", mprolity."siteid", mprolity."code", mprolity."domain", mprolity."label",
 				mprolity."status", mprolity."mtime", mprolity."editor", mprolity."ctime"
 			FROM "mshop_product_list_type" AS mprolity
@@ -1281,7 +1753,7 @@
 			WHERE ( mprolity."siteid" IN (58) AND mprolity."id" IN (191,197,198,199,200,201,202,203,204,205,206,207,208,176) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(1.154899597167969ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(1.323938369750977ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
@@ -1290,7 +1762,7 @@
 				( mtex."siteid" IN (58) AND ( mtex."id" IN (846,847,848,849,850,851,852,853,854,855,856,857,858,859,860,861,862,863,842,843,844,845) AND ( mtex."status" > 0 AND ( mtex."langid" = 'de' OR mtex."langid" IS NULL ) ) ) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2188682556152344ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2629756927490234ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -1298,7 +1770,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (143,144,145,146,147,148) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2100467681884766ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2899169921875ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -1306,7 +1778,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."domain" = 'product' )
 			 ORDER BY mtexty."code" ASC 
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2119541168212891ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.1759529113769531ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -1314,7 +1786,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."domain" = 'product' )
 			 ORDER BY mtexty."code" ASC 
 			LIMIT 100 OFFSET 7
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.3149509429931641ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2660751342773438ms): SQL statement: 
 			SELECT DISTINCT mpro."id", mpro."siteid", mpro."typeid", mpro."label",
 				mpro."status", mpro."start", mpro."end", mpro."code", mpro."suppliercode",
 				mpro."ctime", mpro."mtime", mpro."editor"
@@ -1323,7 +1795,7 @@
 			WHERE ( mpro."siteid" IN (58) AND mproty."siteid" IN (58) AND mpro."id" IN (139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159) )
 			 ORDER BY mproty."code" ASC, mpro."code" ASC 
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.3011226654052734ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2470016479492188ms): SQL statement: 
 			SELECT mproty."id", mproty."siteid", mproty."code", mproty."domain", mproty."label",
 				mproty."status", mproty."mtime", mproty."editor", mproty."ctime"
 			FROM "mshop_product_type" AS mproty
@@ -1331,15 +1803,15 @@
 			WHERE ( mproty."siteid" IN (58) AND mproty."id" IN (40,42,41) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.26702880859375ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2849102020263672ms): SQL statement: 
 			SELECT mproli."id", mproli."parentid", mproli."siteid", mproli."typeid", mproli."domain",
 				mproli."refid", mproli."start", mproli."end", mproli."pos", mproli."mtime", mproli."editor", mproli."ctime"
 			FROM "mshop_product_list" AS mproli
 			
-			WHERE ( mproli."siteid" IN (58) AND ( mproli."parentid" IN (145,140,139,146,147,148,149,150,141,142,159,152,153,154,155,156,144,143,151,158,157) AND mproli."domain" IN ('text') AND ( ( mproli."start" <= '2013-11-19 17:59:00' OR mproli."start" IS NULL ) AND ( mproli."end" >= '2013-11-19 17:59:00' OR mproli."end" IS NULL ) ) ) )
+			WHERE ( mproli."siteid" IN (58) AND ( mproli."parentid" IN (145,140,139,146,147,148,149,150,141,142,159,152,153,154,155,156,144,143,151,158,157) AND mproli."domain" IN ('text') AND ( ( mproli."start" <= '2013-11-20 11:58:00' OR mproli."start" IS NULL ) AND ( mproli."end" >= '2013-11-20 11:58:00' OR mproli."end" IS NULL ) ) ) )
 			 
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.2460479736328125ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.1308917999267578ms): SQL statement: 
 			SELECT mprolity."id", mprolity."siteid", mprolity."code", mprolity."domain", mprolity."label",
 				mprolity."status", mprolity."mtime", mprolity."editor", mprolity."ctime"
 			FROM "mshop_product_list_type" AS mprolity
@@ -1347,7 +1819,7 @@
 			WHERE ( mprolity."siteid" IN (58) AND mprolity."id" IN (191,197,198,199,200,201,202,203,204,205,206,207,208,176) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.1790523529052734ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2868175506591797ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
@@ -1356,7 +1828,7 @@
 				( mtex."siteid" IN (58) AND ( mtex."id" IN (846,847,848,849,850,851,852,853,854,855,856,857,858,859,860,861,862,863,842,843,844,845) AND ( mtex."status" > 0 AND ( mtex."langid" = 'de' OR mtex."langid" IS NULL ) ) ) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:09 7 MShop_Common_Manager_Abstract::_searchItems(0.244140625ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2169609069824219ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -1364,7 +1836,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (143,144,145,146,147,148) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.2880096435546875ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2350807189941406ms): SQL statement: 
 			SELECT DISTINCT mpro."id", mpro."siteid", mpro."typeid", mpro."label",
 				mpro."status", mpro."start", mpro."end", mpro."code", mpro."suppliercode",
 				mpro."ctime", mpro."mtime", mpro."editor"
@@ -1373,7 +1845,7 @@
 			WHERE ( mpro."siteid" IN (58) AND mpro."code" = 'CNE' )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.2751350402832031ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2958774566650391ms): SQL statement: 
 			SELECT mproty."id", mproty."siteid", mproty."code", mproty."domain", mproty."label",
 				mproty."status", mproty."mtime", mproty."editor", mproty."ctime"
 			FROM "mshop_product_type" AS mproty
@@ -1381,21 +1853,21 @@
 			WHERE ( mproty."siteid" IN (58) AND mproty."id" IN (40) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 Create export file for product IDs: 139<message> 2013-11-19 17:59:10 7 MShop_Locale_Manager_Language_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:08 7 Create export file for product IDs: 139<message> 2013-11-20 11:58:08 7 MShop_Locale_Manager_Language_Default::_getSearchResults: SQL statement: 
 			SELECT mlocla."id", mlocla."label", mlocla."siteid", mlocla."status",
 				mlocla."mtime", mlocla."editor", mlocla."ctime"
 			FROM "mshop_locale_language" AS mlocla
 			WHERE mlocla."id" IN ('de')
 			ORDER BY mlocla."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.2279281616210938ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2448558807373047ms): SQL statement: 
 			SELECT DISTINCT mpro."id", mpro."siteid", mpro."typeid", mpro."label",
 				mpro."status", mpro."start", mpro."end", mpro."code", mpro."suppliercode",
 				mpro."ctime", mpro."mtime", mpro."editor"
@@ -1404,7 +1876,7 @@
 			WHERE ( mpro."siteid" IN (58) AND mproty."siteid" IN (58) AND mpro."id" IN (139) )
 			 ORDER BY mproty."code" ASC, mpro."code" ASC 
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.1780986785888672ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2629756927490234ms): SQL statement: 
 			SELECT mproty."id", mproty."siteid", mproty."code", mproty."domain", mproty."label",
 				mproty."status", mproty."mtime", mproty."editor", mproty."ctime"
 			FROM "mshop_product_type" AS mproty
@@ -1412,15 +1884,15 @@
 			WHERE ( mproty."siteid" IN (58) AND mproty."id" IN (40) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.5619525909423828ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.9222030639648438ms): SQL statement: 
 			SELECT mproli."id", mproli."parentid", mproli."siteid", mproli."typeid", mproli."domain",
 				mproli."refid", mproli."start", mproli."end", mproli."pos", mproli."mtime", mproli."editor", mproli."ctime"
 			FROM "mshop_product_list" AS mproli
 			
-			WHERE ( mproli."siteid" IN (58) AND ( mproli."parentid" IN (139) AND mproli."domain" IN ('text') AND ( ( mproli."start" <= '2013-11-19 17:59:00' OR mproli."start" IS NULL ) AND ( mproli."end" >= '2013-11-19 17:59:00' OR mproli."end" IS NULL ) ) ) )
+			WHERE ( mproli."siteid" IN (58) AND ( mproli."parentid" IN (139) AND mproli."domain" IN ('text') AND ( ( mproli."start" <= '2013-11-20 11:58:00' OR mproli."start" IS NULL ) AND ( mproli."end" >= '2013-11-20 11:58:00' OR mproli."end" IS NULL ) ) ) )
 			 
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.1149177551269531ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.1308917999267578ms): SQL statement: 
 			SELECT mprolity."id", mprolity."siteid", mprolity."code", mprolity."domain", mprolity."label",
 				mprolity."status", mprolity."mtime", mprolity."editor", mprolity."ctime"
 			FROM "mshop_product_list_type" AS mprolity
@@ -1428,7 +1900,7 @@
 			WHERE ( mprolity."siteid" IN (58) AND mprolity."id" IN (191) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.6258487701416016ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.8249282836914062ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
@@ -1437,7 +1909,7 @@
 				( mtex."siteid" IN (58) AND ( mtex."id" IN (846,847,848,849,850,851) AND ( mtex."status" > 0 AND ( mtex."langid" = 'de' OR mtex."langid" IS NULL ) ) ) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.1900196075439453ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2439022064208984ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -1445,7 +1917,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (143,144,145,146,147,148) )
 			
 			LIMIT 2147483647 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.2129077911376953ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2081394195556641ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -1453,7 +1925,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."domain" = 'product' )
 			 ORDER BY mtexty."code" ASC 
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.2779960632324219ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.1070499420166016ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -1461,14 +1933,14 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."domain" = 'product' )
 			 ORDER BY mtexty."code" ASC 
 			LIMIT 100 OFFSET 7
-		<message> 2013-11-19 17:59:10 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.2200603485107422ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2949237823486328ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -1476,7 +1948,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."domain" = 'product' )
 			 ORDER BY mtexty."code" ASC 
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.1480579376220703ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.1180171966552734ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -1484,7 +1956,7 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."domain" = 'product' )
 			 ORDER BY mtexty."code" ASC 
 			LIMIT 100 OFFSET 7
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.2481937408447266ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2789497375488281ms): SQL statement: 
 			SELECT DISTINCT mpro."id", mpro."siteid", mpro."typeid", mpro."label",
 				mpro."status", mpro."start", mpro."end", mpro."code", mpro."suppliercode",
 				mpro."ctime", mpro."mtime", mpro."editor"
@@ -1493,7 +1965,7 @@
 			WHERE ( mpro."siteid" IN (58) AND mpro."code" IN ('ABCD') )
 			 ORDER BY mpro."id" ASC 
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.2908706665039062ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2751350402832031ms): SQL statement: 
 			SELECT mproty."id", mproty."siteid", mproty."code", mproty."domain", mproty."label",
 				mproty."status", mproty."mtime", mproty."editor", mproty."ctime"
 			FROM "mshop_product_type" AS mproty
@@ -1501,7 +1973,7 @@
 			WHERE ( mproty."siteid" IN (58) AND mproty."id" IN (40) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.1339912414550781ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.1418590545654297ms): SQL statement: 
 			SELECT DISTINCT mpro."id", mpro."siteid", mpro."typeid", mpro."label",
 				mpro."status", mpro."start", mpro."end", mpro."code", mpro."suppliercode",
 				mpro."ctime", mpro."mtime", mpro."editor"
@@ -1510,7 +1982,7 @@
 			WHERE ( mpro."siteid" IN (58) AND mpro."code" IN ('ABCD') )
 			 ORDER BY mpro."id" ASC 
 			LIMIT 100 OFFSET 1
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.7860660552978516ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.6580352783203125ms): SQL statement: 
 			SELECT mproli."id", mproli."parentid", mproli."siteid", mproli."typeid", mproli."domain",
 				mproli."refid", mproli."start", mproli."end", mproli."pos", mproli."mtime", mproli."editor", mproli."ctime"
 			FROM "mshop_product_list" AS mproli
@@ -1518,7 +1990,7 @@
 			WHERE ( mproli."siteid" IN (58) AND ( mproli."parentid" IN (145) AND mproli."domain" = 'text' ) )
 			  ORDER BY mproli."id" ASC 
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.1289844512939453ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.1649856567382812ms): SQL statement: 
 			SELECT mprolity."id", mprolity."siteid", mprolity."code", mprolity."domain", mprolity."label",
 				mprolity."status", mprolity."mtime", mprolity."editor", mprolity."ctime"
 			FROM "mshop_product_list_type" AS mprolity
@@ -1526,7 +1998,7 @@
 			WHERE ( mprolity."siteid" IN (58) AND mprolity."id" IN (176) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.675201416015625ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.6248950958251953ms): SQL statement: 
 			SELECT mproli."id", mproli."parentid", mproli."siteid", mproli."typeid", mproli."domain",
 				mproli."refid", mproli."start", mproli."end", mproli."pos", mproli."mtime", mproli."editor", mproli."ctime"
 			FROM "mshop_product_list" AS mproli
@@ -1534,7 +2006,7 @@
 			WHERE ( mproli."siteid" IN (58) AND ( mproli."parentid" IN (145) AND mproli."domain" = 'text' ) )
 			  ORDER BY mproli."id" ASC 
 			LIMIT 100 OFFSET 1
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.2591609954833984ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2388954162597656ms): SQL statement: 
 			SELECT mprolity."id", mprolity."siteid", mprolity."code", mprolity."domain", mprolity."label",
 				mprolity."status", mprolity."mtime", mprolity."editor", mprolity."ctime"
 			FROM "mshop_product_list_type" AS mprolity
@@ -1542,7 +2014,7 @@
 			WHERE ( mprolity."siteid" IN (58) AND mprolity."domain" = 'text' )
 			 ORDER BY mprolity."code" ASC 
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.1990795135498047ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.1380443572998047ms): SQL statement: 
 			SELECT mprolity."id", mprolity."siteid", mprolity."code", mprolity."domain", mprolity."label",
 				mprolity."status", mprolity."mtime", mprolity."editor", mprolity."ctime"
 			FROM "mshop_product_list_type" AS mprolity
@@ -1550,7 +2022,7 @@
 			WHERE ( mprolity."siteid" IN (58) AND mprolity."domain" = 'text' )
 			 ORDER BY mprolity."code" ASC 
 			LIMIT 100 OFFSET 19
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.9098052978515625ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.9119510650634766ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
@@ -1559,7 +2031,7 @@
 				( mtex."siteid" IN (58) AND ( mtex."domain" = 'product' AND mtex."langid" = 'en' AND mtex."status" = 1 AND mtex."content" LIKE '%ABCD:%' ) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.2608299255371094ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2510547637939453ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -1567,16 +2039,16 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (145,148,147,146,143,144) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.6139278411865234ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.331878662109375ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
 			
 			WHERE
-				( mtex."siteid" IN (58) AND mtex."id" = 1218 )
+				( mtex."siteid" IN (58) AND mtex."id" = 1188 )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.2169609069824219ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2191066741943359ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -1584,16 +2056,16 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (145) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.6029605865478516ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.5860328674316406ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
 			
 			WHERE
-				( mtex."siteid" IN (58) AND mtex."id" = 1219 )
+				( mtex."siteid" IN (58) AND mtex."id" = 1189 )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.2031326293945312ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2930164337158203ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -1601,16 +2073,16 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (148) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.5459785461425781ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.4780292510986328ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
 			
 			WHERE
-				( mtex."siteid" IN (58) AND mtex."id" = 1220 )
+				( mtex."siteid" IN (58) AND mtex."id" = 1190 )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.2110004425048828ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.1149177551269531ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -1618,16 +2090,16 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (147) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.5850791931152344ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.5819797515869141ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
 			
 			WHERE
-				( mtex."siteid" IN (58) AND mtex."id" = 1221 )
+				( mtex."siteid" IN (58) AND mtex."id" = 1191 )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.2579689025878906ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2880096435546875ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -1635,16 +2107,16 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (146) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.5819797515869141ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.5218982696533203ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
 			
 			WHERE
-				( mtex."siteid" IN (58) AND mtex."id" = 1222 )
+				( mtex."siteid" IN (58) AND mtex."id" = 1192 )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.2031326293945312ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2419948577880859ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -1652,16 +2124,16 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (143) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.5550384521484375ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.5869865417480469ms): SQL statement: 
 			SELECT DISTINCT mtex."id", mtex."siteid", mtex."langid", mtex."typeid", mtex."domain", mtex."label",
 				mtex."content", mtex."status", mtex."mtime", mtex."editor", mtex."ctime"
 			FROM "mshop_text" AS mtex
 			
 			WHERE
-				( mtex."siteid" IN (58) AND mtex."id" = 1223 )
+				( mtex."siteid" IN (58) AND mtex."id" = 1193 )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.2379417419433594ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2589225769042969ms): SQL statement: 
 			SELECT mtexty."id", mtexty."siteid", mtexty."code", mtexty."domain", mtexty."label",
 				mtexty."status", mtexty."mtime", mtexty."editor", mtexty."ctime"
 			FROM "mshop_text_type" mtexty
@@ -1669,15 +2141,15 @@
 			WHERE ( mtexty."siteid" IN (58) AND mtexty."id" IN (144) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.8728504180908203ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.8361339569091797ms): SQL statement: 
 			SELECT mproli."id", mproli."parentid", mproli."siteid", mproli."typeid", mproli."domain",
 				mproli."refid", mproli."start", mproli."end", mproli."pos", mproli."mtime", mproli."editor", mproli."ctime"
 			FROM "mshop_product_list" AS mproli
 			
-			WHERE ( mproli."siteid" IN (58) AND ( mproli."domain" = 'text' AND mproli."refid" IN ('1218','1219','1220','1221','1222','1223') ) )
+			WHERE ( mproli."siteid" IN (58) AND ( mproli."domain" = 'text' AND mproli."refid" IN ('1188','1189','1190','1191','1192','1193') ) )
 			 
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.2360343933105469ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2620220184326172ms): SQL statement: 
 			SELECT mprolity."id", mprolity."siteid", mprolity."code", mprolity."domain", mprolity."label",
 				mprolity."status", mprolity."mtime", mprolity."editor", mprolity."ctime"
 			FROM "mshop_product_list_type" AS mprolity
@@ -1685,7 +2157,87 @@
 			WHERE ( mprolity."siteid" IN (58) AND mprolity."id" IN (176) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.5049705505371094ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.5850791931152344ms): SQL statement: 
+			SELECT mproli."id", mproli."parentid", mproli."siteid", mproli."typeid", mproli."domain",
+				mproli."refid", mproli."start", mproli."end", mproli."pos", mproli."mtime", mproli."editor", mproli."ctime"
+			FROM "mshop_product_list" AS mproli
+			
+			WHERE ( mproli."siteid" IN (58) AND mproli."id" = 956 )
+			 
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(3.083944320678711ms): SQL statement: 
+			SELECT mprolity."id", mprolity."siteid", mprolity."code", mprolity."domain", mprolity."label",
+				mprolity."status", mprolity."mtime", mprolity."editor", mprolity."ctime"
+			FROM "mshop_product_list_type" AS mprolity
+			
+			WHERE ( mprolity."siteid" IN (58) AND mprolity."id" IN (176) )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.5679130554199219ms): SQL statement: 
+			SELECT mproli."id", mproli."parentid", mproli."siteid", mproli."typeid", mproli."domain",
+				mproli."refid", mproli."start", mproli."end", mproli."pos", mproli."mtime", mproli."editor", mproli."ctime"
+			FROM "mshop_product_list" AS mproli
+			
+			WHERE ( mproli."siteid" IN (58) AND mproli."id" = 957 )
+			 
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2200603485107422ms): SQL statement: 
+			SELECT mprolity."id", mprolity."siteid", mprolity."code", mprolity."domain", mprolity."label",
+				mprolity."status", mprolity."mtime", mprolity."editor", mprolity."ctime"
+			FROM "mshop_product_list_type" AS mprolity
+			
+			WHERE ( mprolity."siteid" IN (58) AND mprolity."id" IN (176) )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.5409717559814453ms): SQL statement: 
+			SELECT mproli."id", mproli."parentid", mproli."siteid", mproli."typeid", mproli."domain",
+				mproli."refid", mproli."start", mproli."end", mproli."pos", mproli."mtime", mproli."editor", mproli."ctime"
+			FROM "mshop_product_list" AS mproli
+			
+			WHERE ( mproli."siteid" IN (58) AND mproli."id" = 958 )
+			 
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2191066741943359ms): SQL statement: 
+			SELECT mprolity."id", mprolity."siteid", mprolity."code", mprolity."domain", mprolity."label",
+				mprolity."status", mprolity."mtime", mprolity."editor", mprolity."ctime"
+			FROM "mshop_product_list_type" AS mprolity
+			
+			WHERE ( mprolity."siteid" IN (58) AND mprolity."id" IN (176) )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.5829334259033203ms): SQL statement: 
+			SELECT mproli."id", mproli."parentid", mproli."siteid", mproli."typeid", mproli."domain",
+				mproli."refid", mproli."start", mproli."end", mproli."pos", mproli."mtime", mproli."editor", mproli."ctime"
+			FROM "mshop_product_list" AS mproli
+			
+			WHERE ( mproli."siteid" IN (58) AND mproli."id" = 959 )
+			 
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2429485321044922ms): SQL statement: 
+			SELECT mprolity."id", mprolity."siteid", mprolity."code", mprolity."domain", mprolity."label",
+				mprolity."status", mprolity."mtime", mprolity."editor", mprolity."ctime"
+			FROM "mshop_product_list_type" AS mprolity
+			
+			WHERE ( mprolity."siteid" IN (58) AND mprolity."id" IN (176) )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(1.962184906005859ms): SQL statement: 
+			SELECT mproli."id", mproli."parentid", mproli."siteid", mproli."typeid", mproli."domain",
+				mproli."refid", mproli."start", mproli."end", mproli."pos", mproli."mtime", mproli."editor", mproli."ctime"
+			FROM "mshop_product_list" AS mproli
+			
+			WHERE ( mproli."siteid" IN (58) AND mproli."id" = 960 )
+			 
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2489089965820312ms): SQL statement: 
+			SELECT mprolity."id", mprolity."siteid", mprolity."code", mprolity."domain", mprolity."label",
+				mprolity."status", mprolity."mtime", mprolity."editor", mprolity."ctime"
+			FROM "mshop_product_list_type" AS mprolity
+			
+			WHERE ( mprolity."siteid" IN (58) AND mprolity."id" IN (176) )
+			
+			LIMIT 100 OFFSET 0
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.5288124084472656ms): SQL statement: 
 			SELECT mproli."id", mproli."parentid", mproli."siteid", mproli."typeid", mproli."domain",
 				mproli."refid", mproli."start", mproli."end", mproli."pos", mproli."mtime", mproli."editor", mproli."ctime"
 			FROM "mshop_product_list" AS mproli
@@ -1693,7 +2245,7 @@
 			WHERE ( mproli."siteid" IN (58) AND mproli."id" = 961 )
 			 
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.3070831298828125ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.2191066741943359ms): SQL statement: 
 			SELECT mprolity."id", mprolity."siteid", mprolity."code", mprolity."domain", mprolity."label",
 				mprolity."status", mprolity."mtime", mprolity."editor", mprolity."ctime"
 			FROM "mshop_product_list_type" AS mprolity
@@ -1701,179 +2253,99 @@
 			WHERE ( mprolity."siteid" IN (58) AND mprolity."id" IN (176) )
 			
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.5059242248535156ms): SQL statement: 
-			SELECT mproli."id", mproli."parentid", mproli."siteid", mproli."typeid", mproli."domain",
-				mproli."refid", mproli."start", mproli."end", mproli."pos", mproli."mtime", mproli."editor", mproli."ctime"
-			FROM "mshop_product_list" AS mproli
-			
-			WHERE ( mproli."siteid" IN (58) AND mproli."id" = 962 )
-			 
-			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.2379417419433594ms): SQL statement: 
-			SELECT mprolity."id", mprolity."siteid", mprolity."code", mprolity."domain", mprolity."label",
-				mprolity."status", mprolity."mtime", mprolity."editor", mprolity."ctime"
-			FROM "mshop_product_list_type" AS mprolity
-			
-			WHERE ( mprolity."siteid" IN (58) AND mprolity."id" IN (176) )
-			
-			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.4739761352539062ms): SQL statement: 
-			SELECT mproli."id", mproli."parentid", mproli."siteid", mproli."typeid", mproli."domain",
-				mproli."refid", mproli."start", mproli."end", mproli."pos", mproli."mtime", mproli."editor", mproli."ctime"
-			FROM "mshop_product_list" AS mproli
-			
-			WHERE ( mproli."siteid" IN (58) AND mproli."id" = 963 )
-			 
-			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.1988410949707031ms): SQL statement: 
-			SELECT mprolity."id", mprolity."siteid", mprolity."code", mprolity."domain", mprolity."label",
-				mprolity."status", mprolity."mtime", mprolity."editor", mprolity."ctime"
-			FROM "mshop_product_list_type" AS mprolity
-			
-			WHERE ( mprolity."siteid" IN (58) AND mprolity."id" IN (176) )
-			
-			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.4978179931640625ms): SQL statement: 
-			SELECT mproli."id", mproli."parentid", mproli."siteid", mproli."typeid", mproli."domain",
-				mproli."refid", mproli."start", mproli."end", mproli."pos", mproli."mtime", mproli."editor", mproli."ctime"
-			FROM "mshop_product_list" AS mproli
-			
-			WHERE ( mproli."siteid" IN (58) AND mproli."id" = 964 )
-			 
-			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.2350807189941406ms): SQL statement: 
-			SELECT mprolity."id", mprolity."siteid", mprolity."code", mprolity."domain", mprolity."label",
-				mprolity."status", mprolity."mtime", mprolity."editor", mprolity."ctime"
-			FROM "mshop_product_list_type" AS mprolity
-			
-			WHERE ( mprolity."siteid" IN (58) AND mprolity."id" IN (176) )
-			
-			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.4930496215820312ms): SQL statement: 
-			SELECT mproli."id", mproli."parentid", mproli."siteid", mproli."typeid", mproli."domain",
-				mproli."refid", mproli."start", mproli."end", mproli."pos", mproli."mtime", mproli."editor", mproli."ctime"
-			FROM "mshop_product_list" AS mproli
-			
-			WHERE ( mproli."siteid" IN (58) AND mproli."id" = 965 )
-			 
-			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.2369880676269531ms): SQL statement: 
-			SELECT mprolity."id", mprolity."siteid", mprolity."code", mprolity."domain", mprolity."label",
-				mprolity."status", mprolity."mtime", mprolity."editor", mprolity."ctime"
-			FROM "mshop_product_list_type" AS mprolity
-			
-			WHERE ( mprolity."siteid" IN (58) AND mprolity."id" IN (176) )
-			
-			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.4830360412597656ms): SQL statement: 
-			SELECT mproli."id", mproli."parentid", mproli."siteid", mproli."typeid", mproli."domain",
-				mproli."refid", mproli."start", mproli."end", mproli."pos", mproli."mtime", mproli."editor", mproli."ctime"
-			FROM "mshop_product_list" AS mproli
-			
-			WHERE ( mproli."siteid" IN (58) AND mproli."id" = 966 )
-			 
-			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.2369880676269531ms): SQL statement: 
-			SELECT mprolity."id", mprolity."siteid", mprolity."code", mprolity."domain", mprolity."label",
-				mprolity."status", mprolity."mtime", mprolity."editor", mprolity."ctime"
-			FROM "mshop_product_list_type" AS mprolity
-			
-			WHERE ( mprolity."siteid" IN (58) AND mprolity."id" IN (176) )
-			
-			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."id" = 58
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.5159378051757812ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.5249977111816406ms): SQL statement: 
 		SELECT majob."id", majob."siteid", majob."label", majob."method", majob."parameter",
 			majob."result", majob."status", majob."editor", majob."mtime", majob."ctime"
 		FROM "madmin_job" AS majob
-		WHERE ( majob."siteid" IN (58) AND majob."id" IN (301) )
+		WHERE ( majob."siteid" IN (58) AND majob."id" IN (241) )
 		
 		LIMIT 1 OFFSET 0
-	<message> 2013-11-19 17:59:10 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+	<message> 2013-11-20 11:58:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."id" = 58
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.4909038543701172ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.4799365997314453ms): SQL statement: 
 		SELECT COUNT( majob."id" ) AS "count"
 		FROM "madmin_job" AS majob
 		WHERE ( majob."siteid" IN (58) AND ( ( majob."label" LIKE '%file.txt%' ) AND 1 = 1 ) )
-	<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.45013427734375ms): SQL statement: 
+	<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.3120899200439453ms): SQL statement: 
 		SELECT majob."id", majob."siteid", majob."label", majob."method", majob."parameter",
 			majob."result", majob."status", majob."editor", majob."mtime", majob."ctime"
 		FROM "madmin_job" AS majob
 		WHERE ( majob."siteid" IN (58) AND ( ( majob."label" LIKE '%file.txt%' ) AND 1 = 1 ) )
 		
 		LIMIT 100 OFFSET 0
-	<message> 2013-11-19 17:59:10 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+	<message> 2013-11-20 11:58:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."id" = 58
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."code" = 'unittest'
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi
 			WHERE mlocsi."id" = 58
 			ORDER BY mlocsi."id" ASC
 			LIMIT 100 OFFSET 0
-		<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.4661083221435547ms): SQL statement: 
+		<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.5190372467041016ms): SQL statement: 
 		SELECT COUNT( majob."id" ) AS "count"
 		FROM "madmin_job" AS majob
 		WHERE ( majob."siteid" IN (58) AND ( ( majob."label" LIKE '%file.txt%' ) AND 1 = 1 ) )
-	<message> 2013-11-19 17:59:10 7 MShop_Common_Manager_Abstract::_searchItems(0.4289150238037109ms): SQL statement: 
+	<message> 2013-11-20 11:58:08 7 MShop_Common_Manager_Abstract::_searchItems(0.3190040588378906ms): SQL statement: 
 		SELECT majob."id", majob."siteid", majob."label", majob."method", majob."parameter",
 			majob."result", majob."status", majob."editor", majob."mtime", majob."ctime"
 		FROM "madmin_job" AS majob
 		WHERE ( majob."siteid" IN (58) AND ( ( majob."label" LIKE '%file.txt%' ) AND 1 = 1 ) )
 		
 		LIMIT 100 OFFSET 0
-	<message> 2013-11-19 17:59:10 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
+	<message> 2013-11-20 11:58:08 7 MShop_Locale_Manager_Site_Default::_getSearchResults: SQL statement: 
 			SELECT mlocsi."id", mlocsi."parentid", mlocsi."code", mlocsi."label", mlocsi."config", mlocsi."status",
 				mlocsi."editor", mlocsi."mtime", mlocsi."ctime"
 			FROM "mshop_locale_site" AS mlocsi

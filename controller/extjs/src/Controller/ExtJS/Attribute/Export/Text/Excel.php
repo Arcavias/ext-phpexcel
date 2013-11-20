@@ -147,8 +147,6 @@ class Controller_ExtJS_Attribute_Export_Text_Excel
 			throw $e;
 		}
 
-// 		$this->_removeTempFiles( $tmpfolder );
-
 		return array(
 			'file' => '<a href="'.$this->_filepath.'">Download</a>',
 		);
@@ -243,7 +241,7 @@ class Controller_ExtJS_Attribute_Export_Text_Excel
 			$search->setConditions( $search->compare( '==', 'attribute.id', $ids ) );
 		}
 
-		$sort = array( $search->sort( '+', 'attribute.type.code' ), $search->sort( '+', 'attribute.position' ) );
+		$sort = array( $search->sort( '+', 'attribute.type.code' ), $search->sort( '+', 'attribute.position' ), $search->sort( '-', 'attribute.id' ) );
 		$search->setSortations( $sort );
 
 		$start = 0;
