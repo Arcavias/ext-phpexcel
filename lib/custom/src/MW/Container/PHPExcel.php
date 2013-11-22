@@ -14,10 +14,11 @@
  * @package MW
  * @subpackage Container
  */
-class MW_Container_PHPExcel implements MW_Container_Interface
+class MW_Container_PHPExcel
+	extends MW_Container_Abstract
+	implements MW_Container_Interface
 {
 	private $_container;
-	private $_options;
 	private $_format;
 
 
@@ -40,12 +41,38 @@ class MW_Container_PHPExcel implements MW_Container_Interface
 		{
 			$this->_container = new PHPExcel();
 			$this->_container->removeSheetByIndex( 0 );
+
+			switch( $format )
+			{
+				case 'Excel5':
+					$resourcepath .= '.xls';
+					break;
+				case 'Excel2003XML':
+					$resourcepath .= '.xml';
+					break;
+				case 'Excel2007':
+					$resourcepath .= '.xlsx';
+					break;
+				case 'OOCalc':
+					$resourcepath .= '.ods';
+					break;
+				case 'SYLK':
+					$resourcepath .= '.slk';
+					break;
+				case 'Gnumeric':
+					$resourcepath .= '.gnumeric';
+					break;
+				case 'CSV':
+					$resourcepath .= '.csv';
+					break;
+			}
 		}
+
+		parent::__construct( $resourcepath, $options );
 
 		$this->_iterator = $this->_container->getWorksheetIterator();
 
 		$this->_resourcepath = $resourcepath;
-		$this->_options = $options;
 		$this->_format = $format;
 	}
 
@@ -61,7 +88,7 @@ class MW_Container_PHPExcel implements MW_Container_Interface
 		$sheet = $this->_container->createSheet();
 		$sheet->setTitle( $name );
 
-		return new MW_Container_Content_PHPExcel( $sheet, $name, $this->_options );
+		return new MW_Container_Content_PHPExcel( $sheet, $name, $this->_getOptions() );
 	}
 
 
@@ -95,7 +122,7 @@ class MW_Container_PHPExcel implements MW_Container_Interface
 	{
 		$sheet = $this->_iterator->current();
 
-		return new MW_Container_Content_PHPExcel( $sheet, $sheet->getTitle(), $this->_options );
+		return new MW_Container_Content_PHPExcel( $sheet, $sheet->getTitle(), $this->_getOptions() );
 	}
 
 
