@@ -38,15 +38,19 @@ class Controller_ExtJS_Product_Import_Text_ExcelTest extends MW_Unittest_Testcas
 	protected function setUp()
 	{
 		$this->_context = TestHelper::getContext();
+		$this->_context->getConfig()->set( 'controller/extjs/product/export/text/default/container/format', 'PHPExcel' );
+		$this->_context->getConfig()->set( 'controller/extjs/product/export/text/default/content/format', 'Excel5' );
+		$this->_context->getConfig()->set( 'controller/extjs/product/import/text/default/container/format', 'PHPExcel' );
+		$this->_context->getConfig()->set( 'controller/extjs/product/import/text/default/content/format', 'Excel5' );
 
-		$this->_testdir = $this->_context->getConfig()->get( 'controller/extjs/product/import/text/excel/uploaddir', './tmp' );
+		$this->_testdir = $this->_context->getConfig()->get( 'controller/extjs/product/import/text/default/uploaddir', './tmp' );
 		$this->_testfile = $this->_testdir . DIRECTORY_SEPARATOR . 'file.txt';
 
 		if( !is_dir( $this->_testdir ) && mkdir( $this->_testdir, 0775, true ) === false ) {
 			throw new Exception( sprintf( 'Unable to create missing upload directory "%1$s"', $this->_testdir ) );
 		}
 
-		$this->_object = new Controller_ExtJS_Product_Import_Text_Excel( $this->_context );
+		$this->_object = new Controller_ExtJS_Product_Import_Text_Default( $this->_context );
 	}
 
 
@@ -71,8 +75,10 @@ class Controller_ExtJS_Product_Import_Text_ExcelTest extends MW_Unittest_Testcas
 	}
 
 
-	public function testImportFile()
+	public function testImportFromXLSFile()
 	{
+		$this->_object = new Controller_ExtJS_Product_Import_Text_Default( $this->_context );
+
 		$filename = 'product-import-test.xlsx';
 
 		$phpExcel = new PHPExcel();
@@ -113,13 +119,6 @@ class Controller_ExtJS_Product_Import_Text_ExcelTest extends MW_Unittest_Testcas
 		$sheet->setCellValueByColumnAndRow( 4, 5, 'metatitle' );
 		$sheet->setCellValueByColumnAndRow( 4, 6, 'name' );
 		$sheet->setCellValueByColumnAndRow( 4, 7, 'short' );
-
-// 		$sheet->setCellValueByColumnAndRow( 5, 2, '-' );
-// 		$sheet->setCellValueByColumnAndRow( 5, 3, '-' );
-// 		$sheet->setCellValueByColumnAndRow( 5, 4, '-' );
-// 		$sheet->setCellValueByColumnAndRow( 5, 5, '-' );
-// 		$sheet->setCellValueByColumnAndRow( 5, 6, '-' );
-// 		$sheet->setCellValueByColumnAndRow( 5, 7, '-' );
 
 		$sheet->setCellValueByColumnAndRow( 6, 2, 'ABCD: long' );
 		$sheet->setCellValueByColumnAndRow( 6, 3, 'ABCD: meta desc' );

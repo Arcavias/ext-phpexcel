@@ -36,7 +36,10 @@ class Controller_ExtJS_Catalog_Export_Text_ExcelTest extends MW_Unittest_Testcas
 	protected function setUp()
 	{
 		$this->_context = TestHelper::getContext();
-		$this->_object = new Controller_ExtJS_Catalog_Export_Text_Excel( $this->_context );
+		$this->_context->getConfig()->set( 'controller/extjs/catalog/export/text/default/container/format', 'PHPExcel' );
+		$this->_context->getConfig()->set( 'controller/extjs/catalog/export/text/default/content/format', 'Excel5' );
+
+		$this->_object = new Controller_ExtJS_Catalog_Export_Text_Default( $this->_context );
 	}
 
 
@@ -52,70 +55,10 @@ class Controller_ExtJS_Catalog_Export_Text_ExcelTest extends MW_Unittest_Testcas
 	}
 
 
-	public function testcreateHttpOutput()
+	public function testExportXLSFile()
 	{
-		$manager = MShop_Catalog_Manager_Factory::createManager( $this->_context );
-		$node = $manager->getTree( null, array(), MW_Tree_Manager_Abstract::LEVEL_ONE );
+		$this->_object = new Controller_ExtJS_Catalog_Export_Text_Default( $this->_context );
 
-		$search = $manager->createSearch();
-		$search->setConditions( $search->compare( '==', 'catalog.label', array( 'Root', 'Tee' ) ) );
-
-		$ids = array();
-		foreach ( $manager->searchItems( $search ) as $item ) {
-			$ids[$item->getLabel()] = $item->getId();
-		}
-
-
-		$params = new stdClass();
-		$params->lang = array( 'de', 'fr' );
-		$params->items = array( $node->getId() );
-		$params->site = 'unittest';
-
-		if( ob_start() === false ) {
-			throw new Exception( 'Unable to start output buffering' );
-		}
-
-		$this->_object->createHttpOutput( $params );
-
-		$content = ob_get_contents();
-		ob_end_clean();
-
-
-		$filename = 'catalog-export.xls';
-
-		if( file_put_contents( $filename, $content ) === false ) {
-			throw new Exception( 'Unable to write export file' );
-		}
-
-		$phpExcel = PHPExcel_IOFactory::load($filename);
-
-		if( unlink( $filename ) === false ) {
-			throw new Exception( 'Unable to remove export file' );
-		}
-
-		$phpExcel->setActiveSheetIndex( 0 );
-		$sheet = $phpExcel->getActiveSheet();
-
-		$this->assertEquals( 'Language ID', $sheet->getCell( 'A1' )->getValue() );
-		$this->assertEquals( 'Text', $sheet->getCell( 'G1' )->getValue() );
-
-		$this->assertEquals( 'de', $sheet->getCell( 'A4' )->getValue() );
-		$this->assertEquals( 'Root', $sheet->getCell( 'B4' )->getValue() );
-		$this->assertEquals( $ids['Root'], $sheet->getCell( 'C4' )->getValue() );
-		$this->assertEquals( 'default', $sheet->getCell( 'D4' )->getValue() );
-		$this->assertEquals( 'name', $sheet->getCell( 'E4' )->getValue() );
-		$this->assertEquals( '', $sheet->getCell( 'G4' )->getValue() );
-
-		$this->assertEquals( 'de', $sheet->getCell( 'A21' )->getValue() );
-		$this->assertEquals( 'Tee', $sheet->getCell( 'B21' )->getValue() );
-		$this->assertEquals( $ids['Tee'], $sheet->getCell( 'C21' )->getValue() );
-		$this->assertEquals( 'unittype8', $sheet->getCell( 'D21' )->getValue() );
-		$this->assertEquals( 'long', $sheet->getCell( 'E21' )->getValue() );
-		$this->assertEquals( 'Dies würde die lange Beschreibung der Teekategorie sein. Auch hier machen Bilder einen Sinn.', $sheet->getCell( 'G21' )->getValue() );
-	}
-
-	public function testExportFile()
-	{
 		$manager = MShop_Catalog_Manager_Factory::createManager( $this->_context );
 		$node = $manager->getTree( null, array(), MW_Tree_Manager_Abstract::LEVEL_ONE );
 

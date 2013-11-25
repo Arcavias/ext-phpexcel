@@ -10,7 +10,7 @@ return array(
 		'attribute' => array(
 			'export' => array(
 				'text' => array(
-					'excel' => array(
+					'default' => array(
 						'enablecheck' => false,
 						'exportdir' => PATH_TESTS . '/tmp',
 						'downloaddir' => PATH_TESTS . '/tmp',
@@ -19,7 +19,7 @@ return array(
 			),
 			'import' => array(
 				'text' => array(
-					'excel' => array(
+					'default' => array(
 						'enablecheck' => false,
 						'uploaddir' => PATH_TESTS . '/tmp',
 					),
@@ -29,7 +29,7 @@ return array(
 		'catalog' => array(
 			'export' => array(
 				'text' => array(
-					'excel' => array(
+					'default' => array(
 						'enablecheck' => false,
 						'exportdir' => PATH_TESTS . '/tmp',
 						'downloaddir' => PATH_TESTS . '/tmp',
@@ -38,7 +38,7 @@ return array(
 			),
 			'import' => array(
 				'text' => array(
-					'excel' => array(
+					'default' => array(
 						'enablecheck' => false,
 						'uploaddir' => PATH_TESTS . '/tmp',
 					),
@@ -48,7 +48,7 @@ return array(
 		'product' => array(
 			'export' => array(
 				'text' => array(
-					'excel' => array(
+					'default' => array(
 						'enablecheck' => false,
 						'exportdir' => PATH_TESTS . '/tmp',
 						'downloaddir' => PATH_TESTS . '/tmp',
@@ -57,12 +57,12 @@ return array(
 			),
 			'import' => array(
 				'text' => array(
-					'excel' => array(
+					'default' => array(
 						'enablecheck' => false,
 						'uploaddir' => PATH_TESTS . '/tmp',
 					),
 				),
 			),
 		),
-	)
+	),
 );

@@ -36,7 +36,10 @@ class Controller_ExtJS_Product_Export_Text_ExcelTest extends MW_Unittest_Testcas
 	protected function setUp()
 	{
 		$this->_context = TestHelper::getContext();
-		$this->_object = new Controller_ExtJS_Product_Export_Text_Excel( $this->_context );
+		$this->_context->getConfig()->set( 'controller/extjs/product/export/text/default/container/format', 'PHPExcel' );
+		$this->_context->getConfig()->set( 'controller/extjs/product/export/text/default/content/format', 'Excel5' );
+
+		$this->_object = new Controller_ExtJS_Product_Export_Text_Default( $this->_context );
 	}
 
 
@@ -52,78 +55,10 @@ class Controller_ExtJS_Product_Export_Text_ExcelTest extends MW_Unittest_Testcas
 	}
 
 
-	public function testcreateHttpOutput()
+	public function testExportXLSFile()
 	{
-		$manager = MShop_Product_Manager_Factory::createManager( $this->_context );
-		$textTypeManager = MShop_Text_Manager_Factory::createManager( $this->_context )->getSubManager('type');
+		$this->_object = new Controller_ExtJS_Product_Export_Text_Default( $this->_context );
 
-
-		$typeTotal = 0;
-		$typeSearch = $textTypeManager->createSearch();
-		$typeSearch->setConditions( $typeSearch->compare( '==', 'text.type.domain', 'product' ) );
-		$typeSearch->setSlice( 0, 0 );
-		$textTypeManager->searchItems( $typeSearch, array(), $typeTotal );
-
-
-		$ids = array();
-		$search = $manager->createSearch();
-		$search->setConditions( $search->compare( '!=', 'product.code', array( 'U:HIS', 'U:HISSUB01', 'U:HISSUB02' ) ) );
-		foreach( $manager->searchItems( $search ) as $item ) {
-			$ids[] = $item->getId();
-		}
-
-		$params = new stdClass();
-		$params->lang = array( 'de', 'en' );
-		$params->items = $ids;
-		$params->site = 'unittest';
-
-		if( ob_start() === false ) {
-			throw new Exception( 'Unable to start output buffering' );
-		}
-
-		$this->_object->createHttpOutput( $params );
-
-		$content = ob_get_contents();
-		ob_end_clean();
-
-		$filename = 'product-export.xls';
-
-		if( file_put_contents( $filename, $content ) === false ) {
-			throw new Exception( 'Unable to write export file' );
-		}
-
-		$phpExcel = PHPExcel_IOFactory::load($filename);
-
-		if( unlink( $filename ) === false ) {
-			throw new exception( 'unable to remove export file' );
-		}
-
-
-		$phpExcel->setActiveSheetIndex(0);
-		$sheet = $phpExcel->getActiveSheet();
-
-		$this->assertEquals( 'Language ID', $sheet->getCell('A1')->getValue() );
-		$this->assertEquals( 'Text', $sheet->getCell('G1')->getValue() );
-
-		for( $i = 2; $i < $typeTotal + 1; $i++ )
-		{
-			if( $sheet->getCell( 'E' . $i )->getValue() == 'name' ) {
-				break;
-			}
-		}
-		$this->assertLessThan( $typeTotal, $i );
-
-		$this->assertEquals( 'de', $sheet->getCell('A' . $i)->getValue() );
-		$this->assertEquals( 'default', $sheet->getCell('B' . $i)->getValue() );
-		$this->assertEquals( 'ABCD', $sheet->getCell('C' . $i)->getValue() );
-		$this->assertEquals( 'default', $sheet->getCell('D' . $i)->getValue() );
-		$this->assertEquals( 'name', $sheet->getCell('E' . $i)->getValue() );
-		$this->assertEquals( 'Unterproduct 1', $sheet->getCell('G' . $i)->getValue() );
-	}
-
-
-	public function testExportFile()
-	{
 		$productManager = MShop_Product_Manager_Factory::createManager( $this->_context );
 		$criteria = $productManager->createSearch();
 
@@ -147,8 +82,8 @@ class Controller_ExtJS_Product_Export_Text_ExcelTest extends MW_Unittest_Testcas
 		$this->assertTrue( array_key_exists('file', $result) );
 
 		$file = substr($result['file'], 9, -14);
-		$this->assertTrue( file_exists( $file ) );
 
+		$this->assertTrue( file_exists( $file ) );
 
 		$inputFileType = PHPExcel_IOFactory::identify( $file );
 		$objReader = PHPExcel_IOFactory::createReader( $inputFileType );
@@ -194,5 +129,4 @@ class Controller_ExtJS_Product_Export_Text_ExcelTest extends MW_Unittest_Testcas
 
 		$this->assertEquals( $expected, $actual );
 	}
-
 }

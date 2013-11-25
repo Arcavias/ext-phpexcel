@@ -38,6 +38,11 @@ class Controller_ExtJS_Catalog_Import_Text_ExcelTest extends MW_Unittest_Testcas
 	protected function setUp()
 	{
 		$this->_context = TestHelper::getContext();
+		$this->_context->getConfig()->set( 'controller/extjs/catalog/export/text/default/container/format', 'PHPExcel' );
+		$this->_context->getConfig()->set( 'controller/extjs/catalog/export/text/default/content/format', 'Excel5' );
+		$this->_context->getConfig()->set( 'controller/extjs/catalog/import/text/default/container/format', 'PHPExcel' );
+		$this->_context->getConfig()->set( 'controller/extjs/catalog/import/text/default/content/format', 'Excel5' );
+
 
 		$this->_testdir = $this->_context->getConfig()->get( 'controller/extjs/catalog/import/text/default/uploaddir', './tmp' );
 		$this->_testfile = $this->_testdir . DIRECTORY_SEPARATOR . 'file.txt';
@@ -46,7 +51,7 @@ class Controller_ExtJS_Catalog_Import_Text_ExcelTest extends MW_Unittest_Testcas
 			throw new Exception( sprintf( 'Unable to create missing upload directory "%1$s"', $this->_testdir ) );
 		}
 
-		$this->_object = new Controller_ExtJS_Catalog_Import_Text_Excel( $this->_context );
+		$this->_object = new Controller_ExtJS_Catalog_Import_Text_Default( $this->_context );
 	}
 
 
@@ -69,34 +74,29 @@ class Controller_ExtJS_Catalog_Import_Text_ExcelTest extends MW_Unittest_Testcas
 		$this->assertEquals( 2, count( $desc['Catalog_Import_Text.importFile'] ) );
 	}
 
-	public function testImportFile()
+	public function testImportFromXLSFile()
 	{
+		$this->_object = new Controller_ExtJS_Catalog_Import_Text_Default( $this->_context );
+
 		$catalogManager = MShop_Catalog_Manager_Factory::createManager( $this->_context );
 
 		$node = $catalogManager->getTree( null, array(), MW_Tree_Manager_Abstract::LEVEL_ONE );
 
 		$params = new stdClass();
-		$params->lang = array( 'de' );
+		$params->lang = array( 'en' );
 		$params->items = $node->getId();
 		$params->site = $this->_context->getLocale()->getSite()->getCode();
 
-		if( ob_start() === false ) {
-			throw new Exception( 'Unable to start output buffering' );
-		}
 
-		$exporter = new Controller_ExtJS_Catalog_Export_Text_Excel( $this->_context );
-		$exporter->createHttpOutput( $params );
+		$exporter = new Controller_ExtJS_Catalog_Export_Text_Default( $this->_context );
+		$result = $exporter->exportFile( $params );
 
-		$content = ob_get_contents();
-		ob_end_clean();
+		$this->assertTrue( array_key_exists('file', $result) );
 
+		$filename = substr($result['file'], 9, -14);
+		$this->assertTrue( file_exists( $filename ) );
 
-		$filename = 'catalog-import.xlsx';
 		$filename2 = 'catalog-import.xls';
-
-		if( file_put_contents( $filename, $content ) === false ) {
-			throw new Exception( 'Unable write import file' );
-		}
 
 		$phpExcel = PHPExcel_IOFactory::load($filename);
 
@@ -131,7 +131,7 @@ class Controller_ExtJS_Catalog_Import_Text_ExcelTest extends MW_Unittest_Testcas
 
 		$expr = array();
 		$expr[] = $criteria->compare( '==', 'text.domain', 'catalog' );
-		$expr[] = $criteria->compare( '==', 'text.languageid', 'de' );
+		$expr[] = $criteria->compare( '==', 'text.languageid', 'en' );
 		$expr[] = $criteria->compare( '==', 'text.status', 1 );
 		$expr[] = $criteria->compare( '~=', 'text.content', 'Root:' );
 		$criteria->setConditions( $criteria->combine( '&&', $expr ) );

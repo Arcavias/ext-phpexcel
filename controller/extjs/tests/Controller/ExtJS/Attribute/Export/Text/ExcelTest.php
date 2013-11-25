@@ -35,7 +35,9 @@ class Controller_ExtJS_Attribute_Export_Text_ExcelTest extends MW_Unittest_Testc
 	protected function setUp()
 	{
 		$this->_context = TestHelper::getContext();
-		$this->_object = new Controller_ExtJS_Attribute_Export_Text_Excel( $this->_context );
+		$this->_context->getConfig()->set( 'controller/extjs/attribute/export/text/default/container/format', 'PHPExcel' );
+		$this->_context->getConfig()->set( 'controller/extjs/attribute/export/text/default/content/format', 'Excel5' );
+		$this->_object = new Controller_ExtJS_Attribute_Export_Text_Default( $this->_context );
 	}
 
 
@@ -51,68 +53,12 @@ class Controller_ExtJS_Attribute_Export_Text_ExcelTest extends MW_Unittest_Testc
 	}
 
 
-	public function testcreateHttpOutput()
+
+
+	public function testExportXLSFile()
 	{
-		$manager = MShop_Attribute_Manager_Factory::createManager( $this->_context );
+		$this->_object = new Controller_ExtJS_Attribute_Export_Text_Default( $this->_context );
 
-		$ids = array();
-		foreach( $manager->searchItems( $manager->createSearch() ) as $item ) {
-			$ids[] = $item->getId();
-		}
-
-		$params = new stdClass();
-		$params->lang = array( 'de' );
-		$params->items = $ids;
-		$params->site = 'unittest';
-
-		if( ob_start() === false ) {
-			throw new Exception( 'Unable to start output buffering' );
-		}
-
-		$this->_object->createHttpOutput( $params );
-
-		$content = ob_get_contents();
-		ob_end_clean();
-
-
-		$filename = 'attribute-export.xls';
-
-		if( file_put_contents( $filename, $content ) === false ) {
-			throw new Exception( 'Unable to write export file' );
-		}
-
-		$phpExcel = PHPExcel_IOFactory::load($filename);
-
-		if( unlink( $filename ) === false ) {
-			throw new Exception( 'Unable to remove export file' );
-		}
-
-
-		$phpExcel->setActiveSheetIndex(0);
-		$sheet = $phpExcel->getActiveSheet();
-
-		$this->assertEquals( 'Language ID', $sheet->getCell('A1')->getValue() );
-		$this->assertEquals( 'Text', $sheet->getCell('G1')->getValue() );
-
-		$this->assertEquals( 'de', $sheet->getCell('A8')->getValue() );
-		$this->assertEquals( 'color', $sheet->getCell('B8')->getValue() );
-		$this->assertEquals( 'white', $sheet->getCell('C8')->getValue() );
-		$this->assertEquals( 'default', $sheet->getCell('D8')->getValue() );
-		$this->assertEquals( 'name', $sheet->getCell('E8')->getValue() );
-		$this->assertEquals( 'weiß', $sheet->getCell('G8')->getValue() );
-
-
-		$this->assertEquals( '', $sheet->getCell('A124')->getValue() );
-		$this->assertEquals( 'width', $sheet->getCell('B124')->getValue() );
-		$this->assertEquals( '36', $sheet->getCell('C124')->getValue() );
-		$this->assertEquals( 'default', $sheet->getCell('D124')->getValue() );
-		$this->assertEquals( 'name', $sheet->getCell('E124')->getValue() );
-		$this->assertEquals( '36', $sheet->getCell('G124')->getValue() );
-	}
-
-
-	public function testExportFile()
-	{
 		$manager = MShop_Attribute_Manager_Factory::createManager( $this->_context );
 
 		$ids = array();
