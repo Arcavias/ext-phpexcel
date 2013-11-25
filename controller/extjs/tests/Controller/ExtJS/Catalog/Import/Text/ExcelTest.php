@@ -9,8 +9,6 @@
 class Controller_ExtJS_Catalog_Import_Text_ExcelTest extends MW_Unittest_Testcase
 {
 	private $_object;
-	private $_testdir;
-	private $_testfile;
 	private $_context;
 
 
@@ -38,18 +36,10 @@ class Controller_ExtJS_Catalog_Import_Text_ExcelTest extends MW_Unittest_Testcas
 	protected function setUp()
 	{
 		$this->_context = TestHelper::getContext();
-		$this->_context->getConfig()->set( 'controller/extjs/catalog/export/text/default/container/format', 'PHPExcel' );
-		$this->_context->getConfig()->set( 'controller/extjs/catalog/export/text/default/content/format', 'Excel5' );
-		$this->_context->getConfig()->set( 'controller/extjs/catalog/import/text/default/container/format', 'PHPExcel' );
-		$this->_context->getConfig()->set( 'controller/extjs/catalog/import/text/default/content/format', 'Excel5' );
-
-
-		$this->_testdir = $this->_context->getConfig()->get( 'controller/extjs/catalog/import/text/default/uploaddir', './tmp' );
-		$this->_testfile = $this->_testdir . DIRECTORY_SEPARATOR . 'file.txt';
-
-		if( !is_dir( $this->_testdir ) && mkdir( $this->_testdir, 0775, true ) === false ) {
-			throw new Exception( sprintf( 'Unable to create missing upload directory "%1$s"', $this->_testdir ) );
-		}
+		$this->_context->getConfig()->set( 'controller/extjs/catalog/export/text/default/container/type', 'PHPExcel' );
+		$this->_context->getConfig()->set( 'controller/extjs/catalog/export/text/default/container/format', 'Excel5' );
+		$this->_context->getConfig()->set( 'controller/extjs/catalog/import/text/default/container/type', 'PHPExcel' );
+		$this->_context->getConfig()->set( 'controller/extjs/catalog/import/text/default/container/format', 'Excel5' );
 
 		$this->_object = new Controller_ExtJS_Catalog_Import_Text_Default( $this->_context );
 	}
@@ -66,13 +56,6 @@ class Controller_ExtJS_Catalog_Import_Text_ExcelTest extends MW_Unittest_Testcas
 		$this->_object = null;
 	}
 
-	public function testGetServiceDescription()
-	{
-		$desc = $this->_object->getServiceDescription();
-		$this->assertInternalType( 'array', $desc );
-		$this->assertEquals( 2, count( $desc['Catalog_Import_Text.uploadFile'] ) );
-		$this->assertEquals( 2, count( $desc['Catalog_Import_Text.importFile'] ) );
-	}
 
 	public function testImportFromXLSFile()
 	{
@@ -168,62 +151,4 @@ class Controller_ExtJS_Catalog_Import_Text_ExcelTest extends MW_Unittest_Testcas
 			$this->assertEquals( 'Root:', substr( $item->getContent(), 0, 5 ) );
 		}
 	}
-
-	public function testUploadFile()
-	{
-		$jobController = Controller_ExtJS_Admin_Job_Factory::createController( $this->_context );
-
-		$testfiledir = dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'testfiles' . DIRECTORY_SEPARATOR;
-		$directory = dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'testdir';
-
-		exec( sprintf( 'cp -r %1$s %2$s', escapeshellarg( $testfiledir ) . '*', escapeshellarg( $this->_testdir ) ) );
-
-
-		$_FILES['unittest'] = array(
-			'name' => 'file.txt',
-			'tmp_name' => $this->_testfile,
-			'error' => UPLOAD_ERR_OK,
-		);
-
-		$params = new stdClass();
-		$params->items = $this->_testfile;
-		$params->site = $this->_context->getLocale()->getSite()->getCode();
-
-		$result = $this->_object->uploadFile( $params );
-
-		$this->assertTrue( file_exists( $result['items'] ) );
-		unlink( $result['items'] );
-
-		$params = (object) array(
-			'site' => 'unittest',
-			'condition' => (object) array( '&&' => array( 0 => (object) array( '~=' => (object) array( 'job.label' => 'file.txt' ) ) ) ),
-		);
-
-		$result = $jobController->searchItems( $params );
-		$this->assertEquals( 1, count( $result['items'] ) );
-
-		$deleteParams = (object) array(
-			'site' => 'unittest',
-			'items' => $result['items'][0]->{'job.id'},
-		);
-
-		$jobController->deleteItems( $deleteParams );
-
-		$result = $jobController->searchItems( $params );
-		$this->assertEquals( 0, count( $result['items'] ) );
-	}
-
-
-	public function testUploadFileExeptionNoFiles()
-	{
-		$params = new stdClass();
-		$params->items = 'test.txt';
-		$params->site = 'unittest';
-
-		$_FILES = array();
-
-		$this->setExpectedException( 'Controller_ExtJS_Exception' );
-		$result = $this->_object->uploadFile( $params );
-	}
-
 }

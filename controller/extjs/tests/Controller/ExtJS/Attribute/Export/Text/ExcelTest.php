@@ -35,8 +35,8 @@ class Controller_ExtJS_Attribute_Export_Text_ExcelTest extends MW_Unittest_Testc
 	protected function setUp()
 	{
 		$this->_context = TestHelper::getContext();
-		$this->_context->getConfig()->set( 'controller/extjs/attribute/export/text/default/container/format', 'PHPExcel' );
-		$this->_context->getConfig()->set( 'controller/extjs/attribute/export/text/default/content/format', 'Excel5' );
+		$this->_context->getConfig()->set( 'controller/extjs/attribute/export/text/default/container/type', 'PHPExcel' );
+		$this->_context->getConfig()->set( 'controller/extjs/attribute/export/text/default/container/format', 'Excel5' );
 		$this->_object = new Controller_ExtJS_Attribute_Export_Text_Default( $this->_context );
 	}
 
@@ -106,23 +106,4 @@ class Controller_ExtJS_Attribute_Export_Text_ExcelTest extends MW_Unittest_Testc
 		$this->assertEquals( 'name', $sheet->getCell('E124')->getValue() );
 		$this->assertEquals( '36', $sheet->getCell('G124')->getValue() );
 	}
-
-
-	public function testGetServiceDescription()
-	{
-		$actual = $this->_object->getServiceDescription();
-		$expected = array(
-			'Attribute_Export_Text.createHttpOutput' => array(
-				"parameters" => array(
-					array( "type" => "string", "name" => "site", "optional" => false ),
-					array( "type" => "array", "name" => "items", "optional" => false ),
-					array( "type" => "array", "name" => "lang", "optional" => true ),
-				),
-				"returns" => "",
-			),
-		);
-
-		$this->assertEquals( $expected, $actual );
-	}
-
 }

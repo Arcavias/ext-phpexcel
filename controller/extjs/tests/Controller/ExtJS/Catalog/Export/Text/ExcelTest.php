@@ -36,8 +36,8 @@ class Controller_ExtJS_Catalog_Export_Text_ExcelTest extends MW_Unittest_Testcas
 	protected function setUp()
 	{
 		$this->_context = TestHelper::getContext();
-		$this->_context->getConfig()->set( 'controller/extjs/catalog/export/text/default/container/format', 'PHPExcel' );
-		$this->_context->getConfig()->set( 'controller/extjs/catalog/export/text/default/content/format', 'Excel5' );
+		$this->_context->getConfig()->set( 'controller/extjs/catalog/export/text/default/container/type', 'PHPExcel' );
+		$this->_context->getConfig()->set( 'controller/extjs/catalog/export/text/default/container/format', 'Excel5' );
 
 		$this->_object = new Controller_ExtJS_Catalog_Export_Text_Default( $this->_context );
 	}
@@ -110,23 +110,4 @@ class Controller_ExtJS_Catalog_Export_Text_ExcelTest extends MW_Unittest_Testcas
 		$this->assertEquals( 'long', $sheet->getCell( 'E21' )->getValue() );
 		$this->assertEquals( 'Dies würde die lange Beschreibung der Teekategorie sein. Auch hier machen Bilder einen Sinn.', $sheet->getCell( 'G21' )->getValue() );
 	}
-
-
-	public function testGetServiceDescription()
-	{
-		$actual = $this->_object->getServiceDescription();
-		$expected = array(
-			'Catalog_Export_Text.createHttpOutput' => array(
-				"parameters" => array(
-					array( "type" => "string","name" => "site","optional" => false ),
-					array( "type" => "array","name" => "items","optional" => false ),
-					array( "type" => "array","name" => "lang","optional" => true ),
-				),
-				"returns" => "",
-			),
-		);
-
-		$this->assertEquals( $expected, $actual );
-	}
-
 }
