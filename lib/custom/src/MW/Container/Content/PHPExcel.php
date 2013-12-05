@@ -71,10 +71,14 @@ class MW_Container_Content_PHPExcel
 	 */
 	function current()
 	{
-		$result = array();
+		if( $this->_iterator->valid() === false ) {
+			return null;
+		}
 
 		$iterator = $this->_iterator->current()->getCellIterator();
 		$iterator->setIterateOnlyExistingCells( false );
+
+		$result = array();
 
 		foreach( $iterator as $cell ) {
 			$result[] = $cell->getValue();
@@ -100,7 +104,7 @@ class MW_Container_Content_PHPExcel
 	 */
 	function next()
 	{
-		return $this->_iterator->next();
+		$this->_iterator->next();
 	}
 
 
@@ -109,7 +113,7 @@ class MW_Container_Content_PHPExcel
 	 */
 	function rewind()
 	{
-		return $this->_iterator->rewind();
+		$this->_iterator->rewind();
 	}
 
 
