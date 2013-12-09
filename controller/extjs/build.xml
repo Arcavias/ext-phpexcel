@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="PHPExcel extension - ExtJS controller" default="test">
+<project name="Arcavias PHPExcel extension - ExtJS controller" default="test">
 
 	<target name="test" description="Executes unit tests">
 		<echo msg="Executing unit tests" />
