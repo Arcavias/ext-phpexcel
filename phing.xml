@@ -31,6 +31,13 @@
 	<target name="build" description="Creates all files to be generated" >
 	</target>
 
+	<target name="release" description="Creates new release" depends="build">
+		<exec command="git branch ${version}" checkreturn="true" logoutput="true" />
+		<exec command="git tag -a ext-phpexcel_${version} -m 'Release ${version}'" checkreturn="true" logoutput="true" />
+		<exec command="git push origin ${version}" checkreturn="true" logoutput="true" />
+		<exec command="git push --tags" checkreturn="true" logoutput="true" />
+	</target>
+
 	<target name="all" depends="test,check,clean" description="Builds all parts of the package">
 	</target>
 
