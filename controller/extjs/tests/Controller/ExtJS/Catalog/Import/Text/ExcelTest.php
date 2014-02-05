@@ -54,6 +54,9 @@ class Controller_ExtJS_Catalog_Import_Text_ExcelTest extends MW_Unittest_Testcas
 	protected function tearDown()
 	{
 		$this->_object = null;
+
+		Controller_ExtJS_Factory::clear();
+		MShop_Factory::clear();
 	}
 
 
