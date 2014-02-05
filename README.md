@@ -1,4 +1,4 @@
-ext-phpexcel
+ext-phpexcel [![Build Status](https://travis-ci.org/Arcavias/ext-phpexcel.png?branch=master)](https://travis-ci.org/Arcavias/ext-phpexcel)
 ============
 
 Provided PHPExcel library for imports and exports
