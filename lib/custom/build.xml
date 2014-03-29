@@ -4,7 +4,7 @@
 	
 	<target name="test" description="Executes unit tests">
 		<echo msg="Executing unit tests" />
-		<exec command="phpunit -d memory_limit=-1 --include-path ${coredir} --configuration=phpunit.xml ."
+		<exec command="${bindir}phpunit -d memory_limit=-1 --include-path ${coredir} --configuration=phpunit.xml ."
 			  dir="tests" checkreturn="true" logoutput="true"/>
 	</target>
 	
@@ -14,13 +14,13 @@
 	<target name="coverage" description="Generates code coverage report">
 		<echo msg="Generating code coverage report" />
 		<delete dir="tests/coverage" quiet="true" failonerror="false" />
-		<exec command="phpunit -d memory_limit=-1 --include-path ${coredir} --configuration=phpunit-coverage.xml ."
+		<exec command="${bindir}phpunit -d memory_limit=-1 --include-path ${coredir} --configuration=phpunit-coverage.xml ."
 			  dir="tests" checkreturn="true" logoutput="true"/>
 	</target>
 	
 	<target name="check" description="Executes code sniffer">
 		<echo msg="Executing code sniffer" />
-		<exec command="phpcs -n --standard=${codestddir}/Metaways src tests"
+		<exec command="${bindir}phpcs -n --standard=${codestddir}/Metaways src tests"
 			  checkreturn="true" logoutput="true"/>
 	</target>
 

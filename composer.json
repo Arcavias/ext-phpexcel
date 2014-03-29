@@ -10,9 +10,6 @@
 		"forum": "https://forum.arcavias.com",
 		"wiki": "https://docs.arcavias.com"
 	},
-	"require": {
-		"arcavias/extension-installer": "dev-master"
-	},
 	"autoload": {
 		"psr-0": {
 			"MW": "lib/custom/src",
