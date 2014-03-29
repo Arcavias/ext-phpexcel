@@ -11,4 +11,4 @@ before_script:
   - composer install || sleep 60 && composer install
   - mysql -e 'create database arcavias;'
   - echo "<?php return array( 'db' => array( 'adapter' => 'mysql', 'host' => '127.0.0.1', 'database' => 'arcavias', 'username' => 'root', 'password' => '', 'limit' => 2, 'opt-persistent' => false, 'stmt' => array( \"SET NAMES 'utf8'\", \"SET SESSION sql_mode='ANSI'\" ) ) );" > config/resource.php
-script: "phing setup && phing -Ddir=ext/phpexcel testext && phing -Ddir=ext/phpexcel checkext"
+script: "vendor/bin/phing setup && vendor/bin/phing -Ddir=ext/phpexcel testext && vendor/bin/phing -Ddir=ext/phpexcel checkext"
