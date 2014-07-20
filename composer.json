@@ -6,9 +6,12 @@
 	"license": "LGPL-3.0",
 	"support": {
 		"source": "https://github.com/Arcavias/ext-phpexcel",
-		"issues": "https://bugs.arcavias.com",
+		"issues": "https://github.com/Arcavias/ext-phpexcel/issues",
 		"forum": "https://forum.arcavias.com",
 		"wiki": "https://docs.arcavias.com"
+	},
+	"require": {
+		"arcavias/extension-installer": "dev-master"
 	},
 	"autoload": {
 		"psr-0": {
